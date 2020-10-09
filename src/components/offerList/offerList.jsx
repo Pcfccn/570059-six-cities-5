@@ -8,11 +8,12 @@ class OfferList extends React.PureComponent {
   }
   render() {
     const {offerCards} = this.props;
-    console.log(`offerCards on list`, offerCards);
     return (
       <div className="cities__places-list places__list tabs__content">
         {offerCards.map((currentCard) => (
-          <OfferCard key = {currentCard.id} offer = {currentCard} />
+          <OfferCard
+            key={currentCard.id}
+            offer={currentCard} />
         ))}
       </div>
     );
@@ -20,7 +21,7 @@ class OfferList extends React.PureComponent {
 }
 
 OfferList.propTypes = {
-  offerCards: PropTypes.arrayOf(PropTypes.object).isRequared
+  offerCards: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 export default OfferList;

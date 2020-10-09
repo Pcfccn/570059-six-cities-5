@@ -57,17 +57,18 @@ class OfferCard extends PureComponent {
 }
 
 OfferCard.propTypes = {
-  offer: PropTypes.object.IsRequared,
-  image: PropTypes.string.IsRequared,
-  price: PropTypes.objectOf(PropTypes.shape({
-    value: PropTypes.number.IsRequared,
-    period: PropTypes.string.IsRequared
-  })).IsRequared,
-  rating: PropTypes.number.IsRequared,
-  isInBookmarks: PropTypes.bool.IsRequared,
-  name: PropTypes.string.IsRequared,
-  type: PropTypes.string.IsRequared,
-  isPremium: PropTypes.bool.IsRequared,
+  offer: PropTypes.shape({
+    image: PropTypes.arrayOf(PropTypes.string).isRequired,
+    price: PropTypes.shape({
+      value: PropTypes.number.isRequired,
+      period: PropTypes.string.isRequired,
+    }).isRequired,
+    rating: PropTypes.number.isRequired,
+    isInBookmarks: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    isPremium: PropTypes.bool.isRequired,
+  }).isRequired,
 };
 
 export default OfferCard;
