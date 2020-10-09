@@ -1,7 +1,7 @@
 import {PropTypes} from "prop-types";
 import React from "react";
 
-const Room = (props) => {
+const Offer = (props) => {
   const id = props.match.params.id;
   return (
     <div className="page">
@@ -328,7 +328,7 @@ const Room = (props) => {
   );
 };
 
-Room.propTypes = {
+Offer.propTypes = {
   match: PropTypes.shape({
     params: PropTypes.shape({
       id: PropTypes.string.isRequired
@@ -336,4 +336,4 @@ Room.propTypes = {
   }),
 };
 
-export default Room;
+export default Offer;
