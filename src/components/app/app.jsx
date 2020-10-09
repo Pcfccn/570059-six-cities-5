@@ -1,3 +1,4 @@
+import {PropTypes} from "prop-types";
 import React, {Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {Path} from "../../constants";
@@ -6,12 +7,13 @@ import Main from "../main/main";
 import Offer from "../offer/Offer";
 import SignIn from "../sign-in/sign-in";
 
-const App = () => {
+const App = (props) => {
+  const {offers} = props;
   return (
     <BrowserRouter>
       <Switch>
         <Route exact path = {Path.MAIN}>
-          <Main />
+          <Main offers={offers} />
         </Route>
         <Route exact path = {Path.SIGN_IN}>
           <SignIn />
@@ -30,6 +32,10 @@ const App = () => {
       </Switch>
     </BrowserRouter>
   );
+};
+
+App.propTypes = {
+  offers: PropTypes.array.isRequired
 };
 
 export default App;
