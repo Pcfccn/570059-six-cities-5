@@ -2,6 +2,8 @@ import {PropTypes} from "prop-types";
 import React, {Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {Path} from "../../constants";
+import {reviews} from "../../mock/offer";
+import {getOffer, getReviews} from "../../utils/common";
 import Favorites from "../favorites/favorites";
 import Main from "../main/main";
 import Offer from "../offer/Offer";
@@ -21,7 +23,16 @@ const App = (props) => {
         <Route exact path = {Path.FAVORITES}>
           <Favorites />
         </Route>
-        <Route path = {Path.OFFER} exact component = {Offer} />
+        <Route
+          path = {Path.OFFER} exact
+          render={(offerProps) => (
+            <Offer
+              offer={getOffer(offers, offerProps)}
+              reviews={getReviews(offers, reviews, offerProps)}
+            />
+          )
+          }
+        />
         <Route
           render = {() => (
             <Fragment>

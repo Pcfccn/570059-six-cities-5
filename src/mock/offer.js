@@ -44,7 +44,7 @@ const property = [
     host: {
       avatar: `img/avatar-angelina.jpg`,
       name: `Anaina`,
-      pro: true,
+      pro: false,
       description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
       The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
