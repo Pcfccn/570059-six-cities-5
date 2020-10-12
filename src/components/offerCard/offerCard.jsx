@@ -9,7 +9,10 @@ class OfferCard extends PureComponent {
   }
 
   render() {
-    const {offer} = this.props;
+    const {offer, onOfferCardClick} = this.props;
+    const onClick = () => {
+      onOfferCardClick(offer.id);
+    };
     const {image, price, rating, isInBookmarks, name, type, isPremium} = offer;
     const widthForRatingStar = rating * widthStartsCoefficient;
     const isInBookmarksButtonActive = isInBookmarks
@@ -20,7 +23,7 @@ class OfferCard extends PureComponent {
       : ``;
 
     return (
-      <article className="cities__place-card place-card">
+      <article className="cities__place-card place-card" onClick={onClick}>
         {isPremiumTemplate}
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
@@ -68,7 +71,9 @@ OfferCard.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     isPremium: PropTypes.bool.isRequired,
+    id: PropTypes.string.isRequired,
   }).isRequired,
+  onOfferCardClick: PropTypes.func.isRequired
 };
 
 export default OfferCard;

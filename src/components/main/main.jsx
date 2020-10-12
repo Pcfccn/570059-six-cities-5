@@ -8,7 +8,7 @@ class Main extends React.PureComponent {
   }
 
   render() {
-    const {offers} = this.props;
+    const {offers, onOfferCardClick} = this.props;
     return (
       <div className="page page--gray page--main">
         <header className="header">
@@ -92,7 +92,7 @@ class Main extends React.PureComponent {
                     <li className="places__option" tabIndex="0">Top rated first</li>
                   </ul>
                 </form>
-                <OfferList offerCards={offers} />
+                <OfferList offerCards={offers} onOfferCardClick={onOfferCardClick}/>
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
@@ -107,7 +107,8 @@ class Main extends React.PureComponent {
 
 
 Main.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.array.isRequired,
+  onOfferCardClick: PropTypes.func.isRequired,
 };
 
 export default Main;

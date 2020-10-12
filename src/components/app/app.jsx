@@ -9,14 +9,28 @@ import Main from "../main/main";
 import Offer from "../offer/Offer";
 import SignIn from "../sign-in/sign-in";
 
+const onSubmitForm = (state) => {
+  console.log(state);
+};
+
 const App = (props) => {
   const {offers} = props;
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path = {Path.MAIN}>
-          <Main offers={offers} />
-        </Route>
+        <Route exact
+          path = {Path.MAIN}
+          render={({history}) => (
+            <Main
+              onOfferCardClick={(offerId) => {
+                history.push(`/offer/${offerId}`);
+              }}
+              offers={offers}
+              onSubmitForm={onSubmitForm}
+            />
+          )
+          }
+        />
         <Route exact path = {Path.SIGN_IN}>
           <SignIn />
         </Route>
@@ -29,6 +43,7 @@ const App = (props) => {
             <Offer
               offer={getOffer(offers, offerProps)}
               reviews={getReviews(offers, reviews, offerProps)}
+              onSubmitForm={onSubmitForm}
             />
           )
           }

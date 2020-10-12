@@ -137,14 +137,14 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2021`
   },
   "2137": {
     avatar: `img/avatar-max.jpg`,
     name: `YaYa`,
     rating: 5,
     text: `HoHO`,
-    date: `April 2020`
+    date: `April 2022`
   },
 
   "2138": {
@@ -154,28 +154,28 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2023`
   },
   "2139": {
     avatar: `img/avatar-max.jpg`,
     name: `YaYa`,
     rating: 1,
     text: `HoHO`,
-    date: `April 2020`
+    date: `April 2024`
   },
   "2140": {
     avatar: `img/avatar-max.jpg`,
     name: `YaYa`,
     rating: 4,
     text: `HoHO`,
-    date: `April 2020`
+    date: `April 2025`
   },
   "2141": {
     avatar: `img/avatar-max.jpg`,
     name: `YaYa`,
     rating: 5,
     text: `HoHO`,
-    date: `April 2020`
+    date: `April 2026`
   },
 
   "2142": {
@@ -185,7 +185,7 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2017`
   },
   "2143": {
     avatar: `img/avatar-max.jpg`,
@@ -194,7 +194,7 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2018`
   },
   "2144": {
     avatar: `img/avatar-max.jpg`,
@@ -203,7 +203,7 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2029`
   },
   "2145": {
     avatar: `img/avatar-max.jpg`,
@@ -212,7 +212,7 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2030`
   },
   "2146": {
     avatar: `img/avatar-max.jpg`,
@@ -221,14 +221,14 @@ const reviews = {
     text: `The building is green and from 18th century.
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
-    date: `April 2019`
+    date: `April 2031`
   },
   "2147": {
     avatar: `img/avatar-max.jpg`,
     name: `YaYa`,
     rating: 5,
     text: `HoHO`,
-    date: `April 2020`
+    date: `April 2032`
   },
 
 };
