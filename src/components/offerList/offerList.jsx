@@ -5,6 +5,9 @@ import OfferCard from "../offerCard/offerCard";
 class OfferList extends React.PureComponent {
   constructor(props) {
     super(props);
+
+    this.state = {};
+    this._setState = this._setState.bind(this);
   }
   render() {
     const {offerCards, onOfferCardClick} = this.props;
@@ -15,10 +18,16 @@ class OfferList extends React.PureComponent {
             key={currentCard.id}
             offer={currentCard}
             onOfferCardClick={onOfferCardClick}
+            onMouseEnterCard={this._setState}
           />
         ))}
       </div>
     );
+  }
+
+  _setState(offerState) {
+    this.setState(offerState);
+    console.log(this.state);
   }
 }
 

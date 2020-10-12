@@ -6,12 +6,17 @@ import {widthStartsCoefficient} from "../../constants";
 class OfferCard extends PureComponent {
   constructor(props) {
     super(props);
+
+    this.state = {};
   }
 
   render() {
-    const {offer, onOfferCardClick} = this.props;
+    const {offer, onOfferCardClick, onMouseEnterCard} = this.props;
     const onClick = () => {
       onOfferCardClick(offer.id);
+    };
+    const onMouseEnter = () => {
+      onMouseEnterCard(offer);
     };
     const {image, price, rating, isInBookmarks, name, type, isPremium} = offer;
     const widthForRatingStar = rating * widthStartsCoefficient;
@@ -23,7 +28,10 @@ class OfferCard extends PureComponent {
       : ``;
 
     return (
-      <article className="cities__place-card place-card" onClick={onClick}>
+      <article className="cities__place-card place-card"
+        onClick={onClick}
+        onMouseEnter={onMouseEnter}
+        >
         {isPremiumTemplate}
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
