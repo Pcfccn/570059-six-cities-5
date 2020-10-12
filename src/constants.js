@@ -1,8 +1,10 @@
-const paths = {
+const Path = {
   MAIN: `/`,
   SIGN_IN: `/login`,
   FAVORITES: `/favorites`,
-  ROOM: `/offer/:id`,
+  OFFER: `/offer/:id`,
 };
 
-export {paths};
+const widthStartsCoefficient = 20;
+
+export {Path, widthStartsCoefficient};
