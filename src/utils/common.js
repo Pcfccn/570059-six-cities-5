@@ -1,3 +1,5 @@
+import {widthStartsCoefficient} from "../constants";
+
 const getOffer = ((offers, props) => (offers.filter((offer) => offer.id === props.match.params.id)[0]));
 
 const getReviews = ((offers, reviews, props) => {
@@ -6,4 +8,6 @@ const getReviews = ((offers, reviews, props) => {
   );
 });
 
-export {getOffer, getReviews};
+const getWidthForRatingStar = (rating) => `${rating * widthStartsCoefficient}%`;
+
+export {getOffer, getReviews, getWidthForRatingStar};

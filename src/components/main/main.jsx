@@ -8,7 +8,7 @@ class Main extends React.PureComponent {
   }
 
   render() {
-    const {offers, onOfferCardClick} = this.props;
+    const {offers} = this.props;
     return (
       <div className="page page--gray page--main">
         <header className="header">
@@ -16,7 +16,7 @@ class Main extends React.PureComponent {
             <div className="header__wrapper">
               <div className="header__left">
                 <a className="header__logo-link header__logo-link--active">
-                  <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
+                  <img className="header__logo" src="/img/logo.svg" alt="6 cities logo" width="81" height="41"/>
                 </a>
               </div>
               <nav className="header__nav">
@@ -92,7 +92,7 @@ class Main extends React.PureComponent {
                     <li className="places__option" tabIndex="0">Top rated first</li>
                   </ul>
                 </form>
-                <OfferList offerCards={offers} onOfferCardClick={onOfferCardClick}/>
+                <OfferList offerCards={offers} />
               </section>
               <div className="cities__right-section">
                 <section className="cities__map map"></section>
@@ -108,7 +108,6 @@ class Main extends React.PureComponent {
 
 Main.propTypes = {
   offers: PropTypes.array.isRequired,
-  onOfferCardClick: PropTypes.func.isRequired,
 };
 
 export default Main;

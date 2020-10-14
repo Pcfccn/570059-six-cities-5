@@ -1,5 +1,6 @@
 import {PropTypes} from "prop-types";
 import React, {PureComponent} from "react";
+import {Link} from "react-router-dom";
 import {widthStartsCoefficient} from "../../constants";
 
 
@@ -11,10 +12,7 @@ class OfferCard extends PureComponent {
   }
 
   render() {
-    const {offer, onOfferCardClick, onMouseEnterCard} = this.props;
-    const onClick = () => {
-      onOfferCardClick(offer.id);
-    };
+    const {offer, onMouseEnterCard} = this.props;
     const onMouseEnter = () => {
       onMouseEnterCard(offer);
     };
@@ -29,14 +27,13 @@ class OfferCard extends PureComponent {
 
     return (
       <article className="cities__place-card place-card"
-        onClick={onClick}
         onMouseEnter={onMouseEnter}
-        >
+      >
         {isPremiumTemplate}
         <div className="cities__image-wrapper place-card__image-wrapper">
-          <a href="#">
+          <Link to={`/offer/${offer.id}`}>
             <img className="place-card__image" src={image[0]} width="260" height="200" alt="Place image"/>
-          </a>
+          </Link>
         </div>
         <div className="place-card__info">
           <div className="place-card__price-wrapper">
@@ -58,7 +55,7 @@ class OfferCard extends PureComponent {
             </div>
           </div>
           <h2 className="place-card__name">
-            <a href="#">{name}</a>
+            <Link to={`/offer/${offer.id}`}>{name}</Link>
           </h2>
           <p className="place-card__type">{type}</p>
         </div>
@@ -81,7 +78,7 @@ OfferCard.propTypes = {
     isPremium: PropTypes.bool.isRequired,
     id: PropTypes.string.isRequired,
   }).isRequired,
-  onOfferCardClick: PropTypes.func.isRequired
+  onMouseEnterCard: PropTypes.func.isRequired,
 };
 
 export default OfferCard;

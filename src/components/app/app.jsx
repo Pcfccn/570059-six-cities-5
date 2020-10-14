@@ -9,8 +9,9 @@ import Main from "../main/main";
 import Offer from "../offer/Offer";
 import SignIn from "../sign-in/sign-in";
 
-const onSubmitForm = (state) => {
-  console.log(state);
+// const onSubmitForm = (state) => {
+const onSubmitForm = () => {
+  // console.log(state);
 };
 
 const App = (props) => {
@@ -20,11 +21,8 @@ const App = (props) => {
       <Switch>
         <Route exact
           path = {Path.MAIN}
-          render={({history}) => (
+          render={() => (
             <Main
-              onOfferCardClick={(offerId) => {
-                history.push(`/offer/${offerId}`);
-              }}
               offers={offers}
               onSubmitForm={onSubmitForm}
             />
