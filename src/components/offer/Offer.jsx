@@ -1,10 +1,10 @@
 import {PropTypes} from "prop-types";
 import React from "react";
 import {getWidthForRatingStar} from "../../utils/common";
-import PostCommentForm from "../post-comment-form/post-comment-form";
-import Inside from "./Inside";
-import Photos from "./Photos";
-import Reviews from "./Reviews";
+import PostCommentForm from "../offer-post-comment-form/offer-post-comment-form";
+import Inside from "../offer-inside/offer-inside";
+import Photos from "../offer-photos/offer-photos";
+import Reviews from "../offer-reviews/offer-reviews";
 
 const Offer = (props) => {
   const {offer, reviews, onSubmitForm} = props;
@@ -56,14 +56,8 @@ const Offer = (props) => {
                 <h1 className="property__name">
                   {name}
                 </h1>
-                {/* <button className={`property__bookmark-button ${isInBookmarksButtonActive} button`} type="button">
-                  <svg className="property__bookmark-icon" width="31" height="33">
-                    <use xlinkHref="#icon-bookmark"></use>
-                  </svg>
-                  <span className="visually-hidden">To bookmarks</span>
-                </button> */}
-                <button className="property__bookmark-button property__bookmark-button--active button" type="button">
-                  <svg className="property__bookmark-icon" width="31" height="33">
+                <button className={`property__bookmark-button ${isInBookmarksButtonActive} button`} type="button">
+                  <svg className="place-card__bookmark-icon" width="31" height="33">
                     <use xlinkHref="#icon-bookmark"></use>
                   </svg>
                   <span className="visually-hidden">To bookmarks</span>
