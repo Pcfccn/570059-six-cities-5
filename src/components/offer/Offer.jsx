@@ -5,6 +5,7 @@ import PostCommentForm from "../offer-post-comment-form/offer-post-comment-form"
 import Inside from "../offer-inside/offer-inside";
 import Photos from "../offer-photos/offer-photos";
 import Reviews from "../offer-reviews/offer-reviews";
+import offerPropTypes from "../types/offer";
 
 const Offer = (props) => {
   const {offer, reviews, onSubmitForm} = props;
@@ -238,22 +239,7 @@ Offer.propTypes = {
         rating: PropTypes.number.isRequired,
         text: PropTypes.string.isRequired,
       })),
-  offer: PropTypes.shape({
-    image: PropTypes.arrayOf(PropTypes.string).isRequired,
-    price: PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      period: PropTypes.string.isRequired,
-    }).isRequired,
-    rating: PropTypes.number.isRequired,
-    isInBookmarks: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    isPremium: PropTypes.bool.isRequired,
-    bedrooms: PropTypes.number.isRequired,
-    adults: PropTypes.number.isRequired,
-    inside: PropTypes.array.isRequired,
-    host: PropTypes.object.isRequired
-  }).isRequired,
+  offer: offerPropTypes,
   onSubmitForm: PropTypes.func.isRequired,
 };
 

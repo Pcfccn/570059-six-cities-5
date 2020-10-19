@@ -1,6 +1,7 @@
 import {PropTypes} from "prop-types";
 import React from "react";
 import OfferList from "../offer-list/offer-list";
+import offerPropTypes from "../types/offer";
 
 class Main extends React.PureComponent {
   constructor(props) {
@@ -107,7 +108,7 @@ class Main extends React.PureComponent {
 
 
 Main.propTypes = {
-  offers: PropTypes.array.isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes).isRequired
 };
 
 export default Main;

@@ -8,6 +8,7 @@ import Favorites from "../favorites/favorites";
 import Main from "../main/main";
 import Offer from "../offer/Offer";
 import SignIn from "../sign-in/sign-in";
+import offerPropTypes from "../types/offer";
 
 // const onSubmitForm = (state) => {
 const onSubmitForm = () => {
@@ -59,17 +60,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  offers: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    reviews: PropTypes.array.isRequired,
-    image: PropTypes.array.isRequired,
-    inside: PropTypes.array.isRequired,
-    isInBookmarks: PropTypes.bool.isRequired,
-    isPremium: PropTypes.bool.isRequired,
-    location: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    price: PropTypes.object.isRequired,
-  }).isRequired)
+  offers: PropTypes.arrayOf(offerPropTypes).isRequired
 };
 
 export default App;

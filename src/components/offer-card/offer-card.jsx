@@ -2,6 +2,7 @@ import {PropTypes} from "prop-types";
 import React, {PureComponent} from "react";
 import {Link} from "react-router-dom";
 import {Path, widthStartsCoefficient} from "../../constants";
+import offerPropTypes from "../types/offer";
 
 
 class OfferCard extends PureComponent {
@@ -65,19 +66,7 @@ class OfferCard extends PureComponent {
 }
 
 OfferCard.propTypes = {
-  offer: PropTypes.shape({
-    image: PropTypes.arrayOf(PropTypes.string).isRequired,
-    price: PropTypes.shape({
-      value: PropTypes.number.isRequired,
-      period: PropTypes.string.isRequired,
-    }).isRequired,
-    rating: PropTypes.number.isRequired,
-    isInBookmarks: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    isPremium: PropTypes.bool.isRequired,
-    id: PropTypes.string.isRequired,
-  }).isRequired,
+  offer: offerPropTypes,
   onMouseEnterCard: PropTypes.func.isRequired,
 };
 
