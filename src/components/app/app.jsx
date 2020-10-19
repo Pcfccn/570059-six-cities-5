@@ -59,7 +59,17 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  offers: PropTypes.array.isRequired
+  offers: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    reviews: PropTypes.array.isRequired,
+    image: PropTypes.array.isRequired,
+    inside: PropTypes.array.isRequired,
+    isInBookmarks: PropTypes.bool.isRequired,
+    isPremium: PropTypes.bool.isRequired,
+    location: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    price: PropTypes.object.isRequired,
+  }).isRequired)
 };
 
 export default App;
