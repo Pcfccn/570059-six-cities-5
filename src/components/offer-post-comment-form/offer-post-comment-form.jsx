@@ -1,7 +1,7 @@
 import {PropTypes} from "prop-types";
 import React from "react";
-
-const ratingInputTitle = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
+import {ratingStars} from "../../constants";
+import RatingStar from "../offer-post-comment-rating-star/offer-post-comment-rating-star";
 
 class PostCommentForm extends React.PureComponent {
   constructor(props) {
@@ -11,33 +11,6 @@ class PostCommentForm extends React.PureComponent {
       rating: 0,
       text: ``
     };
-  }
-
-  getInputTemplate(index) {
-    return (
-      <React.Fragment key={`${index}-stars`}>
-        <input className="form__rating-input visually-hidden" name="rating" value={index} id={`${index}-stars`} type="radio"
-          onChange={
-            (evt) => {
-              this.setState({rating: evt.target.value});
-            }
-          }
-        />
-        <label htmlFor={`${index}-stars`} className="reviews__rating-label form__rating-label" title={ratingInputTitle[index - 1]}>
-          <svg className="form__star-image" width="37" height="33">
-            <use xlinkHref="#icon-star"></use>
-          </svg>
-        </label>
-      </React.Fragment>
-    );
-  }
-
-  getInputsTemplate() {
-    const inputs = [];
-    for (let i = 5; i > 0; i--) {
-      inputs.push(this.getInputTemplate(i));
-    }
-    return inputs;
   }
 
   render() {
@@ -50,8 +23,7 @@ class PostCommentForm extends React.PureComponent {
       <form className="reviews__form form" action="#" method="post" onSubmit={onSubmit}>
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
         <div className="reviews__rating-form form__rating">
-          {this.getInputsTemplate()}
-
+          {ratingStars.map((stars) => <RatingStar key={stars} index={stars}/>)}
         </div>
         <textarea className="reviews__textarea form__textarea" id="review" name="review"
           placeholder="Tell how was your stay, what you like and what can be improved"

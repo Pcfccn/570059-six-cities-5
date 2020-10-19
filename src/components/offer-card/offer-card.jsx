@@ -1,7 +1,7 @@
 import {PropTypes} from "prop-types";
 import React, {PureComponent} from "react";
 import {Link} from "react-router-dom";
-import {widthStartsCoefficient} from "../../constants";
+import {Path, widthStartsCoefficient} from "../../constants";
 
 
 class OfferCard extends PureComponent {
@@ -31,7 +31,7 @@ class OfferCard extends PureComponent {
       >
         {isPremiumTemplate}
         <div className="cities__image-wrapper place-card__image-wrapper">
-          <Link to={`/offer/${offer.id}`}>
+          <Link to={`${Path.getUrlById(offer.id)}`}>
             <img className="place-card__image" src={image[0]} width="260" height="200" alt="Place image"/>
           </Link>
         </div>
@@ -55,7 +55,7 @@ class OfferCard extends PureComponent {
             </div>
           </div>
           <h2 className="place-card__name">
-            <Link to={`/offer/${offer.id}`}>{name}</Link>
+            <Link to={`${Path.getUrlById(offer.id)}`}>{name}</Link>
           </h2>
           <p className="place-card__type">{type}</p>
         </div>
