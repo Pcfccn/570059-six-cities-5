@@ -6,10 +6,11 @@ import Inside from "../offer-inside/offer-inside";
 import Photos from "../offer-photos/offer-photos";
 import Reviews from "../offer-reviews/offer-reviews";
 import offerPropTypes from "../types/offer";
+import MapComponent from "../map/map";
 
 const Offer = (props) => {
   const {offer, reviews, onSubmitForm} = props;
-  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price} = offer;
+  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, city, location} = offer;
   const isInBookmarksButtonActive = isInBookmarks
     ? `property__bookmark-button--active`
     : ``;
@@ -117,7 +118,7 @@ const Offer = (props) => {
               </section>
             </div>
           </div>
-          <section className="property__map map"></section>
+          <MapComponent mapClass={`property__map`} city={city} pinLocations={[location]} />
         </section>
         <div className="container">
           <section className="near-places places">
