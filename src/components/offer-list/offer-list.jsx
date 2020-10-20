@@ -2,6 +2,7 @@ import React from "react";
 import {PropTypes} from "prop-types";
 import OfferCard from "../offer-card/offer-card";
 import offerPropTypes from "../types/offer";
+import {OfferCardClassName} from "../../constants";
 
 class OfferList extends React.PureComponent {
   constructor(props) {
@@ -23,6 +24,7 @@ class OfferList extends React.PureComponent {
           <OfferCard
             key={currentCard.id}
             offer={currentCard}
+            className={OfferCardClassName.citiesPlace}
             onMouseEnterCard={this.handleMouseEnterCard}
           />
         ))}

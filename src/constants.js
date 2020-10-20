@@ -15,4 +15,14 @@ const CityCoordinates = {
   Amsterdam: [52.38333, 4.9],
 };
 
-export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates};
+const OfferCardClassName = {
+  nearPlace: `near-places__card`,
+  citiesPlace: `cities__place-card`,
+};
+
+const MapClassName = {
+  property: `property__map`,
+  cities: `cities__map`,
+};
+
+export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates, OfferCardClassName, MapClassName};
