@@ -11,4 +11,8 @@ const ratingInputTitle = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
 
 const widthStartsCoefficient = 20;
 
-export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle};
+const CityCoordinates = {
+  Amsterdam: [52.38333, 4.9],
+};
+
+export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates};

@@ -1,6 +1,7 @@
 const property = [
   {
     id: `01`,
+    city: `Amsterdam`,
     reviews: [2134, 2135],
     image: [`/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/room.jpg`, `/img/studio-01.jpg`, `/img/studio-photos.jpg`],
     isPremium: false,
@@ -23,10 +24,11 @@ const property = [
       description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
       The building is green and from 18th century.`,
     },
-    location: `52.3909553943508, 4.85309666406198`
+    location: [52.3909553943508, 4.85309666406198]
   },
   {
     id: `02`,
+    city: `Amsterdam`,
     reviews: [2136, 2137, 2138],
     image: [`/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/room.jpg`, `/img/studio-01.jpg`, `/img/studio-photos.jpg`],
     isPremium: false,
@@ -58,10 +60,11 @@ const property = [
       An independent House, strategically located between Rembrand Square and National Opera,
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
     },
-    location: `52.369553943508, 4.85309666406198`
+    location: [52.369553943508, 4.85309666406198]
   },
   {
     id: `03`,
+    city: `Amsterdam`,
     reviews: [2139, 2140, 2141],
     image: [`/img/studio-01.jpg`, `/img/studio-photos.jpg`],
     isPremium: true,
@@ -83,10 +86,11 @@ const property = [
       pro: true,
       description: ``,
     },
-    location: `52.3909553943508, 4.929309666406198`
+    location: [52.3909553943508, 4.929309666406198]
   },
   {
     id: `04`,
+    city: `Amsterdam`,
     reviews: [2141, 2142, 2143, 2144, 2145, 2146, 2147],
     image: [`/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/studio-01.jpg`, `/img/studio-photos.jpg`],
     isPremium: true,
@@ -108,7 +112,7 @@ const property = [
       description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
     },
-    location: `52.3809553943508, 4.939309666406198`
+    location: [52.3809553943508, 4.939309666406198]
   }
 ];
 

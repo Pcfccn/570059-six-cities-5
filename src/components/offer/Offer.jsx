@@ -10,7 +10,7 @@ import MapComponent from "../map/map";
 
 const Offer = (props) => {
   const {offer, reviews, onSubmitForm} = props;
-  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price} = offer;
+  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, city, location} = offer;
   const isInBookmarksButtonActive = isInBookmarks
     ? `property__bookmark-button--active`
     : ``;
@@ -118,7 +118,7 @@ const Offer = (props) => {
               </section>
             </div>
           </div>
-          <MapComponent />
+          <MapComponent mapClass={`property__map`} city={city} pinLocations={[location]} />
         </section>
         <div className="container">
           <section className="near-places places">
