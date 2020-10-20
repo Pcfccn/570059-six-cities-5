@@ -13,7 +13,7 @@ class OfferCard extends PureComponent {
   }
 
   render() {
-    const {offer, onMouseEnterCard} = this.props;
+    const {offer, className, onMouseEnterCard} = this.props;
     const handleCardMouseEnter = () => {
       onMouseEnterCard(offer);
     };
@@ -27,7 +27,7 @@ class OfferCard extends PureComponent {
       : ``;
 
     return (
-      <article className="cities__place-card place-card"
+      <article className={`${className} place-card`}
         onMouseEnter={handleCardMouseEnter}
       >
         {isPremiumTemplate}
@@ -67,6 +67,7 @@ class OfferCard extends PureComponent {
 
 OfferCard.propTypes = {
   offer: offerPropTypes,
+  className: PropTypes.string.isRequired,
   onMouseEnterCard: PropTypes.func.isRequired,
 };
 

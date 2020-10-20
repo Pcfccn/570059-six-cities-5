@@ -3,7 +3,7 @@ import React, {Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {Path} from "../../constants";
 import {reviews} from "../../mock/offer";
-import {getOffer, getReviews} from "../../utils/common";
+import {getReviews} from "../../utils/common";
 import Favorites from "../favorites/favorites";
 import Main from "../main/main";
 import Offer from "../offer/Offer";
@@ -40,7 +40,8 @@ const App = (props) => {
           path = {Path.OFFER} exact
           render={(offerProps) => (
             <Offer
-              offer={getOffer(offers, offerProps)}
+              offers={offers}
+              offerProps={offerProps}
               reviews={getReviews(offers, reviews, offerProps)}
               onSubmitForm={onSubmitForm}
             />

@@ -1,5 +1,6 @@
 import {PropTypes} from "prop-types";
 import React from "react";
+import {MapClassName} from "../../constants";
 import MapComponent from "../map/map";
 import OfferList from "../offer-list/offer-list";
 import offerPropTypes from "../types/offer";
@@ -97,7 +98,7 @@ class Main extends React.PureComponent {
                 <OfferList offerCards={offers} />
               </section>
               <div className="cities__right-section">
-                <MapComponent mapClass={`cities__map`} city={offers[0].city} pinLocations={offers.map((offer) => (offer.location))} />
+                <MapComponent className={MapClassName.cities} city={offers[0].city} pinLocations={offers.map((offer) => (offer.location))} />
               </div>
             </div>
           </div>
