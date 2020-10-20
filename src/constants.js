@@ -1,8 +1,14 @@
-const paths = {
+const Path = {
   MAIN: `/`,
   SIGN_IN: `/login`,
   FAVORITES: `/favorites`,
-  ROOM: `/offer/:id`,
+  OFFER: `/offer/:id`,
+  getUrlById: (id) => (`/offer/${id}`)
 };
 
-export {paths};
+const ratingStars = [5, 4, 3, 2, 1];
+const ratingInputTitle = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
+
+const widthStartsCoefficient = 20;
+
+export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle};

@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./components/app/app";
-
+import {offers} from "./mock/offer";
 
 ReactDOM.render(
-    <App/>,
+    <App offers={offers} />,
     document.querySelector(`#root`)
 );
