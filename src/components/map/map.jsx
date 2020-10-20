@@ -1,6 +1,5 @@
 import React, {PureComponent} from "react";
 import leaflet from "leaflet";
-import "leaflet/dist/leaflet.css";
 
 class MapComponent extends PureComponent {
   constructor(props) {
