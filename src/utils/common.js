@@ -18,4 +18,8 @@ const getReviews = ((offers, reviews, props) => {
 
 const getWidthForRatingStar = (rating) => `${rating * widthStartsCoefficient}%`;
 
-export {getOffer, getReviews, getWidthForRatingStar, getMockNearestOffers};
+const extend = (a, b) => {
+  return Object.assign({}, a, b);
+};
+
+export {getOffer, getReviews, getWidthForRatingStar, getMockNearestOffers, extend};

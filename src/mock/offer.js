@@ -113,7 +113,96 @@ const property = [
       but where the bustle of the city comes to rest in this alley flowery and colorful.`,
     },
     location: [52.3809553943508, 4.939309666406198]
-  }
+  },
+  {
+    id: `05`,
+    city: `Paris`,
+    reviews: [2134, 2135],
+    image: [`/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/room.jpg`, `/img/studio-01.jpg`, `/img/studio-photos.jpg`],
+    isPremium: false,
+    isInBookmarks: true,
+    name: `Beautiful & luxurious studio`,
+    type: `Apartament`,
+    bedrooms: 3,
+    adults: 4,
+    rating: 3.5,
+    price: {
+      value: 1234,
+      period: `night`,
+    },
+    inside: [`Wi-Fi`, `Washing machine`, `Towels`, `Heating`, `Coffee machine`, `Baby seat`, `Kitchen`,
+      `Dishwasher`, `whatewer you want`],
+    host: {
+      avatar: `/img/avatar-angelina.jpg`,
+      name: `Anagelina`,
+      pro: true,
+      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+      The building is green and from 18th century.`,
+    },
+    location: [48.9, 2.4]
+  },
+  {
+    id: `06`,
+    city: `Paris`,
+    reviews: [2136, 2137, 2138],
+    image: [`/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/room.jpg`, `/img/studio-01.jpg`, `/img/studio-photos.jpg`],
+    isPremium: false,
+    isInBookmarks: false,
+    name: `Awful & luxurious studio`,
+    type: `Studio`,
+    bedrooms: 0,
+    adults: 2,
+    rating: 3,
+    price: {
+      value: 16543234,
+      period: `month`,
+    },
+    inside: [],
+    host: {
+      avatar: `/img/avatar-angelina.jpg`,
+      name: `Anaina`,
+      pro: false,
+      description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+      The building is green and from 18th century.
+      An independent House, strategically located between Rembrand Square and National Opera,
+      but where the bustle of the city comes to rest in this alley flowery and colorful.
+      A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+      The building is green and from 18th century.
+      An independent House, strategically located between Rembrand Square and National Opera,
+      but where the bustle of the city comes to rest in this alley flowery and colorful.
+      A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+      The building is green and from 18th century.
+      An independent House, strategically located between Rembrand Square and National Opera,
+      but where the bustle of the city comes to rest in this alley flowery and colorful.`,
+    },
+    location: [48.8, 2.3]
+  },
+  {
+    id: `07`,
+    city: `Paris`,
+    reviews: [2139, 2140, 2141],
+    image: [`/img/studio-01.jpg`, `/img/studio-photos.jpg`],
+    isPremium: true,
+    isInBookmarks: false,
+    name: `Beautiful & luxurious studio`,
+    type: `Apartament`,
+    bedrooms: 12,
+    adults: 129,
+    rating: 0.5,
+    price: {
+      value: 500,
+      period: `night`,
+    },
+    inside: [`Wi-Fi`, `Washing machine`, `Towels`, `Heating`, `Coffee machine`, `Baby seat`, `Kitchen`,
+      `Dishwasher`, `Cabel TV`, `Fridge`, `whatewer you want`],
+    host: {
+      avatar: `/img/avatar-angelina.jpg`,
+      name: `Anzhela`,
+      pro: true,
+      description: ``,
+    },
+    location: [48.85, 2.35]
+  },
 ];
 
 const reviews = {
