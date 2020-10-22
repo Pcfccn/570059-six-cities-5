@@ -13,6 +13,7 @@ const widthStartsCoefficient = 20;
 
 const CityCoordinates = {
   Amsterdam: [52.38333, 4.9],
+  Paris: [48.864716, 2.349014],
 };
 
 const OfferCardClassName = {
@@ -25,4 +26,6 @@ const MapClassName = {
   cities: `cities__map`,
 };
 
-export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates, OfferCardClassName, MapClassName};
+const cities = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
+
+export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates, OfferCardClassName, MapClassName, cities};
