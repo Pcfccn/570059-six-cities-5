@@ -5,7 +5,8 @@ import {ActionType} from "./action";
 
 const initialState = {
   city: cities[0],
-  offers: offers.filter((offer) => (offer.city === cities[0]))
+  offers: offers.filter((offer) => (offer.city === cities[0])),
+  isSortOptionsOpened: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -15,6 +16,13 @@ const reducer = (state = initialState, action) => {
         extend(state, {
           city: action.payload,
           offers: offers.filter((offer) => (offer.city === action.payload)),
+        })
+      );
+
+    case ActionType.OPEN_SORT_OPTIONS:
+      return (
+        extend(state, {
+          isSortOptionsOpened: action.payload,
         })
       );
 

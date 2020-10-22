@@ -28,4 +28,11 @@ const MapClassName = {
 
 const cities = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
 
-export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates, OfferCardClassName, MapClassName, cities};
+const SortType = {
+  PRICE_ASC: `Price: low to high`,
+  PRICE_DESC: `Price: high to low`,
+  POPULAR_DESC: `Popular`,
+  RATING_DESC: `Top rated first`,
+};
+
+export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates, OfferCardClassName, MapClassName, cities, SortType};
