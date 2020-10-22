@@ -17,10 +17,10 @@ const ActionCreator = {
       payload: !isSortOpen,
     });
   },
-  changeSortType: (type) => {
+  changeSortType: (offers, city, type) => {
     return ({
       type: ActionType.CHANGE_SORT_TYPE,
-      payload: type,
+      payload: {offers, city, type},
     });
   }
 };

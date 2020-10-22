@@ -3,14 +3,15 @@ import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
 import {PropTypes} from "prop-types";
 import MainSortingOptionsList from "../main-sorting-options/main-sorting-options-list";
+import offerPropTypes from "../types/offer";
 
 const MainSort = (props) => {
-  const {isSortOptionsOpened, sortType, openSortOptions, changeSortType} = props;
+  const {offers, city, isSortOptionsOpened, sortType, openSortOptions, changeSortType} = props;
   const handleOpenSortOptions = () => {
     openSortOptions(isSortOptionsOpened);
   };
   const handleChangeSortType = (chosedSortType) => {
-    changeSortType(chosedSortType);
+    changeSortType(offers, city, chosedSortType);
     handleOpenSortOptions();
   };
 
@@ -33,6 +34,8 @@ const MainSort = (props) => {
 const mapStateToProps = (state) => ({
   isSortOptionsOpened: state.isSortOptionsOpened,
   sortType: state.sortType,
+  offers: state.offers,
+  city: state.city,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -40,8 +43,8 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(ActionCreator.openSortOptions(isSortOptionsOpened));
   },
 
-  changeSortType(sortType) {
-    dispatch(ActionCreator.changeSortType(sortType));
+  changeSortType(offers, city, sortType) {
+    dispatch(ActionCreator.changeSortType(offers, city, sortType));
   },
 });
 
@@ -50,6 +53,8 @@ MainSort.propTypes = {
   changeSortType: PropTypes.func.isRequired,
   isSortOptionsOpened: PropTypes.bool.isRequired,
   sortType: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
 };
 
 export {MainSort};
