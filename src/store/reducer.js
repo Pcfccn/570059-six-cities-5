@@ -1,4 +1,4 @@
-import {cities} from "../constants";
+import {cities, SortType} from "../constants";
 import {offers} from "../mock/offer";
 import {extend} from "../utils/common";
 import {ActionType} from "./action";
@@ -7,6 +7,7 @@ const initialState = {
   city: cities[0],
   offers: offers.filter((offer) => (offer.city === cities[0])),
   isSortOptionsOpened: false,
+  sortType: SortType.POPULAR_DESC,
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,11 +21,10 @@ const reducer = (state = initialState, action) => {
       );
 
     case ActionType.OPEN_SORT_OPTIONS:
-      return (
-        extend(state, {
-          isSortOptionsOpened: action.payload,
-        })
-      );
+      return (extend(state, {isSortOptionsOpened: action.payload}));
+
+    case ActionType.CHANGE_SORT_TYPE:
+      return (extend(state, {sortType: action.payload}));
 
     default:
       return state;

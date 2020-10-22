@@ -1,4 +1,5 @@
 import React from "react";
+import {PropTypes} from "prop-types";
 
 const MainSortingOption = (props) => {
   const {type, activeSortType, changeType} = props;
@@ -12,6 +13,12 @@ const MainSortingOption = (props) => {
   >
     {type}
   </li>);
+};
+
+MainSortingOption.propTypes = {
+  changeType: PropTypes.func.isRequired,
+  activeSortType: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
 };
 
 export default MainSortingOption;
