@@ -17,6 +17,9 @@ class OfferCard extends PureComponent {
     const handleCardMouseEnter = () => {
       onMouseEnterCard(offer);
     };
+    const handleCardMouseLeave = () => {
+      onMouseEnterCard({});
+    };
     const {image, price, rating, isInBookmarks, name, type, isPremium} = offer;
     const widthForRatingStar = rating * widthStartsCoefficient;
     const isInBookmarksButtonActive = isInBookmarks
@@ -29,6 +32,7 @@ class OfferCard extends PureComponent {
     return (
       <article className={`${className} place-card`}
         onMouseEnter={handleCardMouseEnter}
+        onMouseLeave={handleCardMouseLeave}
       >
         {isPremiumTemplate}
         <div className="cities__image-wrapper place-card__image-wrapper">

@@ -8,6 +8,7 @@ const initialState = {
   offers: filterOffersByCity(offers, cities[0]),
   isSortOptionsOpened: false,
   sortType: SortType.POPULAR_DESC,
+  enteredOffer: {},
 };
 
 const reducer = (state = initialState, action) => {
@@ -36,10 +37,12 @@ const reducer = (state = initialState, action) => {
         }));
       }
 
+    case ActionType.CHANGE_ENTERED_OFFER:
+      return (extend(state, {enteredOffer: action.payload.offer}));
+
     default:
       return state;
   }
-
 };
 
 export {reducer};
