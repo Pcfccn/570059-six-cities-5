@@ -3,38 +3,44 @@ import {PropTypes} from "prop-types";
 import OfferCard from "../offer-card/offer-card";
 import offerPropTypes from "../types/offer";
 import {OfferCardClassName} from "../../constants";
+import {connect} from "react-redux";
+import {ActionCreator} from "../../store/action";
 
-class OfferList extends React.PureComponent {
-  constructor(props) {
-    super(props);
+const OfferList = (props) => {
+  const {changeEnteredOffer} = props;
+  const handleMouseEnterCard = (entreredOffer) => {
+    changeEnteredOffer(entreredOffer);
+  };
 
-    this.state = {};
-    this.handleMouseEnterCard = this.handleMouseEnterCard.bind(this);
-  }
-
-  handleMouseEnterCard(offerState) {
-    this.setState(offerState);
-  }
-
-  render() {
-    const {offerCards} = this.props;
-    return (
-      <div className="cities__places-list places__list tabs__content">
-        {offerCards.map((currentCard) => (
-          <OfferCard
-            key={currentCard.id}
-            offer={currentCard}
-            className={OfferCardClassName.citiesPlace}
-            onMouseEnterCard={this.handleMouseEnterCard}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+  const {offerCards} = props;
+  return (
+    <div className="cities__places-list places__list tabs__content">
+      {offerCards.map((currentCard) => (
+        <OfferCard
+          key={currentCard.id}
+          offer={currentCard}
+          className={OfferCardClassName.citiesPlace}
+          onMouseEnterCard={handleMouseEnterCard}
+        />
+      ))}
+    </div>
+  );
+};
 
 OfferList.propTypes = {
   offerCards: PropTypes.arrayOf(offerPropTypes).isRequired,
+  changeEnteredOffer: PropTypes.func.isRequired,
 };
 
-export default OfferList;
+
+const mapStateToProps = () => ({
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  changeEnteredOffer(entreredOffer) {
+    dispatch(ActionCreator.changeEnteredOffer(entreredOffer));
+  },
+});
+
+export {OfferList};
+export default connect(mapStateToProps, mapDispatchToProps)(OfferList);
