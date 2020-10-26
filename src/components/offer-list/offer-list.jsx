@@ -19,7 +19,7 @@ const OfferList = (props) => {
         <OfferCard
           key={currentCard.id}
           offer={currentCard}
-          className={OfferCardClassName.citiesPlace}
+          className={OfferCardClassName.CITIES_PLACE}
           onMouseEnterCard={handleMouseEnterCard}
         />
       ))}

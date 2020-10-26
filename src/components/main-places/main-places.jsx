@@ -21,7 +21,7 @@ const MainPlaces = (props) => {
         <div className="cities__right-section">
           <MapComponent
             key={`${city}-${enteredOfferId}`}
-            className={MapClassName.cities}
+            className={MapClassName.CITIES}
             city={city}
             pinLocations={offers.map((offer) => (offer.location)).filter((offerLocation) => offerLocation !== enteredOfferLocation)}
             chosedPinLocation={enteredOfferLocation}

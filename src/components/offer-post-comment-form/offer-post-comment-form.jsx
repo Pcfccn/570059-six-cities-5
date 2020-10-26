@@ -15,21 +15,23 @@ class PostCommentForm extends React.PureComponent {
 
   render() {
     const {onSubmitForm} = this.props;
-    const onSubmit = (evt) => {
+    const handelFormSubmit = (evt) => {
       evt.preventDefault();
       onSubmitForm(this.state);
     };
+
+    const handleTextAreaChange = (evt) => {
+      this.setState({text: evt.target.value});
+    };
     return (
-      <form className="reviews__form form" action="#" method="post" onSubmit={onSubmit}>
+      <form className="reviews__form form" action="#" method="post" onSubmit={handelFormSubmit}>
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
         <div className="reviews__rating-form form__rating">
           {ratingStars.map((stars) => <RatingStar key={stars} index={stars}/>)}
         </div>
         <textarea className="reviews__textarea form__textarea" id="review" name="review"
           placeholder="Tell how was your stay, what you like and what can be improved"
-          onChange={(evt) => {
-            this.setState({text: evt.target.value});
-          }}></textarea>
+          onChange={handleTextAreaChange}></textarea>
         <div className="reviews__button-wrapper">
           <p className="reviews__help">
                       To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.

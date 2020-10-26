@@ -8,7 +8,7 @@ const initialState = {
   offers: filterOffersByCity(offers, cities[0]),
   isSortOptionsOpened: false,
   sortType: SortType.POPULAR_DESC,
-  enteredOffer: {},
+  enteredOffer: {id: ``, location: []},
 };
 
 const reducer = (state = initialState, action) => {

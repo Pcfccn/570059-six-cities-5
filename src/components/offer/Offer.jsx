@@ -103,7 +103,7 @@ const Offer = (props) => {
             </div>
           </div>
           <MapComponent
-            className={MapClassName.property}
+            className={MapClassName.PROPERTY}
             city={city}
             pinLocations={[location].concat(nearestOffers.map((it) => (it.location)))}
           />
@@ -116,7 +116,7 @@ const Offer = (props) => {
                 <OfferCard
                   key={nearestOffer.id}
                   offer={nearestOffer}
-                  className={OfferCardClassName.nearPlace}
+                  className={OfferCardClassName.NEAR_PLACE}
                   onMouseEnterCard={()=>{}}
                 />
               ))}

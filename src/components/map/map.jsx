@@ -9,7 +9,7 @@ class MapComponent extends PureComponent {
   }
 
   componentDidMount() {
-    const {city, pinLocations, chosedPinLocation} = this.props;
+    const {city, pinLocations, chosedPinLocation = []} = this.props;
     const cityCoordinates = CityCoordinates[city];
     const icon = leaflet.icon({
       iconUrl: `img/pin.svg`,
@@ -42,7 +42,7 @@ class MapComponent extends PureComponent {
   render() {
     const {className} = this.props;
     return (
-      <section id="map" className={`${className} map`}></section>
+      <section id="map" className={`${className} map`} />
     );
   }
 }

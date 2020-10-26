@@ -18,7 +18,7 @@ class OfferCard extends PureComponent {
       onMouseEnterCard(offer);
     };
     const handleCardMouseLeave = () => {
-      onMouseEnterCard({});
+      onMouseEnterCard({id: ``, location: []});
     };
     const {image, price, rating, isInBookmarks, name, type, isPremium} = offer;
     const widthForRatingStar = rating * widthStartsCoefficient;

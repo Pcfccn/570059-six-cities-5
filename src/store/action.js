@@ -12,10 +12,10 @@ const ActionCreator = {
       payload: city,
     });
   },
-  openSortOptions: (isSortOpen) => {
+  openSortOptions: (toggle) => {
     return ({
       type: ActionType.OPEN_SORT_OPTIONS,
-      payload: !isSortOpen,
+      payload: !toggle,
     });
   },
   changeSortType: (offers, city, type) => {
