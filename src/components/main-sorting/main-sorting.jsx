@@ -5,31 +5,42 @@ import {PropTypes} from "prop-types";
 import MainSortingOptionsList from "../main-sorting-options/main-sorting-options-list";
 import offerPropTypes from "../types/offer";
 
-const MainSort = (props) => {
-  const {offers, city, isSortOptionsOpened, sortType, openSortOptions, changeSortType} = props;
-  const handleOpenSortOptions = () => {
-    openSortOptions(isSortOptionsOpened);
-  };
-  const handleChangeSortType = (chosedSortType) => {
-    changeSortType(offers, city, chosedSortType);
-    handleOpenSortOptions();
-  };
+class MainSort extends React.PureComponent {
+  constructor(props) {
+    super(props);
 
-  return (
-    <form className="places__sorting" action="#" method="get">
-      <span className="places__sorting-caption">Sort by </span>
-      <span className="places__sorting-type" tabIndex="0" onClick={handleOpenSortOptions}>
-        {sortType}
-        <svg className="places__sorting-arrow" width="7" height="4">
-          <use xlinkHref="#icon-arrow-select"></use>
-        </svg>
-      </span>
-      <ul className={`places__options places__options--custom ${isSortOptionsOpened ? `places__options--opened` : ``}`}>
-        <MainSortingOptionsList changeType={handleChangeSortType} activeSortType={sortType} />
-      </ul>
-    </form>
-  );
-};
+    this.handleOpenSortOptions = this.handleOpenSortOptions.bind(this);
+    this.handleChangeSortType = this.handleChangeSortType.bind(this);
+  }
+  handleOpenSortOptions() {
+    const {isSortOptionsOpened, openSortOptions} = this.props;
+    openSortOptions(isSortOptionsOpened);
+  }
+
+  handleChangeSortType(chosedSortType) {
+    const {offers, city, changeSortType} = this.props;
+    changeSortType(offers, city, chosedSortType);
+    this.handleOpenSortOptions();
+  }
+
+  render() {
+    const {isSortOptionsOpened, sortType} = this.props;
+    return (
+      <form className="places__sorting" action="#" method="get">
+        <span className="places__sorting-caption">Sort by </span>
+        <span className="places__sorting-type" tabIndex="0" onClick={this.handleOpenSortOptions}>
+          {sortType}
+          <svg className="places__sorting-arrow" width="7" height="4">
+            <use xlinkHref="#icon-arrow-select"></use>
+          </svg>
+        </span>
+        <ul className={`places__options places__options--custom ${isSortOptionsOpened ? `places__options--opened` : ``}`}>
+          <MainSortingOptionsList changeType={this.handleChangeSortType} activeSortType={sortType} />
+        </ul>
+      </form>
+    );
+  }
+}
 
 const mapStateToProps = (state) => ({
   isSortOptionsOpened: state.isSortOptionsOpened,

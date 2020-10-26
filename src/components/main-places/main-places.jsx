@@ -8,7 +8,7 @@ import MainSort from "../main-sorting/main-sorting";
 import {connect} from "react-redux";
 
 const MainPlaces = (props) => {
-  const {offers, city, enteredOfferLocation, enteredOfferId} = props;
+  const {offers, city, enteredOfferLocation, enteredOfferId, sortType} = props;
   return (
     <div className="cities">
       <div className="cities__places-container container">
@@ -16,7 +16,7 @@ const MainPlaces = (props) => {
           <h2 className="visually-hidden">Places</h2>
           <b className="places__found">{`${offers.length} places to stay in ${city}`}</b>
           <MainSort />
-          <OfferList offerCards={offers} />
+          <OfferList key={sortType} offerCards={offers} />
         </section>
         <div className="cities__right-section">
           <MapComponent
@@ -35,6 +35,7 @@ const MainPlaces = (props) => {
 MainPlaces.propTypes = {
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
   city: PropTypes.string.isRequired,
+  sortType: PropTypes.string.isRequired,
   enteredOfferId: PropTypes.string.isRequired,
   enteredOfferLocation: PropTypes.array.isRequired,
 };
@@ -42,6 +43,7 @@ MainPlaces.propTypes = {
 const mapStateToProps = (state) => ({
   enteredOfferLocation: state.enteredOffer.location,
   enteredOfferId: state.enteredOffer.id,
+  sortType: state.sortType,
 });
 
 export {MainPlaces};

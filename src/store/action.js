@@ -19,7 +19,6 @@ const ActionCreator = {
     });
   },
   changeSortType: (offers, city, type) => {
-    console.log(offers, city, type);
     return ({
       type: ActionType.CHANGE_SORT_TYPE,
       payload: {offers, city, type},
