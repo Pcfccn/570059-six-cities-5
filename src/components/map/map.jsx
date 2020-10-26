@@ -9,7 +9,7 @@ class MapComponent extends PureComponent {
   }
 
   componentDidMount() {
-    const {city, pinLocations, chosedPinLocation = []} = this.props;
+    const {city, pinLocations, chosedPinLocation} = this.props;
     const cityCoordinates = CityCoordinates[city];
     const icon = leaflet.icon({
       iconUrl: `img/pin.svg`,
@@ -34,7 +34,7 @@ class MapComponent extends PureComponent {
     pinLocations.map((pinLocation) => {
       leaflet.marker(pinLocation, {icon}).addTo(map);
     });
-    if (chosedPinLocation.length) {
+    if (chosedPinLocation && chosedPinLocation.length) {
       leaflet.marker(chosedPinLocation, {activeIcon}).addTo(map);
     }
   }
@@ -46,6 +46,10 @@ class MapComponent extends PureComponent {
     );
   }
 }
+
+MapComponent.defaultProps = {
+  chosedPinLocation: [],
+};
 
 MapComponent.propTypes = {
   className: PropTypes.string.isRequired,
