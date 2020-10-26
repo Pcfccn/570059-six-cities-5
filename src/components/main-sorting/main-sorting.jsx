@@ -11,10 +11,13 @@ class MainSort extends React.PureComponent {
 
     this.handleOpenSortOptions = this.handleOpenSortOptions.bind(this);
     this.handleChangeSortType = this.handleChangeSortType.bind(this);
+
+    this.state = {
+      isSortOptionsOpened: false,
+    };
   }
   handleOpenSortOptions() {
-    const {isSortOptionsOpened, openSortOptions} = this.props;
-    openSortOptions(isSortOptionsOpened);
+    this.setState({isSortOptionsOpened: !this.state.isSortOptionsOpened});
   }
 
   handleChangeSortType(chosedSortType) {
@@ -24,7 +27,7 @@ class MainSort extends React.PureComponent {
   }
 
   render() {
-    const {isSortOptionsOpened, sortType} = this.props;
+    const {sortType} = this.props;
     return (
       <form className="places__sorting" action="#" method="get">
         <span className="places__sorting-caption">Sort by </span>
@@ -34,7 +37,7 @@ class MainSort extends React.PureComponent {
             <use xlinkHref="#icon-arrow-select"></use>
           </svg>
         </span>
-        <ul className={`places__options places__options--custom ${isSortOptionsOpened ? `places__options--opened` : ``}`}>
+        <ul className={`places__options places__options--custom ${this.state.isSortOptionsOpened ? `places__options--opened` : ``}`}>
           <MainSortingOptionsList changeType={this.handleChangeSortType} activeSortType={sortType} />
         </ul>
       </form>
@@ -43,7 +46,6 @@ class MainSort extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  isSortOptionsOpened: state.isSortOptionsOpened,
   sortType: state.sortType,
   offers: state.offers,
   city: state.city,
@@ -62,7 +64,6 @@ const mapDispatchToProps = (dispatch) => ({
 MainSort.propTypes = {
   openSortOptions: PropTypes.func.isRequired,
   changeSortType: PropTypes.func.isRequired,
-  isSortOptionsOpened: PropTypes.bool.isRequired,
   sortType: PropTypes.string.isRequired,
   city: PropTypes.string.isRequired,
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
