@@ -6,17 +6,18 @@ class RatingStar extends React.PureComponent {
   constructor(props) {
     super(props);
   }
+
+  handleInputChange(evt) {
+    this.setState({rating: evt.target.value});
+  }
+
   render() {
     const {index} = this.props;
 
     return (
       <Fragment>
         <input className="form__rating-input visually-hidden" name="rating" value={index} id={`${index}-stars`} type="radio"
-          onChange={
-            (evt) => {
-              this.setState({rating: evt.target.value});
-            }
-          }
+          onChange={this.handleInputChange}
         />
         <label htmlFor={`${index}-stars`} className="reviews__rating-label form__rating-label" title={ratingInputTitle[index - 1]}>
           <svg className="form__star-image" width="37" height="33">
