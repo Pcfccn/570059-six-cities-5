@@ -4,8 +4,7 @@ import {Link} from "react-router-dom";
 import {Path, widthStartsCoefficient} from "../../constants";
 import offerPropTypes from "../types/offer";
 
-const OfferCard = (props) => {
-  const {offer, className, onMouseEnterCard} = props;
+const OfferCard = ({offer, className, onMouseEnterCard}) => {
   const handleCardMouseEnter = () => {
     onMouseEnterCard(offer);
   };

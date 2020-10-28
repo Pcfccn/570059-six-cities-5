@@ -6,13 +6,11 @@ import {OfferCardClassName} from "../../constants";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
 
-const OfferList = (props) => {
-  const {changeEnteredOffer} = props;
+const OfferList = ({changeEnteredOffer, offerCards}) => {
   const handleMouseEnterCard = (entreredOffer) => {
     changeEnteredOffer(entreredOffer);
   };
 
-  const {offerCards} = props;
   return (
     <div className="cities__places-list places__list tabs__content">
       {offerCards.map((currentCard) => (

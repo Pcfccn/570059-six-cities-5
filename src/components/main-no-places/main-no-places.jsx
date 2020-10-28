@@ -2,8 +2,7 @@
 import React from "react";
 import {PropTypes} from "prop-types";
 
-const MainNoPlaces = (props) => {
-  const {city} = props;
+const MainNoPlaces = ({city}) => {
   return (
     <div className="cities page__main--index-empty">
       <div className="cities__places-container cities__places-container--empty container">

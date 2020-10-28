@@ -1,8 +1,7 @@
 import React from "react";
 import {PropTypes} from "prop-types";
 
-const MainSortingOption = (props) => {
-  const {type, activeSortType, changeType} = props;
+const MainSortingOption = ({type, activeSortType, changeType}) => {
   const handleChangeType = () => {
     changeType(type);
   };

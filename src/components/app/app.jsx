@@ -15,8 +15,7 @@ const onSubmitForm = () => {
   // console.log(state);
 };
 
-const App = (props) => {
-  const {offers} = props;
+const App = ({offers}) => {
   return (
     <BrowserRouter>
       <Switch>
