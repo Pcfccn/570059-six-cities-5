@@ -35,9 +35,12 @@ const Offer = (props) => {
           </div>
           <div className="property__container container">
             <div className="property__wrapper">
-              <div className="property__mark">
-                {isPremium ? <span>Premium</span> : ``}
-              </div>
+              {isPremium
+                ? <div className="property__mark">
+                  <span>Premium</span>
+                </div>
+                : ``}
+
               <div className="property__name-wrapper">
                 <h1 className="property__name">
                   {name}
@@ -103,9 +106,10 @@ const Offer = (props) => {
             </div>
           </div>
           <MapComponent
-            className={MapClassName.property}
+            className={MapClassName.PROPERTY}
             city={city}
-            pinLocations={[location].concat(nearestOffers.map((it) => (it.location)))}
+            pinLocations={nearestOffers.map((it) => (it.location))}
+            chosedPinLocation={location}
           />
         </section>
         <div className="container">
@@ -115,8 +119,8 @@ const Offer = (props) => {
               {nearestOffers.map((nearestOffer) => (
                 <OfferCard
                   key={nearestOffer.id}
+                  className={OfferCardClassName.NEAR_PLACE}
                   offer={nearestOffer}
-                  className={OfferCardClassName.nearPlace}
                   onMouseEnterCard={()=>{}}
                 />
               ))}

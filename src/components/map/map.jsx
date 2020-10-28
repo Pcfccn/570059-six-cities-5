@@ -34,7 +34,7 @@ class MapComponent extends PureComponent {
     pinLocations.map((pinLocation) => {
       leaflet.marker(pinLocation, {icon}).addTo(map);
     });
-    if (chosedPinLocation.length) {
+    if (chosedPinLocation && chosedPinLocation.length) {
       leaflet.marker(chosedPinLocation, {activeIcon}).addTo(map);
     }
   }
@@ -42,10 +42,14 @@ class MapComponent extends PureComponent {
   render() {
     const {className} = this.props;
     return (
-      <section id="map" className={`${className} map`}></section>
+      <section id="map" className={`${className} map`} />
     );
   }
 }
+
+MapComponent.defaultProps = {
+  chosedPinLocation: [],
+};
 
 MapComponent.propTypes = {
   className: PropTypes.string.isRequired,

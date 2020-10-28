@@ -17,13 +17,13 @@ const CityCoordinates = {
 };
 
 const OfferCardClassName = {
-  nearPlace: `near-places__card`,
-  citiesPlace: `cities__place-card`,
+  NEAR_PLACE: `near-places__card`,
+  CITIES_PLACE: `cities__place-card`,
 };
 
 const MapClassName = {
-  property: `property__map`,
-  cities: `cities__map`,
+  PROPERTY: `property__map`,
+  CITIES: `cities__map`,
 };
 
 const cities = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];

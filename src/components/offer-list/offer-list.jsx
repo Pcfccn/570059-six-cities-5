@@ -19,7 +19,7 @@ const OfferList = (props) => {
         <OfferCard
           key={currentCard.id}
           offer={currentCard}
-          className={OfferCardClassName.citiesPlace}
+          className={OfferCardClassName.CITIES_PLACE}
           onMouseEnterCard={handleMouseEnterCard}
         />
       ))}
@@ -32,10 +32,6 @@ OfferList.propTypes = {
   changeEnteredOffer: PropTypes.func.isRequired,
 };
 
-
-const mapStateToProps = () => ({
-});
-
 const mapDispatchToProps = (dispatch) => ({
   changeEnteredOffer(entreredOffer) {
     dispatch(ActionCreator.changeEnteredOffer(entreredOffer));
@@ -43,4 +39,4 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export {OfferList};
-export default connect(mapStateToProps, mapDispatchToProps)(OfferList);
+export default connect(null, mapDispatchToProps)(OfferList);

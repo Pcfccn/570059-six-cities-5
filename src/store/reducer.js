@@ -6,9 +6,8 @@ import {ActionType} from "./action";
 const initialState = {
   city: cities[0],
   offers: filterOffersByCity(offers, cities[0]),
-  isSortOptionsOpened: false,
   sortType: SortType.POPULAR_DESC,
-  enteredOffer: {},
+  enteredOffer: {id: ``, location: []},
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,9 +19,6 @@ const reducer = (state = initialState, action) => {
           offers: filterOffersByCity(offers, action.payload),
         })
       );
-
-    case ActionType.OPEN_SORT_OPTIONS:
-      return (extend(state, {isSortOptionsOpened: action.payload}));
 
     case ActionType.CHANGE_SORT_TYPE:
       if (action.payload.type === SortType.POPULAR_DESC) {
