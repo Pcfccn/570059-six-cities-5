@@ -1,8 +1,7 @@
 import React from "react";
 import {getWidthForRatingStar} from "../../utils/common";
 
-const Reviews = (props) => {
-  const {reviews} = props;
+const Reviews = ({reviews}) => {
   return (
     reviews.map((review, i) => {
       return (

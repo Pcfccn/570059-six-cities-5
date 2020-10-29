@@ -5,8 +5,7 @@ import {cities} from "../../constants";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
 
-const CitiesList = (props) => {
-  const {city, changeCity} = props;
+const CitiesList = ({city, changeCity}) => {
   return (
     <div className="tabs">
       <section className="locations container">

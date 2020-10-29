@@ -1,7 +1,6 @@
 import React from "react";
 
-const Inside = (props) => {
-  const {inside} = props;
+const Inside = ({inside}) => {
   return (
     inside.map((item, i) => {
       return (

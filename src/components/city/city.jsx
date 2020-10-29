@@ -1,8 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const City = (props) => {
-  const {thisCity, active, changeCity} = props;
+const City = ({thisCity, active, changeCity}) => {
   const isActive = active ? ` tabs__item--active` : ``;
   const handleItemLinkClick = () => {
     changeCity(thisCity);

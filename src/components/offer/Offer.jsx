@@ -11,8 +11,7 @@ import {MapClassName, OfferCardClassName} from "../../constants";
 import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 
-const Offer = (props) => {
-  const {offers, offerProps, reviews, onSubmitForm} = props;
+const Offer = ({offers, offerProps, reviews, onSubmitForm}) => {
   const offer = getOffer(offers, offerProps);
   const nearestOffers = getMockNearestOffers(offers, offerProps);
   const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, city, location} = offer;

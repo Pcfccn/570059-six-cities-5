@@ -7,8 +7,7 @@ import offerPropTypes from "../types/offer";
 import MainSort from "../main-sorting/main-sorting";
 import {connect} from "react-redux";
 
-const MainPlaces = (props) => {
-  const {offers, city, enteredOfferLocation, enteredOfferId, sortType} = props;
+const MainPlaces = ({offers, city, enteredOfferLocation, enteredOfferId, sortType}) => {
   return (
     <div className="cities">
       <div className="cities__places-container container">

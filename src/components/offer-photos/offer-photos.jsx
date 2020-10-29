@@ -1,7 +1,6 @@
 import React from "react";
 
-const Photos = (props) => {
-  const {images} = props;
+const Photos = ({images}) => {
   return (
     images.map((photo, i) => {
       return (
