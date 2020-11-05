@@ -6,6 +6,7 @@ import {MapClassName} from "../../constants";
 import offerPropTypes from "../types/offer";
 import MainSort from "../main-sorting/main-sorting";
 import {connect} from "react-redux";
+import {getCityOffers} from "../../store/selectors";
 
 const MainPlaces = ({offers, city, enteredOfferLocation, enteredOfferId, sortType}) => {
   return (
@@ -21,7 +22,8 @@ const MainPlaces = ({offers, city, enteredOfferLocation, enteredOfferId, sortTyp
           <MapComponent
             key={`${city}-${enteredOfferId}`}
             className={MapClassName.CITIES}
-            city={city}
+            cityLocation={offers[0].cityLocation}
+            zoom={offers[0].cityZoom}
             pinLocations={offers.map((offer) => (offer.location)).filter((offerLocation) => offerLocation !== enteredOfferLocation)}
             chosedPinLocation={enteredOfferLocation}
           />
@@ -35,14 +37,16 @@ MainPlaces.propTypes = {
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
   city: PropTypes.string.isRequired,
   sortType: PropTypes.string.isRequired,
-  enteredOfferId: PropTypes.string.isRequired,
+  enteredOfferId: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.string.isRequired]),
   enteredOfferLocation: PropTypes.array.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  enteredOfferLocation: state.enteredOffer.location,
-  enteredOfferId: state.enteredOffer.id,
-  sortType: state.sortType,
+  enteredOfferLocation: state.STATE.enteredOffer.location,
+  enteredOfferId: state.STATE.enteredOffer.id,
+  offers: getCityOffers(state),
+  // offers: DATA.offers.filter((offer) => offer.city === STATE.city),
+  sortType: state.STATE.sortType,
 });
 
 export {MainPlaces};

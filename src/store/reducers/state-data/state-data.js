@@ -1,23 +1,20 @@
-import {cities, SortType} from "../constants";
-import {offers} from "../mock/offer";
-import {extend, filterOffersByCity, sortOffers} from "../utils/common";
-import {ActionType} from "./action";
+import {cities, SortType} from "../../../constants";
+import {offers} from "../../../mock/offer";
+import {extend, filterOffersByCity, sortOffers} from "../../../utils/common";
+import {ActionType} from "../../action";
 
 const initialState = {
   city: cities[0],
-  offers: filterOffersByCity(offers, cities[0]),
+  offers: [],
   sortType: SortType.POPULAR_DESC,
   enteredOffer: {id: ``, location: []},
 };
 
-const reducer = (state = initialState, action) => {
+const stateData = (state = initialState, action) => {
   switch (action.type) {
     case ActionType.CHANGE_CITY:
       return (
-        extend(state, {
-          city: action.payload,
-          offers: filterOffersByCity(offers, action.payload),
-        })
+        extend(state, {city: action.payload})
       );
 
     case ActionType.CHANGE_SORT_TYPE:
@@ -41,4 +38,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export {reducer};
+export {stateData};

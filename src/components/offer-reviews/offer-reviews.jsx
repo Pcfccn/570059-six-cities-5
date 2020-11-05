@@ -3,7 +3,7 @@ import {getWidthForRatingStar} from "../../utils/common";
 
 const Reviews = ({reviews}) => {
   return (
-    reviews.map((review, i) => {
+    Object.values(reviews).slice(0, 1).map((review, i) => {
       return (
         <li className="reviews__item" key={`${i}-${review.name}`}>
           <div className="reviews__user user">

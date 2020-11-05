@@ -11,11 +11,6 @@ const ratingInputTitle = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
 
 const widthStartsCoefficient = 20;
 
-const CityCoordinates = {
-  Amsterdam: [52.38333, 4.9],
-  Paris: [48.864716, 2.349014],
-};
-
 const OfferCardClassName = {
   NEAR_PLACE: `near-places__card`,
   CITIES_PLACE: `cities__place-card`,
@@ -35,4 +30,10 @@ const SortType = {
   RATING_DESC: `Top rated first`,
 };
 
-export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, CityCoordinates, OfferCardClassName, MapClassName, cities, SortType};
+const AuthorizationStatus = {
+  AUTH: `AUTH`,
+  NO_AUTH: `NO_AUTH`,
+};
+
+export {Path, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
+  MapClassName, cities, SortType, AuthorizationStatus};

@@ -10,11 +10,13 @@ import MapComponent from "../map/map";
 import {MapClassName, OfferCardClassName} from "../../constants";
 import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
+import {connect} from "react-redux";
+import {reviews} from "../../mock/offer";
 
-const Offer = ({offers, offerProps, reviews, onSubmitForm}) => {
+const Offer = ({offers, offerProps, onSubmitForm}) => {
   const offer = getOffer(offers, offerProps);
   const nearestOffers = getMockNearestOffers(offers, offerProps);
-  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, city, location} = offer;
+  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, location} = offer;
   const isInBookmarksButtonActive = isInBookmarks
     ? `property__bookmark-button--active`
     : ``;
@@ -106,7 +108,8 @@ const Offer = ({offers, offerProps, reviews, onSubmitForm}) => {
           </div>
           <MapComponent
             className={MapClassName.PROPERTY}
-            city={city}
+            cityLocation={offer.cityLocation}
+            zoom={offer.cityZoom}
             pinLocations={nearestOffers.map((it) => (it.location))}
             chosedPinLocation={location}
           />
@@ -149,4 +152,9 @@ Offer.propTypes = {
   offerProps: PropTypes.object.isRequired,
 };
 
-export default Offer;
+const mapStateToProps = ({DATA}) => ({
+  offers: DATA.offers,
+});
+
+export {Offer};
+export default connect(mapStateToProps)(Offer);
