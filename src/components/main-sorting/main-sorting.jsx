@@ -40,10 +40,10 @@ class MainSort extends React.PureComponent {
   }
 }
 
-const mapStateToProps = (state) => ({
-  sortType: state.sortType,
-  offers: state.offers,
-  city: state.city,
+const mapStateToProps = ({STATE, DATA}) => ({
+  sortType: STATE.sortType,
+  offers: DATA.offers,
+  city: STATE.city,
 });
 
 const mapDispatchToProps = (dispatch) => ({

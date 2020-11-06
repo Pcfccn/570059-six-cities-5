@@ -3,6 +3,8 @@ const ActionType = {
   OPEN_SORT_OPTIONS: `OPEN_SORT_OPTIONS`,
   CHANGE_SORT_TYPE: `OPEN_SORT_TYPE`,
   CHANGE_ENTERED_OFFER: `CHANGE_ENTERED_OFFER`,
+  LOAD_OFFERS: `LOAD_OFFERS`,
+  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
 };
 
 const ActionCreator = {
@@ -10,12 +12,6 @@ const ActionCreator = {
     return ({
       type: ActionType.CHANGE_CITY,
       payload: city,
-    });
-  },
-  openSortOptions: (toggle) => {
-    return ({
-      type: ActionType.OPEN_SORT_OPTIONS,
-      payload: !toggle,
     });
   },
   changeSortType: (offers, city, type) => {
@@ -28,6 +24,24 @@ const ActionCreator = {
     return ({
       type: ActionType.CHANGE_ENTERED_OFFER,
       payload: {offer},
+    });
+  },
+  loadOffers: (offers) => {
+    return ({
+      type: ActionType.LOAD_OFFERS,
+      payload: offers,
+    });
+  },
+  openSortOptions: (toggle) => {
+    return ({
+      type: ActionType.OPEN_SORT_OPTIONS,
+      payload: !toggle,
+    });
+  },
+  requireAuthorization: (status) => {
+    return ({
+      type: ActionType.REQUIRED_AUTHORIZATION,
+      payload: status,
     });
   },
 };

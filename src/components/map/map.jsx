@@ -1,7 +1,6 @@
 import React, {PureComponent} from "react";
 import leaflet from "leaflet";
 import {PropTypes} from "prop-types";
-import {CityCoordinates} from "../../constants";
 
 class MapComponent extends PureComponent {
   constructor(props) {
@@ -9,8 +8,7 @@ class MapComponent extends PureComponent {
   }
 
   componentDidMount() {
-    const {city, pinLocations, chosedPinLocation} = this.props;
-    const cityCoordinates = CityCoordinates[city];
+    const {cityLocation, zoom, pinLocations, chosedPinLocation} = this.props;
     const icon = leaflet.icon({
       iconUrl: `img/pin.svg`,
       iconSize: [30, 30]
@@ -19,14 +17,13 @@ class MapComponent extends PureComponent {
       iconUrl: `img/pin-active.svg`,
       iconSize: [30, 30]
     });
-    const zoom = 12;
     const map = leaflet.map(`map`, {
-      center: cityCoordinates,
+      center: cityLocation,
       zoom,
       zoomControl: false,
       marker: true
     });
-    map.setView(cityCoordinates, zoom);
+    map.setView(cityLocation, zoom);
     leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
       attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/ributions">CARTO</a>`})
       .addTo(map);
@@ -53,7 +50,8 @@ MapComponent.defaultProps = {
 
 MapComponent.propTypes = {
   className: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
+  cityLocation: PropTypes.arrayOf(PropTypes.number).isRequired,
+  zoom: PropTypes.number.isRequired,
   pinLocations: PropTypes.array.isRequired,
   chosedPinLocation: PropTypes.array.isRequired,
 };

@@ -5,7 +5,7 @@ const offerPropTypes = PropTypes.shape({
   bedrooms: PropTypes.number.isRequired,
   city: PropTypes.string.isRequired,
   host: PropTypes.object.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   reviews: PropTypes.arrayOf(PropTypes.number).isRequired,
   image: PropTypes.arrayOf(PropTypes.string).isRequired,
   inside: PropTypes.arrayOf(PropTypes.string).isRequired,
@@ -19,6 +19,7 @@ const offerPropTypes = PropTypes.shape({
   }).isRequired,
   rating: PropTypes.number.isRequired,
   type: PropTypes.string.isRequired,
+  previewImage: PropTypes.string.isRequired,
 });
 
 export default offerPropTypes;

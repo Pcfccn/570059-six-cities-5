@@ -21,8 +21,8 @@ class Main extends React.PureComponent {
         <main className="page__main page__main--index">
           <h1 className="visually-hidden">Cities</h1>
           <CitiesList />
-          {offers.length
-            ? <MainPlaces offers={offers} city={city}/>
+          {offers && offers.length
+            ? <MainPlaces city={city}/>
             : <MainNoPlaces city={city}/>
           }
         </main>
@@ -37,9 +37,9 @@ Main.propTypes = {
   city: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = (state) => ({
-  offers: state.offers,
-  city: state.city,
+const mapStateToProps = ({DATA, STATE}) => ({
+  offers: DATA.offers,
+  city: STATE.city,
 });
 
 export {Main};

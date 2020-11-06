@@ -11,7 +11,7 @@ const OfferCard = ({offer, className, onMouseEnterCard}) => {
   const handleCardMouseLeave = () => {
     onMouseEnterCard({id: ``, location: []});
   };
-  const {image, price, rating, isInBookmarks, name, type, isPremium} = offer;
+  const {price, rating, isInBookmarks, name, type, isPremium, previewImage} = offer;
   const widthForRatingStar = rating * widthStartsCoefficient;
   const isInBookmarksButtonActive = isInBookmarks
     ? `place-card__bookmark-button--active`
@@ -28,7 +28,7 @@ const OfferCard = ({offer, className, onMouseEnterCard}) => {
       {isPremiumTemplate}
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={Path.getUrlById(offer.id)}>
-          <img className="place-card__image" src={image[0]} width="260" height="200" alt="Place image"/>
+          <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place image"/>
         </Link>
       </div>
       <div className="place-card__info">

@@ -1,6 +1,6 @@
 import {SortType, widthStartsCoefficient} from "../constants";
 
-const getOffer = ((offers, props) => (offers.filter((offer) => offer.id === props.match.params.id)[0]));
+const getOffer = ((offers, props) => (offers.filter((offer) => offer.id === +props.match.params.id)[0]));
 
 const getMockNearestOffers = (offers, props) => {
   if (offers.length <= 4) {
