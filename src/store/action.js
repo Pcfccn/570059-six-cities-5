@@ -1,11 +1,4 @@
-const ActionType = {
-  CHANGE_CITY: `CHANGE_CITY`,
-  OPEN_SORT_OPTIONS: `OPEN_SORT_OPTIONS`,
-  CHANGE_SORT_TYPE: `OPEN_SORT_TYPE`,
-  CHANGE_ENTERED_OFFER: `CHANGE_ENTERED_OFFER`,
-  LOAD_OFFERS: `LOAD_OFFERS`,
-  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
-};
+import {ActionType} from "../constants";
 
 const ActionCreator = {
   changeCity: (city) => {
@@ -46,4 +39,4 @@ const ActionCreator = {
   },
 };
 
-export {ActionType, ActionCreator};
+export {ActionCreator};
