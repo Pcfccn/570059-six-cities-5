@@ -3,16 +3,18 @@ import React from "react";
 import {connect} from "react-redux";
 import {Redirect, Route} from "react-router-dom";
 import {AuthorizationStatus, Path} from "../../constants";
+import Favorites from "../favorites/favorites";
 
-const PrivateRoute = ({render, path, exact, authorizationStatus}) => {
+const PrivateRoute = ({path, exact, authorizationStatus}) => {
+  console.log(path, exact, authorizationStatus);
   return (
     <Route
       path={path}
       exact={exact}
-      render={(routeProps) => {
+      render={() => {
         return (
           authorizationStatus === AuthorizationStatus.AUTH
-            ? render(routeProps)
+            ? <Favorites />
             : <Redirect to={Path.SIGN_IN} />
         );
       }}
@@ -24,7 +26,6 @@ PrivateRoute.propTypes = {
   authorizationStatus: PropTypes.string.isRequired,
   exact: PropTypes.bool.isRequired,
   path: PropTypes.string.isRequired,
-  render: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({USER}) => ({

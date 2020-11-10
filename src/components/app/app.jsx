@@ -1,9 +1,10 @@
 import React, {Fragment} from "react";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import {Path} from "../../constants";
-import Favorites from "../favorites/favorites";
+// import Favorites from "../favorites/favorites";
 import Main from "../main/main";
 import Offer from "../offer/Offer";
+import {PrivateRoute} from "../private-route/private-route";
 import SignIn from "../sign-in/sign-in";
 
 // const onSubmitForm = (state) => {
@@ -27,9 +28,10 @@ const App = () => {
         <Route exact path = {Path.SIGN_IN}>
           <SignIn />
         </Route>
-        <Route exact path = {Path.FAVORITES}>
-          <Favorites />
-        </Route>
+        <PrivateRoute
+          exact
+          path={Path.FAVORITES}
+        />
         <Route
           path = {Path.OFFER} exact
           render={(offerProps) => (
