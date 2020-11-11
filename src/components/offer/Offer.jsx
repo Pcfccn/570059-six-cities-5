@@ -7,13 +7,13 @@ import Photos from "../offer-photos/offer-photos";
 import Reviews from "../offer-reviews/offer-reviews";
 import offerPropTypes from "../types/offer";
 import MapComponent from "../map/map";
-import {MapClassName, OfferCardClassName} from "../../constants";
+import {AuthorizationStatus, MapClassName, OfferCardClassName} from "../../constants";
 import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 import {connect} from "react-redux";
 import {reviews} from "../../mock/offer";
 
-const Offer = ({offers, offerProps, onSubmitForm}) => {
+const Offer = ({authorizationStatus, offers, offerProps, onSubmitForm}) => {
   const offer = getOffer(offers, offerProps);
   const nearestOffers = getMockNearestOffers(offers, offerProps);
   const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, location} = offer;
@@ -102,7 +102,10 @@ const Offer = ({offers, offerProps, onSubmitForm}) => {
                 <ul className="reviews__list">
                   <Reviews reviews={reviews} />
                 </ul>
-                <PostCommentForm onSubmitForm={onSubmitForm}/>
+                {authorizationStatus === AuthorizationStatus.AUTH
+                  ? <PostCommentForm onSubmitForm={onSubmitForm}/>
+                  : ``
+                }
               </section>
             </div>
           </div>
@@ -150,10 +153,12 @@ Offer.propTypes = {
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
   onSubmitForm: PropTypes.func.isRequired,
   offerProps: PropTypes.object.isRequired,
+  authorizationStatus: PropTypes.string.isRequired,
 };
 
-const mapStateToProps = ({DATA}) => ({
+const mapStateToProps = ({DATA, USER}) => ({
   offers: DATA.offers,
+  authorizationStatus: USER.authorizationStatus,
 });
 
 export {Offer};

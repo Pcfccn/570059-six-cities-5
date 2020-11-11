@@ -15,6 +15,7 @@ const ApiActionCreator = {
 
   login: ({email, password}) => (dispatch, _getState, api) => (
     api.post(PathApi.LOGIN, {email, password})
+      .then((userData) => dispatch(ActionCreator.loadUserData(userData)))
       .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
       .then(() => dispatch(ActionCreator.redirectToRoute(Path.MAIN)))
   )

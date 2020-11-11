@@ -2,16 +2,16 @@ import {PropTypes} from "prop-types";
 import React, {Fragment} from "react";
 import {connect} from "react-redux";
 import {Redirect, Route} from "react-router-dom";
-import {AuthorizationStatus} from "../../constants";
 
-const PrivateRoute = ({path, redirectPath, children, exact, authorizationStatus}) => {
+const PrivateRoute = ({path, isAuthorizated, redirectPath, children, exact, authorizationStatus}) => {
   return (
     <Route
       path={path}
       exact={exact}
+      isAuthorizated={isAuthorizated}
       render={() => {
         return (
-          authorizationStatus === AuthorizationStatus.AUTH
+          authorizationStatus === isAuthorizated
             ? <Fragment>{children}</Fragment>
             : <Redirect to={redirectPath} />
         );
@@ -22,6 +22,7 @@ const PrivateRoute = ({path, redirectPath, children, exact, authorizationStatus}
 
 PrivateRoute.propTypes = {
   authorizationStatus: PropTypes.string.isRequired,
+  isAuthorizated: PropTypes.string.isRequired,
   exact: PropTypes.bool.isRequired,
   path: PropTypes.string.isRequired,
   redirectPath: PropTypes.string.isRequired,

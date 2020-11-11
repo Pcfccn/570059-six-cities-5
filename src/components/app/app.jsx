@@ -1,6 +1,6 @@
 import React, {Fragment} from "react";
 import {Router as BrowserRouter, Switch, Route} from "react-router-dom";
-import {Path} from "../../constants";
+import {AuthorizationStatus, Path} from "../../constants";
 import browserHistory from "../../brouser-history";
 import Favorites from "../favorites/favorites";
 import Main from "../main/main";
@@ -26,13 +26,19 @@ const App = () => {
           )
           }
         />
-        <Route exact path = {Path.SIGN_IN}>
+        <PrivateRoute
+          exact
+          path={Path.SIGN_IN}
+          redirectPath={Path.MAIN}
+          isAuthorizated={AuthorizationStatus.NO_AUTH}
+        >
           <SignIn />
-        </Route>
+        </PrivateRoute>
         <PrivateRoute
           exact
           path={Path.FAVORITES}
           redirectPath={Path.SIGN_IN}
+          isAuthorizated={AuthorizationStatus.AUTH}
         >
           <Favorites />
         </PrivateRoute>
