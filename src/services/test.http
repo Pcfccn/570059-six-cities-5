@@ -1,1 +1,9 @@
-get https://5.react.pages.academy/six-cities/hotels HTTP/1.1
+# get https://5.react.pages.academy/six-cities/hotels HTTP/1.1
+
+POST https://5.react.pages.academy/six-cities/login HTTP/1.1
+content-type: application/json
+
+{
+  "email": "dsgf@mail.ru",
+  "password": "dfg"
+}

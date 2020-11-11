@@ -1,7 +1,6 @@
-import {cities, SortType} from "../../../constants";
+import {ActionType, cities, SortType} from "../../../constants";
 import {offers} from "../../../mock/offer";
 import {extend, filterOffersByCity, sortOffers} from "../../../utils/common";
-import {ActionType} from "../../action";
 
 const initialState = {
   city: cities[0],

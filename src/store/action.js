@@ -1,49 +1,43 @@
-const ActionType = {
-  CHANGE_CITY: `CHANGE_CITY`,
-  OPEN_SORT_OPTIONS: `OPEN_SORT_OPTIONS`,
-  CHANGE_SORT_TYPE: `OPEN_SORT_TYPE`,
-  CHANGE_ENTERED_OFFER: `CHANGE_ENTERED_OFFER`,
-  LOAD_OFFERS: `LOAD_OFFERS`,
-  REQUIRED_AUTHORIZATION: `REQUIRED_AUTHORIZATION`,
-};
+import {ActionType} from "../constants";
 
 const ActionCreator = {
-  changeCity: (city) => {
-    return ({
-      type: ActionType.CHANGE_CITY,
-      payload: city,
-    });
-  },
-  changeSortType: (offers, city, type) => {
-    return ({
-      type: ActionType.CHANGE_SORT_TYPE,
-      payload: {offers, city, type},
-    });
-  },
-  changeEnteredOffer: (offer) => {
-    return ({
-      type: ActionType.CHANGE_ENTERED_OFFER,
-      payload: {offer},
-    });
-  },
-  loadOffers: (offers) => {
-    return ({
-      type: ActionType.LOAD_OFFERS,
-      payload: offers,
-    });
-  },
-  openSortOptions: (toggle) => {
-    return ({
-      type: ActionType.OPEN_SORT_OPTIONS,
-      payload: !toggle,
-    });
-  },
-  requireAuthorization: (status) => {
-    return ({
-      type: ActionType.REQUIRED_AUTHORIZATION,
-      payload: status,
-    });
-  },
+  changeCity: (city) => ({
+    type: ActionType.CHANGE_CITY,
+    payload: city,
+  }),
+
+  changeSortType: (offers, city, type) => ({
+    type: ActionType.CHANGE_SORT_TYPE,
+    payload: {offers, city, type},
+  }),
+  changeEnteredOffer: (offer) => ({
+    type: ActionType.CHANGE_ENTERED_OFFER,
+    payload: {offer},
+  }),
+
+  loadUserData: (userData) => ({
+    type: ActionType.LOAD_USER_DATA,
+    payload: userData,
+  }),
+
+  loadOffers: (offers) => ({
+    type: ActionType.LOAD_OFFERS,
+    payload: offers,
+  }),
+  openSortOptions: (toggle) => ({
+    type: ActionType.OPEN_SORT_OPTIONS,
+    payload: !toggle,
+  }),
+
+  redirectToRoute: (url) => ({
+    type: ActionType.REDIRECT_TO_ROUTE,
+    payload: url,
+  }),
+
+  requireAuthorization: (status) => ({
+    type: ActionType.REQUIRED_AUTHORIZATION,
+    payload: status,
+  }),
 };
 
-export {ActionType, ActionCreator};
+export {ActionCreator};

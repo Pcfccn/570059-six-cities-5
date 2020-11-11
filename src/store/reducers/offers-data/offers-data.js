@@ -1,5 +1,5 @@
 import {extend} from "../../../utils/common";
-import {ActionType} from "../../action";
+import {ActionType} from "../../../constants";
 import {adaptDataToOffers} from "../../../services/adapter";
 
 const initialState = {offers: []};

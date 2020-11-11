@@ -1,19 +1,26 @@
+import {AuthorizationStatus, Path, ApiURL} from "../constants";
 import {ActionCreator} from "./action";
 
-export const fetchOfferList = () => (dispatch, _getState, api) => (
-  api.get(`/hotels`)
-    .then(({data}) => dispatch(ActionCreator.loadOffers(data)))
-);
+const ApiActionCreator = {
+  fetchOfferList: () => (dispatch, _getState, api) => (
+    api.get(ApiURL.HOTELS)
+      .then(({data}) => dispatch(ActionCreator.loadOffers(data)))
+      .catch(() => {})
+  ),
 
-// export const checkAuth = () => (dispatch, _getState, api) => (
-//   api.get(`/login`)
-//     .then(() => dispatch(requireAuthorization(AuthorizationStatus.AUTH)))
-//     .catch((err) => {
-//       throw err;
-//     })
-// );
+  checkAuth: () => (dispatch, _getState, api) => (
+    api.get(ApiURL.LOGIN)
+      .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
+      .catch(() => {})
+  ),
 
-// export const login = ({login: email, password}) => (dispatch, _getState, api) => (
-//   api.post(`/login`, {email, password})
-//     .then(() => dispatch(requireAuthorization(AuthorizationStatus.AUTH)))
-// );
+  login: ({email, password}) => (dispatch, _getState, api) => (
+    api.post(ApiURL.LOGIN, {email, password})
+      .then((userData) => dispatch(ActionCreator.loadUserData(userData)))
+      .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
+      .then(() => dispatch(ActionCreator.redirectToRoute(Path.MAIN)))
+      .catch(() => {})
+  )
+};
+
+export {ApiActionCreator};

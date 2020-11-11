@@ -1,9 +1,11 @@
 import React, {Fragment} from "react";
-import {BrowserRouter, Switch, Route} from "react-router-dom";
-import {Path} from "../../constants";
+import {Router as BrowserRouter, Switch, Route} from "react-router-dom";
+import {AuthorizationStatus, Path} from "../../constants";
+import browserHistory from "../../brouser-history";
 import Favorites from "../favorites/favorites";
 import Main from "../main/main";
 import Offer from "../offer/Offer";
+import PrivateRoute from "../private-route/private-route";
 import SignIn from "../sign-in/sign-in";
 
 // const onSubmitForm = (state) => {
@@ -13,7 +15,7 @@ const onSubmitForm = () => {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter history={browserHistory}>
       <Switch>
         <Route exact
           path = {Path.MAIN}
@@ -24,12 +26,22 @@ const App = () => {
           )
           }
         />
-        <Route exact path = {Path.SIGN_IN}>
+        <PrivateRoute
+          exact
+          path={Path.SIGN_IN}
+          redirectPath={Path.MAIN}
+          isAuthorizated={AuthorizationStatus.NO_AUTH}
+        >
           <SignIn />
-        </Route>
-        <Route exact path = {Path.FAVORITES}>
+        </PrivateRoute>
+        <PrivateRoute
+          exact
+          path={Path.FAVORITES}
+          redirectPath={Path.SIGN_IN}
+          isAuthorizated={AuthorizationStatus.AUTH}
+        >
           <Favorites />
-        </Route>
+        </PrivateRoute>
         <Route
           path = {Path.OFFER} exact
           render={(offerProps) => (
