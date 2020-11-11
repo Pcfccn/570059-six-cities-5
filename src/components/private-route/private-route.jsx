@@ -1,12 +1,10 @@
 import {PropTypes} from "prop-types";
-import React from "react";
+import React, {Fragment} from "react";
 import {connect} from "react-redux";
 import {Redirect, Route} from "react-router-dom";
-import {AuthorizationStatus, Path} from "../../constants";
-import Favorites from "../favorites/favorites";
+import {AuthorizationStatus} from "../../constants";
 
-const PrivateRoute = ({path, exact, authorizationStatus}) => {
-  console.log(path, exact, authorizationStatus);
+const PrivateRoute = ({path, redirectPath, children, exact, authorizationStatus}) => {
   return (
     <Route
       path={path}
@@ -14,8 +12,8 @@ const PrivateRoute = ({path, exact, authorizationStatus}) => {
       render={() => {
         return (
           authorizationStatus === AuthorizationStatus.AUTH
-            ? <Favorites />
-            : <Redirect to={Path.SIGN_IN} />
+            ? <Fragment>{children}</Fragment>
+            : <Redirect to={redirectPath} />
         );
       }}
     />
@@ -26,6 +24,8 @@ PrivateRoute.propTypes = {
   authorizationStatus: PropTypes.string.isRequired,
   exact: PropTypes.bool.isRequired,
   path: PropTypes.string.isRequired,
+  redirectPath: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired
 };
 
 const mapStateToProps = ({USER}) => ({

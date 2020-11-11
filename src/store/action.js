@@ -31,6 +31,12 @@ const ActionCreator = {
       payload: !toggle,
     });
   },
+
+  redirectToRoute: (url) => ({
+    type: ActionType.REDIRECT_TO_ROUTE,
+    payload: url,
+  }),
+
   requireAuthorization: (status) => {
     return ({
       type: ActionType.REQUIRED_AUTHORIZATION,

@@ -1,4 +1,4 @@
-import {AuthorizationStatus, PathApi} from "../constants";
+import {AuthorizationStatus, Path, PathApi} from "../constants";
 import {ActionCreator} from "./action";
 
 const ApiActionCreator = {
@@ -13,9 +13,10 @@ const ApiActionCreator = {
       .catch(() => {})
   ),
 
-  login: ({login: email, password}) => (dispatch, _getState, api) => (
+  login: ({email, password}) => (dispatch, _getState, api) => (
     api.post(PathApi.LOGIN, {email, password})
       .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
+      .then(() => dispatch(ActionCreator.redirectToRoute(Path.MAIN)))
   )
 };
 
