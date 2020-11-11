@@ -5,6 +5,7 @@ const ApiActionCreator = {
   fetchOfferList: () => (dispatch, _getState, api) => (
     api.get(PathApi.HOTELS)
       .then(({data}) => dispatch(ActionCreator.loadOffers(data)))
+      .catch(() => {})
   ),
 
   checkAuth: () => (dispatch, _getState, api) => (
@@ -18,6 +19,7 @@ const ApiActionCreator = {
       .then((userData) => dispatch(ActionCreator.loadUserData(userData)))
       .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
       .then(() => dispatch(ActionCreator.redirectToRoute(Path.MAIN)))
+      .catch(() => {})
   )
 };
 
