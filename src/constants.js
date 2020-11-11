@@ -16,7 +16,7 @@ const Path = {
   OFFER: `/offer/:id`,
   getUrlById: (id) => (`/offer/${id}`)
 };
-const PathApi = {
+const ApiURL = {
   LOGIN: `/login`,
   HOTELS: `/hotels`,
 };
@@ -50,5 +50,5 @@ const AuthorizationStatus = {
   NO_AUTH: `NO_AUTH`,
 };
 
-export {ActionType, Path, PathApi, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
+export {ActionType, Path, ApiURL, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
   MapClassName, cities, SortType, AuthorizationStatus};
