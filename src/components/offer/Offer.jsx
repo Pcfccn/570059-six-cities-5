@@ -12,17 +12,23 @@ import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 import {connect} from "react-redux";
 import {reviews} from "../../mock/offer";
+import {ApiActionCreator} from "../../store/api-actions";
 
-const Offer = ({authorizationStatus, offers, offerProps, onSubmitForm}) => {
+// const Offer = ({authorizationStatus, offers, offerProps, onSubmitForm, loadComments, comments}) => {
+const Offer = ({authorizationStatus, offers, offerProps, onSubmitForm, loadComments}) => {
   const offer = getOffer(offers, offerProps);
   const nearestOffers = getMockNearestOffers(offers, offerProps);
-  const {image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, location} = offer;
+  console.log(offer);
+  const {id, image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, location} = offer;
   const isInBookmarksButtonActive = isInBookmarks
     ? `property__bookmark-button--active`
     : ``;
   const hostClassName = host.pro
     ? `property__avatar-wrapper--pro`
     : ``;
+
+  // loadComments(id);
+
   return (
     <div className="page">
       <Header />
@@ -158,8 +164,15 @@ Offer.propTypes = {
 
 const mapStateToProps = ({DATA, USER}) => ({
   offers: DATA.offers,
+  comments: DATA.comments,
   authorizationStatus: USER.authorizationStatus,
 });
 
+const mapDispatchToProps = (dispatch) => ({
+  loadComments(id) {
+    dispatch(ApiActionCreator.fetchComments(id));
+  },
+});
+
 export {Offer};
-export default connect(mapStateToProps)(Offer);
+export default connect(mapStateToProps, mapDispatchToProps)(Offer);

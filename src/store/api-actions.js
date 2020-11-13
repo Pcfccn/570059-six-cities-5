@@ -8,8 +8,27 @@ const ApiActionCreator = {
       .catch(() => {})
   ),
 
+  fetchOffer: (id) => (dispatch, _getState, api) => (
+    api.get(ApiURL.getUrlById(id))
+    .then(({data}) => dispatch(ActionCreator.loadOneOffer(data)))
+    .catch(() => {})
+  ),
+
+  fetchComments: (id) => (dispatch, _getState, api) => (
+    api.get(ApiURL.getUrlCommentsById(id))
+    .then(({data}) => dispatch(ActionCreator.loadComments(data)))
+    .catch(() => {})
+  ),
+
+  fetchNearbyOffers: (id) => (dispatch, _getState, api) => (
+    api.get(ApiURL.getUrlNearbyById(id))
+    .then(({data}) => dispatch(ActionCreator.loadNearbyOffers(data)))
+    .catch(() => {})
+  ),
+
   checkAuth: () => (dispatch, _getState, api) => (
     api.get(ApiURL.LOGIN)
+      .then((userData) => dispatch(ActionCreator.loadUserData(userData)))
       .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
       .catch(() => {})
   ),

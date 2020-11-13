@@ -24,6 +24,22 @@ const ActionCreator = {
     type: ActionType.LOAD_OFFERS,
     payload: offers,
   }),
+
+  loadOneOffer: (offer) => ({
+    type: ActionType.LOAD_ONE_OFFER,
+    payload: offer,
+  }),
+
+  loadComments: (comment) => ({
+    type: ActionType.LOAD_COMMENTS,
+    payload: comment,
+  }),
+
+  loadNearbyOffers: (nearbyOffers) => ({
+    type: ActionType.LOAD_NEARBY_OFFERS,
+    payload: nearbyOffers,
+  }),
+
   openSortOptions: (toggle) => ({
     type: ActionType.OPEN_SORT_OPTIONS,
     payload: !toggle,
