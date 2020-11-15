@@ -43,7 +43,7 @@ const ApiActionCreator = {
 
   postComment: (id, {comment, rating}) => (dispatch, _getState, api) => (
     api.post(ApiURL.getUrlCommentsById(id), {comment, rating})
-    .then(() => dispatch(ActionCreator.setRating(0)))
+    .then(() => dispatch(ActionCreator.setRating(`0`)))
     .then(() => dispatch(ActionCreator.enterText(``)))
     .catch(() => {})
   ),

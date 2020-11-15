@@ -23,12 +23,14 @@ const store = createStore(
         applyMiddleware(redirect)
     )
 );
-
-store.dispatch(ApiActionCreator.fetchOfferList());
-
-ReactDOM.render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.querySelector(`#root`)
-);
+Promise.all([
+  store.dispatch(ApiActionCreator.fetchOfferList()),
+  store.dispatch(ApiActionCreator.checkAuth())
+]).then(() => {
+  ReactDOM.render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+      document.querySelector(`#root`)
+  );
+});
