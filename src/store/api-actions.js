@@ -39,7 +39,14 @@ const ApiActionCreator = {
       .then(() => dispatch(ActionCreator.requireAuthorization(AuthorizationStatus.AUTH)))
       .then(() => dispatch(ActionCreator.redirectToRoute(Path.MAIN)))
       .catch(() => {})
-  )
+  ),
+
+  postComment: (id, {comment, rating}) => (dispatch, _getState, api) => (
+    api.post(ApiURL.getUrlCommentsById(id), {comment, rating})
+    .then(() => dispatch(ActionCreator.setRating(0)))
+    .then(() => dispatch(ActionCreator.enterText(``)))
+    .catch(() => {})
+  ),
 };
 
 export {ApiActionCreator};

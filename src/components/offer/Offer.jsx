@@ -14,7 +14,7 @@ import {connect} from "react-redux";
 import {reviews} from "../../mock/offer";
 import {ApiActionCreator} from "../../store/api-actions";
 
-const Offer = ({authorizationStatus, offers, offerProps, onSubmitForm, loadOfferInfo, comments, nearbyOffers}) => {
+const Offer = ({authorizationStatus, offers, offerProps, loadOfferInfo, comments, nearbyOffers}) => {
   useEffect(() => {
     loadOfferInfo(offerProps.match.params.id);
   }, []);
@@ -109,7 +109,7 @@ const Offer = ({authorizationStatus, offers, offerProps, onSubmitForm, loadOffer
                   <ul className="reviews__list">
                     <Reviews reviews={comments} />
                   </ul>
-                  {authorizationStatus === AuthorizationStatus.AUTH && <PostCommentForm onSubmitForm={onSubmitForm}/>}
+                  {authorizationStatus === AuthorizationStatus.AUTH && <PostCommentForm id={id} />}
                 </section>
               </div>
             </div>
@@ -159,7 +159,6 @@ Offer.propTypes = {
         text: PropTypes.string.isRequired,
       })),
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  onSubmitForm: PropTypes.func.isRequired,
   offerProps: PropTypes.object.isRequired,
   authorizationStatus: PropTypes.string.isRequired,
 };

@@ -8,11 +8,6 @@ import Offer from "../offer/Offer";
 import PrivateRoute from "../private-route/private-route";
 import SignIn from "../sign-in/sign-in";
 
-// const onSubmitForm = (state) => {
-const onSubmitForm = () => {
-  // console.log(state);
-};
-
 const App = () => {
   return (
     <BrowserRouter history={browserHistory}>
@@ -20,9 +15,7 @@ const App = () => {
         <Route exact
           path = {Path.MAIN}
           render={() => (
-            <Main
-              onSubmitForm={onSubmitForm}
-            />
+            <Main />
           )
           }
         />
@@ -47,7 +40,6 @@ const App = () => {
           render={(offerProps) => (
             <Offer
               offerProps={offerProps}
-              onSubmitForm={onSubmitForm}
             />
           )
           }

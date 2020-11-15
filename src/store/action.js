@@ -14,6 +14,10 @@ const ActionCreator = {
     type: ActionType.CHANGE_ENTERED_OFFER,
     payload: {offer},
   }),
+  enterText: (text) => ({
+    type: ActionType.ENTER_TEXT,
+    payload: text,
+  }),
 
   loadUserData: (userData) => ({
     type: ActionType.LOAD_USER_DATA,
@@ -53,6 +57,11 @@ const ActionCreator = {
   requireAuthorization: (status) => ({
     type: ActionType.REQUIRED_AUTHORIZATION,
     payload: status,
+  }),
+
+  setRating: (rating) => ({
+    type: ActionType.SET_RATING,
+    payload: rating,
   }),
 };
 
