@@ -3,15 +3,15 @@ import {getWidthForRatingStar} from "../../utils/common";
 
 const Reviews = ({reviews}) => {
   return (
-    Object.values(reviews).slice(0, 1).map((review, i) => {
+    Object.values(reviews).map((review, i) => {
       return (
-        <li className="reviews__item" key={`${i}-${review.name}`}>
+        <li className="reviews__item" key={`${i}-${review.user.name}`}>
           <div className="reviews__user user">
             <div className="reviews__avatar-wrapper user__avatar-wrapper">
-              <img className="reviews__avatar user__avatar" src={review.avatar} width="54" height="54" alt="Reviews avatar"/>
+              <img className="reviews__avatar user__avatar" src={review.user.avatar_url} width="54" height="54" alt="Reviews avatar"/>
             </div>
             <span className="reviews__user-name">
-              {review.name}
+              {review.user.name}
             </span>
           </div>
           <div className="reviews__info">
@@ -22,9 +22,12 @@ const Reviews = ({reviews}) => {
               </div>
             </div>
             <p className="reviews__text">
-              {review.text}
+              {review.comment}
             </p>
-            <time className="reviews__time" dateTime={review.date}>{review.date}</time>
+            <time
+              className="reviews__time"
+              dateTime={review.date}>{new Date(review.date).toLocaleDateString(`en-US`, {year: `numeric`, month: `long`})}
+            </time>
           </div>
         </li>
       );

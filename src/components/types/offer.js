@@ -6,7 +6,6 @@ const offerPropTypes = PropTypes.shape({
   city: PropTypes.string.isRequired,
   host: PropTypes.object.isRequired,
   id: PropTypes.number.isRequired,
-  reviews: PropTypes.arrayOf(PropTypes.number).isRequired,
   image: PropTypes.arrayOf(PropTypes.string).isRequired,
   inside: PropTypes.arrayOf(PropTypes.string).isRequired,
   isInBookmarks: PropTypes.bool.isRequired,
