@@ -28,7 +28,7 @@ class PostCommentForm extends React.PureComponent {
       <form className="reviews__form form" action="#" method="post" onSubmit={handelFormSubmit}>
         <label className="reviews__label form__label" htmlFor="review">Your review</label>
         <div className="reviews__rating-form form__rating">
-          {ratingStars.map((stars) => <RatingStar key={`${stars}${rating}`} index={stars} onChange={handleRatingAreaChange}/>)}
+          {ratingStars.map((stars) => <RatingStar key={stars} index={stars} onChange={handleRatingAreaChange}/>)}
         </div>
         <textarea
           className="reviews__textarea form__textarea" id="review" name="review"
