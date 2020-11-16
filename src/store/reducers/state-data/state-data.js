@@ -4,9 +4,9 @@ import {extend, filterOffersByCity, sortOffers} from "../../../utils/common";
 
 const initialState = {
   city: cities[0],
-  offers: [],
   sortType: SortType.POPULAR_DESC,
   enteredOffer: {id: ``, location: []},
+  userComment: {rating: `0`, text: ``}
 };
 
 const stateData = (state = initialState, action) => {
@@ -15,6 +15,14 @@ const stateData = (state = initialState, action) => {
       return (
         extend(state, {city: action.payload})
       );
+
+    case ActionType.SET_RATING:
+      return (
+        extend(state, {userComment: extend(state.userComment, {rating: action.payload})}));
+
+    case ActionType.ENTER_TEXT:
+      return (
+        extend(state, {userComment: extend(state.userComment, {text: action.payload})}));
 
     case ActionType.CHANGE_SORT_TYPE:
       if (action.payload.type === SortType.POPULAR_DESC) {

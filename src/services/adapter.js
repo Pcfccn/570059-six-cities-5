@@ -1,12 +1,10 @@
 const adaptDataToOffers = (data) => (
   data.map((it) => {
-    // console.log(it);
     return ({
       id: it.id,
       city: it.city.name,
       cityLocation: [it.city.location.latitude, it.city.location.longitude],
       cityZoom: it.city.location.zoom,
-      reviews: [2134, 2135],
       image: it.images,
       previewImage: it.preview_image,
       isPremium: it.is_premium,
@@ -23,9 +21,9 @@ const adaptDataToOffers = (data) => (
       inside: it.goods,
       host: {
         id: it.host.id,
-        avatar: it.avatar_url,
-        name: it.name,
-        pro: it.is_pro,
+        avatar: it.host.avatar_url,
+        name: it.host.name,
+        pro: it.host.is_pro,
         description: it.description,
       },
       location: [it.location.latitude, it.location.longitude],

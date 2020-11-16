@@ -14,6 +14,10 @@ const ActionCreator = {
     type: ActionType.CHANGE_ENTERED_OFFER,
     payload: {offer},
   }),
+  enterText: (text) => ({
+    type: ActionType.ENTER_TEXT,
+    payload: text,
+  }),
 
   loadUserData: (userData) => ({
     type: ActionType.LOAD_USER_DATA,
@@ -24,6 +28,22 @@ const ActionCreator = {
     type: ActionType.LOAD_OFFERS,
     payload: offers,
   }),
+
+  loadOneOffer: (offer) => ({
+    type: ActionType.LOAD_ONE_OFFER,
+    payload: offer,
+  }),
+
+  loadComments: (comment) => ({
+    type: ActionType.LOAD_COMMENTS,
+    payload: comment,
+  }),
+
+  loadNearbyOffers: (nearbyOffers) => ({
+    type: ActionType.LOAD_NEARBY_OFFERS,
+    payload: nearbyOffers,
+  }),
+
   openSortOptions: (toggle) => ({
     type: ActionType.OPEN_SORT_OPTIONS,
     payload: !toggle,
@@ -37,6 +57,11 @@ const ActionCreator = {
   requireAuthorization: (status) => ({
     type: ActionType.REQUIRED_AUTHORIZATION,
     payload: status,
+  }),
+
+  setRating: (rating) => ({
+    type: ActionType.SET_RATING,
+    payload: rating,
   }),
 };
 
