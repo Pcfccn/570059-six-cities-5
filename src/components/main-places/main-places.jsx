@@ -45,7 +45,6 @@ const mapStateToProps = (state) => ({
   enteredOfferLocation: state.STATE.enteredOffer.location,
   enteredOfferId: state.STATE.enteredOffer.id,
   offers: getCityOffers(state),
-  // offers: DATA.offers.filter((offer) => offer.city === STATE.city),
   sortType: state.STATE.sortType,
 });
 
