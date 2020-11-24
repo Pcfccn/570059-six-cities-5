@@ -88,7 +88,7 @@ beforeEach(() => {
   };
 });
 
-it(`Should Main render correctly`, () => {
+it(`Should Favorites render correctly`, () => {
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
   const tree = renderer
