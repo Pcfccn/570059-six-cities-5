@@ -1,9 +1,9 @@
 import React from "react";
-import {Provider} from "react-redux";
 import renderer from "react-test-renderer";
 import {AuthorizationStatus, SortType} from "../../constants";
-import Main from "./main";
+import {MainPlaces} from "./main-places";
 import configureMockStore from 'redux-mock-store';
+import {Provider} from "react-redux";
 import {Router} from "react-router-dom";
 import browserHistory from "../../brouser-history";
 
@@ -72,17 +72,22 @@ beforeEach(() => {
   };
 });
 
-it(`Should Main render correctly`, () => {
+it(`Should MainPlaces render correctly`, () => {
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
   const tree = renderer
     .create(
         <Provider store={store}>
           <Router history={browserHistory}>
-            <Main />
+            <MainPlaces
+              offers={getOffersMock(5)}
+              city={`Amsterdam`}
+              enteredOfferLocation={[]}
+              enteredOfferId={1}
+              sortType={`type`}
+            />
           </Router>
-        </Provider>
-    )
+        </Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();

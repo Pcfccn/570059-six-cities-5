@@ -1,11 +1,11 @@
 import React from "react";
 import {Provider} from "react-redux";
-import renderer from "react-test-renderer";
-import {AuthorizationStatus, SortType} from "../../constants";
-import Main from "./main";
-import configureMockStore from 'redux-mock-store';
 import {Router} from "react-router-dom";
+import renderer from "react-test-renderer";
 import browserHistory from "../../brouser-history";
+import {AuthorizationStatus} from "../../constants";
+import {Offer} from "./Offer";
+import configureMockStore from 'redux-mock-store';
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -50,6 +50,7 @@ const getOffersMock = (count) => {
 
   return templateOffers;
 };
+const noop = () => {};
 
 let mockState;
 beforeEach(() => {
@@ -59,31 +60,34 @@ beforeEach(() => {
       email: `sdf@mail.ri`
     },
     STATE: {
-      city: `Amsterdam`,
-      enteredOffer: {
-        location: getOffersMock(1).location,
-        id: getOffersMock(1).id,
+      userComment: {
+        rating: `5`,
+        text: `xyyyyyyyyy`,
       },
-      sortType: SortType.POPULAR_DESC,
     },
-    DATA: {
-      offers: getOffersMock(5)
-    }
   };
 });
 
-it(`Should Main render correctly`, () => {
-  const mockStore = configureMockStore();
-  const store = mockStore(mockState);
-  const tree = renderer
+describe(`offer`, () => {
+  it(`Should render corectly`, () => {
+    const mockStore = configureMockStore();
+    const store = mockStore(mockState);
+    const tree = renderer
     .create(
         <Provider store={store}>
           <Router history={browserHistory}>
-            <Main />
+            <Offer
+              loadOfferInfo={noop}
+              offerProps={{match: {params: {id: 1}}}}
+              authorizationStatus={AuthorizationStatus.AUTH}
+              offers={getOffersMock(2)}
+              comments={[]}
+              nearbyOffers={[getOffersMock(1)]}
+            />
           </Router>
-        </Provider>
-    )
+        </Provider>)
     .toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
 });

@@ -1,11 +1,11 @@
 import React from "react";
 import {Provider} from "react-redux";
-import renderer from "react-test-renderer";
-import {AuthorizationStatus, SortType} from "../../constants";
-import Main from "./main";
-import configureMockStore from 'redux-mock-store';
 import {Router} from "react-router-dom";
+import renderer from "react-test-renderer";
 import browserHistory from "../../brouser-history";
+import {OfferCardClassName} from "../../constants";
+import OfferCard from "./offer-card";
+import configureMockStore from 'redux-mock-store';
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -50,40 +50,32 @@ const getOffersMock = (count) => {
 
   return templateOffers;
 };
+const noop = () => {};
 
 let mockState;
 beforeEach(() => {
   mockState = {
-    USER: {
-      authorizationStatus: AuthorizationStatus.AUTH,
-      email: `sdf@mail.ri`
-    },
-    STATE: {
-      city: `Amsterdam`,
-      enteredOffer: {
-        location: getOffersMock(1).location,
-        id: getOffersMock(1).id,
-      },
-      sortType: SortType.POPULAR_DESC,
-    },
-    DATA: {
-      offers: getOffersMock(5)
-    }
+
   };
 });
 
-it(`Should Main render correctly`, () => {
-  const mockStore = configureMockStore();
-  const store = mockStore(mockState);
-  const tree = renderer
+describe(`OfferCard`, () => {
+  it(`Should render corectly`, () => {
+    const mockStore = configureMockStore();
+    const store = mockStore(mockState);
+    const tree = renderer
     .create(
         <Provider store={store}>
           <Router history={browserHistory}>
-            <Main />
+            <OfferCard
+              offer={getOffersMock(1)}
+              className={OfferCardClassName.CITIES_PLACE}
+              onMouseEnterCard={noop}
+            />
           </Router>
-        </Provider>
-    )
+        </Provider>)
     .toJSON();
 
-  expect(tree).toMatchSnapshot();
+    expect(tree).toMatchSnapshot();
+  });
 });

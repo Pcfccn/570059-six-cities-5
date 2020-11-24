@@ -73,4 +73,5 @@ const mapDispatchToProps = (dispatch) => ({
   }
 });
 
+export {PostCommentForm};
 export default connect(mapStateToProps, mapDispatchToProps)(PostCommentForm);

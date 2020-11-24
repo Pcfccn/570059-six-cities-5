@@ -5,9 +5,13 @@ import {PropTypes} from "prop-types";
 class MapComponent extends PureComponent {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
   }
 
   componentDidMount() {
+    if (!this.myRef.current) {
+      return;
+    }
     const {cityLocation, zoom, pinLocations, chosedPinLocation} = this.props;
     const icon = leaflet.icon({
       iconUrl: `img/pin.svg`,

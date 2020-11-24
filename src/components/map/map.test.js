@@ -1,11 +1,9 @@
+import {createBrowserHistory} from "history";
 import React from "react";
-import {Provider} from "react-redux";
-import renderer from "react-test-renderer";
-import {AuthorizationStatus, SortType} from "../../constants";
-import Main from "./main";
-import configureMockStore from 'redux-mock-store';
 import {Router} from "react-router-dom";
-import browserHistory from "../../brouser-history";
+import renderer from "react-test-renderer";
+import {MapClassName} from "../../constants";
+import MapComponent from "./map";
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -15,7 +13,14 @@ const getOffersMock = (count) => {
         id: index + 1,
         city: `Amsterdam`,
         reviews: [index + 2134, index + 2135],
-        image: [`/img/apartment-01.jpg`, `/img/apartment-02.jpg`, `/img/apartment-03.jpg`, `/img/room.jpg`, `/img/studio-01.jpg`, `/img/studio-photos.jpg`],
+        image: [
+          `/img/apartment-01.jpg`,
+          `/img/apartment-02.jpg`,
+          `/img/apartment-03.jpg`,
+          `/img/room.jpg`,
+          `/img/studio-01.jpg`,
+          `/img/studio-photos.jpg`,
+        ],
         isPremium: Boolean(Math.random()),
         isInBookmarks: Boolean(Math.random()),
         name: `Beautiful & luxurious studio`,
@@ -27,8 +32,17 @@ const getOffersMock = (count) => {
           value: 1234,
           period: `night`,
         },
-        inside: [`Wi-Fi`, `Washing machine`, `Towels`, `Heating`, `Coffee machine`, `Baby seat`, `Kitchen`,
-          `Dishwasher`, `whatewer you want`],
+        inside: [
+          `Wi-Fi`,
+          `Washing machine`,
+          `Towels`,
+          `Heating`,
+          `Coffee machine`,
+          `Baby seat`,
+          `Kitchen`,
+          `Dishwasher`,
+          `whatewer you want`,
+        ],
         host: {
           avatar: `/img/avatar-angelina.jpg`,
           name: `Anagelina`,
@@ -51,37 +65,25 @@ const getOffersMock = (count) => {
   return templateOffers;
 };
 
-let mockState;
-beforeEach(() => {
-  mockState = {
-    USER: {
-      authorizationStatus: AuthorizationStatus.AUTH,
-      email: `sdf@mail.ri`
-    },
-    STATE: {
-      city: `Amsterdam`,
-      enteredOffer: {
-        location: getOffersMock(1).location,
-        id: getOffersMock(1).id,
-      },
-      sortType: SortType.POPULAR_DESC,
-    },
-    DATA: {
-      offers: getOffersMock(5)
-    }
-  };
-});
+it(`Should Map Component render correctly`, () => {
+  const offers = getOffersMock(4);
+  const enteredOfferLocation = getOffersMock(1).cityLocation;
+  const history = createBrowserHistory();
 
-it(`Should Main render correctly`, () => {
-  const mockStore = configureMockStore();
-  const store = mockStore(mockState);
   const tree = renderer
     .create(
-        <Provider store={store}>
-          <Router history={browserHistory}>
-            <Main />
-          </Router>
-        </Provider>
+        <Router history={history}>
+          <MapComponent
+            key={`key`}
+            className={MapClassName.CITIES}
+            cityLocation={offers[0].cityLocation}
+            zoom={offers[0].cityZoom}
+            pinLocations={offers
+            .map((offer) => offer.location)
+            .filter((offerLocation) => offerLocation !== enteredOfferLocation)}
+            chosedPinLocation={enteredOfferLocation}
+          />
+        </Router>
     )
     .toJSON();
 

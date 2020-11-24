@@ -1,11 +1,10 @@
 import React from "react";
-import {Provider} from "react-redux";
 import renderer from "react-test-renderer";
-import {AuthorizationStatus, SortType} from "../../constants";
-import Main from "./main";
 import configureMockStore from 'redux-mock-store';
+import {Provider} from "react-redux";
 import {Router} from "react-router-dom";
 import browserHistory from "../../brouser-history";
+import {OfferList} from "./offer-list";
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -54,35 +53,22 @@ const getOffersMock = (count) => {
 let mockState;
 beforeEach(() => {
   mockState = {
-    USER: {
-      authorizationStatus: AuthorizationStatus.AUTH,
-      email: `sdf@mail.ri`
-    },
-    STATE: {
-      city: `Amsterdam`,
-      enteredOffer: {
-        location: getOffersMock(1).location,
-        id: getOffersMock(1).id,
-      },
-      sortType: SortType.POPULAR_DESC,
-    },
-    DATA: {
-      offers: getOffersMock(5)
-    }
   };
 });
 
-it(`Should Main render correctly`, () => {
+it(`Should OfferList render correctly`, () => {
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
   const tree = renderer
     .create(
         <Provider store={store}>
           <Router history={browserHistory}>
-            <Main />
+            <OfferList
+              changeEnteredOffer={() => {}}
+              offerCards={getOffersMock(3)}
+            />
           </Router>
-        </Provider>
-    )
+        </Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
