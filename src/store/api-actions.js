@@ -51,6 +51,15 @@ const ApiActionCreator = {
     })
     .catch(() => {})
   ),
+
+  postFavorite: (id, status) => (dispatch, _getState, api) => (
+    api
+    .post(ApiURL.getUrlFavoriteStatus(id, status))
+    .then((data) => {
+      dispatch(ActionCreator.loadOneOffer(data.data));
+    })
+    .catch(() => {})
+  ),
 };
 
 export {ApiActionCreator};

@@ -7,12 +7,13 @@ import Photos from "../offer-photos/offer-photos";
 import Reviews from "../offer-reviews/offer-reviews";
 import offerPropTypes from "../types/offer";
 import MapComponent from "../map/map";
-import {AuthorizationStatus, MapClassName, OfferCardClassName} from "../../constants";
+import {AuthorizationStatus, BookmarksButtonType, MapClassName, OfferCardClassName} from "../../constants";
 import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 import {connect} from "react-redux";
 import {reviews} from "../../mock/offer";
 import {ApiActionCreator} from "../../store/api-actions";
+import BookmarksButton from "../bookmark-button/bookmark-button";
 
 class Offer extends PureComponent {
   constructor(props) {
@@ -31,9 +32,6 @@ class Offer extends PureComponent {
       return null;
     }
     const {id, image, isPremium, isInBookmarks, name, rating, type, bedrooms, adults, inside, host, price, location} = offer;
-    const isInBookmarksButtonActive = isInBookmarks
-      ? `property__bookmark-button--active`
-      : ``;
     const hostClassName = host.pro
       ? `property__avatar-wrapper--pro`
       : ``;
@@ -60,12 +58,11 @@ class Offer extends PureComponent {
                   <h1 className="property__name">
                     {name}
                   </h1>
-                  <button className={`property__bookmark-button ${isInBookmarksButtonActive} button`} type="button">
-                    <svg className="place-card__bookmark-icon" width="31" height="33">
-                      <use xlinkHref="#icon-bookmark"></use>
-                    </svg>
-                    <span className="visually-hidden">To bookmarks</span>
-                  </button>
+                  <BookmarksButton
+                    id={id}
+                    type={BookmarksButtonType.PROPERTY}
+                    isInBookmarks={isInBookmarks}
+                  />
                 </div>
                 <div className="property__rating rating">
                   <div className="property__stars rating__stars">

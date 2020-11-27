@@ -27,6 +27,7 @@ const ApiURL = {
   getUrlById: (id) => (`/hotels/${id}`),
   getUrlNearbyById: (id) => (`/hotels/${id}/nearby`),
   getUrlCommentsById: (id) => (`/comments/${id}`),
+  getUrlFavoriteStatus: (id, status) => (`/favorite/${id}/${status}`),
 };
 
 const ratingStars = [5, 4, 3, 2, 1];
@@ -58,5 +59,10 @@ const AuthorizationStatus = {
   NO_AUTH: `NO_AUTH`,
 };
 
+const BookmarksButtonType = {
+  PROPERTY: `PROPERTY`,
+  PLACE_CARD: `PLACE_CARD`,
+};
+
 export {ActionType, Path, ApiURL, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
-  MapClassName, cities, SortType, AuthorizationStatus};
+  MapClassName, cities, SortType, AuthorizationStatus, BookmarksButtonType};
