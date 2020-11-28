@@ -2,6 +2,12 @@ import {AuthorizationStatus, Path, ApiURL} from "../constants";
 import {ActionCreator} from "./action";
 
 const ApiActionCreator = {
+  fetchFavorites: () => (dispatch, _getState, api) => (
+    api.get(ApiURL.FAVORITES)
+      .then(({data}) => dispatch(ActionCreator.loadFavorites(data)))
+      .catch(() => {})
+  ),
+
   fetchOfferList: () => (dispatch, _getState, api) => (
     api.get(ApiURL.HOTELS)
       .then(({data}) => dispatch(ActionCreator.loadOffers(data)))

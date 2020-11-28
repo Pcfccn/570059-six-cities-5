@@ -24,6 +24,11 @@ const ActionCreator = {
     payload: userData,
   }),
 
+  loadFavorites: (favoritesData) => ({
+    type: ActionType.LOAD_FAVORITES,
+    payload: favoritesData,
+  }),
+
   loadOffers: (offers) => ({
     type: ActionType.LOAD_OFFERS,
     payload: offers,

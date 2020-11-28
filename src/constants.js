@@ -9,6 +9,7 @@ const ActionType = {
   LOAD_USER_DATA: `LOAD_USER_DATA`,
   LOAD_ONE_OFFER: `LOAD_ONE_OFFER`,
   LOAD_COMMENTS: `LOAD_COMMENTS`,
+  LOAD_FAVORITES: `LOAD_FAVORITES`,
   LOAD_NEARBY_OFFERS: `LOAD_NEARBY_OFFERS`,
   SET_RATING: `SET_RATING`,
   ENTER_TEXT: `ENTER_TEXT`,
@@ -24,6 +25,7 @@ const Path = {
 const ApiURL = {
   LOGIN: `/login`,
   HOTELS: `/hotels`,
+  FAVORITES: `/favorite`,
   getUrlById: (id) => (`/hotels/${id}`),
   getUrlNearbyById: (id) => (`/hotels/${id}/nearby`),
   getUrlCommentsById: (id) => (`/comments/${id}`),

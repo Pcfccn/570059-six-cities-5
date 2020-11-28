@@ -45,12 +45,6 @@ BookmarksButton.propTypes = {
   addToBookmarks: PropTypes.func.isRequired,
 };
 
-
-// const mapStateToProps = ({STATE}) => ({
-//   rating: STATE.userComment.rating,
-//   text: STATE.userComment.text,
-// });
-
 const mapDispatchToProps = (dispatch) => ({
   addToBookmarks(id, status) {
     dispatch(ApiActionCreator.postFavorite(id, status));
