@@ -227,7 +227,8 @@ const adaptedOffers = {
       location: [50.839557, 4.346697],
       zoom: 16
     }
-  ]
+  ],
+  favorites: [],
 };
 
 const api = createAPI(() => {});
@@ -238,6 +239,7 @@ describe(`offer-data reducer work correctly`, () => {
       offers: [],
       comments: [],
       nearbyOffers: [],
+      favorites: [],
     });
   });
 
@@ -256,6 +258,7 @@ describe(`offer-data reducer work correctly`, () => {
       payload: offers[0],
     })).toEqual({
       comments: [],
+      favorites: [],
       nearbyOffers: [],
       offers: [adaptedOffers.offers[0]]
     });
@@ -266,7 +269,7 @@ describe(`offer-data reducer work correctly`, () => {
       type: ActionType.LOAD_COMMENTS,
       payload: [{}, {}],
     })).toEqual(
-        {"comments": [{}, {}], "nearbyOffers": [], "offers": []}
+        {"comments": [{}, {}], "nearbyOffers": [], "offers": [], "favorites": []}
     );
   });
 
@@ -276,6 +279,7 @@ describe(`offer-data reducer work correctly`, () => {
       payload: offers,
     })).toEqual({
       comments: [],
+      favorites: [],
       nearbyOffers: adaptedOffers.offers,
       offers: []
     });

@@ -1,11 +1,11 @@
 import React from "react";
-import Favorites from "./favorites";
 import {Provider} from "react-redux";
-import renderer from "react-test-renderer";
-import {AuthorizationStatus, SortType} from "../../constants";
-import configureMockStore from "redux-mock-store";
 import {Router} from "react-router-dom";
+import renderer from "react-test-renderer";
 import browserHistory from "../../brouser-history";
+import {AuthorizationStatus, SortType} from "../../constants";
+import FavoritesOfferCard from "./favorite-offer-card";
+import configureMockStore from 'redux-mock-store';
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -72,7 +72,7 @@ beforeEach(() => {
   mockState = {
     USER: {
       authorizationStatus: AuthorizationStatus.AUTH,
-      email: `sdf@mail.ri`,
+      email: `sdf@mail.ri`
     },
     STATE: {
       city: `Amsterdam`,
@@ -83,23 +83,23 @@ beforeEach(() => {
       sortType: SortType.POPULAR_DESC,
     },
     DATA: {
-      offers: getOffersMock(5),
-      favorites: getOffersMock(5),
-    },
+      offers: getOffersMock(5)
+    }
   };
 });
 
-it(`Should Favorites render correctly`, () => {
+it(`Should FavoritesOfferCard render correctly`, () => {
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
   const tree = renderer
     .create(
         <Provider store={store}>
           <Router history={browserHistory}>
-            <Favorites />
-          </Router>
-        </Provider>
-    )
+            <FavoritesOfferCard
+              favotiteOffer={getOffersMock(1)}
+              offer={getOffersMock(1)}
+            />          </Router>
+        </Provider>)
     .toJSON();
 
   expect(tree).toMatchSnapshot();
