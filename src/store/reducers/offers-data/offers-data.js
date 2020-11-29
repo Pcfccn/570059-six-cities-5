@@ -1,4 +1,4 @@
-import {extend} from "../../../utils/common";
+import {extend, sortComments} from "../../../utils/common";
 import {ActionType} from "../../../constants";
 import {adaptDataToOffers} from "../../../services/adapter";
 
@@ -20,12 +20,21 @@ const offersData = (state = initialState, action) => {
     case ActionType.LOAD_ONE_OFFER:
       return extend(
           state,
-          {offers: state.offers.filter((offer) => offer.id !== action.payload.id)
-          .concat(adaptDataToOffers([action.payload]))
+          {offers: state.offers.map((offer) => {
+            if (offer.id !== action.payload.id) {
+              return offer;
+            } else {
+              return adaptDataToOffers([action.payload])[0];
+            }
+          })
           });
 
     case ActionType.LOAD_COMMENTS:
-      return extend(state, {comments: action.payload});
+      return extend(state, {
+        comments: action.payload
+        .sort((prev, next) => sortComments(prev, next))
+        .slice(0, 10)
+      });
 
     case ActionType.LOAD_NEARBY_OFFERS:
       return extend(state, {nearbyOffers: adaptDataToOffers(action.payload)});

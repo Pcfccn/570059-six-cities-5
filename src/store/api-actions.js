@@ -1,4 +1,4 @@
-import {AuthorizationStatus, Path, ApiURL} from "../constants";
+import {AuthorizationStatus, Path, ApiURL, CommentSendingStatus} from "../constants";
 import {ActionCreator} from "./action";
 
 const ApiActionCreator = {
@@ -54,8 +54,11 @@ const ApiActionCreator = {
       dispatch(ApiActionCreator.fetchComments(id));
       dispatch(ActionCreator.setRating(`0`));
       dispatch(ActionCreator.enterText(``));
+      dispatch(ActionCreator.changeCommentSendingStatus(CommentSendingStatus.DONE));
     })
-    .catch(() => {})
+    .catch(() => {
+      dispatch(ActionCreator.changeCommentSendingStatus(CommentSendingStatus.ERROR));
+    })
   ),
 
   postFavorite: (id, status) => (dispatch, _getState, api) => (

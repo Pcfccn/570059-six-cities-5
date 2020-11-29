@@ -1,4 +1,4 @@
-import {ActionType, cities, SortType} from "../../../constants";
+import {ActionType, cities, CommentSendingStatus, SortType} from "../../../constants";
 import {offers} from "../../../mock/offer";
 import {extend, filterOffersByCity, sortOffers} from "../../../utils/common";
 
@@ -6,7 +6,8 @@ const initialState = {
   city: cities[0],
   sortType: SortType.POPULAR_DESC,
   enteredOffer: {id: ``, location: []},
-  userComment: {rating: `0`, text: ``}
+  userComment: {rating: `0`, text: ``},
+  commentSendingStatus: CommentSendingStatus.DONE,
 };
 
 const stateData = (state = initialState, action) => {
@@ -39,6 +40,9 @@ const stateData = (state = initialState, action) => {
 
     case ActionType.CHANGE_ENTERED_OFFER:
       return (extend(state, {enteredOffer: action.payload.offer}));
+
+    case ActionType.CHANGE_COMMENT_SENDING_STATUS:
+      return (extend(state, {commentSendingStatus: action.payload}));
 
     default:
       return state;

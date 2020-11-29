@@ -13,6 +13,7 @@ const ActionType = {
   LOAD_NEARBY_OFFERS: `LOAD_NEARBY_OFFERS`,
   SET_RATING: `SET_RATING`,
   ENTER_TEXT: `ENTER_TEXT`,
+  CHANGE_COMMENT_SENDING_STATUS: `CHANGE_COMMENT_SENDING_STATUS`,
 };
 
 const Path = {
@@ -66,5 +67,11 @@ const BookmarksButtonType = {
   PLACE_CARD: `PLACE_CARD`,
 };
 
+const CommentSendingStatus = {
+  SENDING: `SENDING`,
+  DONE: `DONE`,
+  ERROR: `ERROR`,
+};
+
 export {ActionType, Path, ApiURL, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
-  MapClassName, cities, SortType, AuthorizationStatus, BookmarksButtonType};
+  MapClassName, cities, SortType, AuthorizationStatus, BookmarksButtonType, CommentSendingStatus};

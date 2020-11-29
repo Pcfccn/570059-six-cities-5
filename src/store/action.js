@@ -19,6 +19,11 @@ const ActionCreator = {
     payload: text,
   }),
 
+  changeCommentSendingStatus: (status) => ({
+    type: ActionType.CHANGE_COMMENT_SENDING_STATUS,
+    payload: status,
+  }),
+
   loadUserData: (userData) => ({
     type: ActionType.LOAD_USER_DATA,
     payload: userData,

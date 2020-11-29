@@ -1,7 +1,7 @@
 import {ActionType, AuthorizationStatus, SortType} from "../constants";
 import {ActionCreator} from "./action";
 
-describe(`Action crator work corectly`, () => {
+describe(`Action creator work correctly`, () => {
   it(`change city`, () => {
     expect(ActionCreator.changeCity(``)).toEqual({
       type: ActionType.CHANGE_CITY,

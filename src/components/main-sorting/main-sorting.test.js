@@ -6,7 +6,7 @@ import {MainSort} from "./main-sorting";
 const noop = () => {};
 
 describe(`MainSorting`, () => {
-  it(`Should render corectly`, () => {
+  it(`Should render correctly`, () => {
     const tree = renderer
     .create(<MainSort
       thisCity={`Paris`}

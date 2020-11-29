@@ -73,7 +73,7 @@ beforeEach(() => {
 });
 
 describe(`offer`, () => {
-  it(`Should render corectly`, () => {
+  it(`Should render correctly`, () => {
     const div = global.document.createElement(`div`);
     global.document.body.appendChild(div);
 

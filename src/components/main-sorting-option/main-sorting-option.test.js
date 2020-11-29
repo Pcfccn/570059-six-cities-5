@@ -6,7 +6,7 @@ import MainSortingOption from "./main-sorting-option";
 const noop = () => {};
 
 describe(`MainSortingOption`, () => {
-  it(`Should render corectly`, () => {
+  it(`Should render correctly`, () => {
     const tree = renderer
     .create(<MainSortingOption
       activeSortType={SortType.POPULAR_DESC}

@@ -60,7 +60,7 @@ beforeEach(() => {
 });
 
 describe(`OfferCard`, () => {
-  it(`Should render corectly`, () => {
+  it(`Should render correctly`, () => {
     const mockStore = configureMockStore();
     const store = mockStore(mockState);
     const tree = renderer
