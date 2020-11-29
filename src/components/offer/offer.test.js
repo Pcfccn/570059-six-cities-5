@@ -1,11 +1,13 @@
 import React from "react";
 import {Provider} from "react-redux";
 import {Router} from "react-router-dom";
-import renderer from "react-test-renderer";
 import browserHistory from "../../brouser-history";
 import {AuthorizationStatus} from "../../constants";
 import {Offer} from "./Offer";
 import configureMockStore from 'redux-mock-store';
+import {configure, mount} from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import toJson from "enzyme-to-json";
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -52,6 +54,8 @@ const getOffersMock = (count) => {
 };
 const noop = () => {};
 
+configure({adapter: new Adapter()});
+
 let mockState;
 beforeEach(() => {
   mockState = {
@@ -70,10 +74,12 @@ beforeEach(() => {
 
 describe(`offer`, () => {
   it(`Should render corectly`, () => {
+    const div = global.document.createElement(`div`);
+    global.document.body.appendChild(div);
+
     const mockStore = configureMockStore();
     const store = mockStore(mockState);
-    const tree = renderer
-    .create(
+    const wrapper = mount(
         <Provider store={store}>
           <Router history={browserHistory}>
             <Offer
@@ -85,9 +91,9 @@ describe(`offer`, () => {
               nearbyOffers={[getOffersMock(1)]}
             />
           </Router>
-        </Provider>)
-    .toJSON();
+        </Provider>,
+        {attachTo: div});
 
-    expect(tree).toMatchSnapshot();
+    expect(toJson(wrapper)).toMatchSnapshot();
   });
 });

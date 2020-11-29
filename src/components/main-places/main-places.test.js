@@ -1,11 +1,13 @@
 import React from "react";
-import renderer from "react-test-renderer";
 import {AuthorizationStatus, SortType} from "../../constants";
 import {MainPlaces} from "./main-places";
 import configureMockStore from 'redux-mock-store';
 import {Provider} from "react-redux";
 import {Router} from "react-router-dom";
 import browserHistory from "../../brouser-history";
+import {configure, mount} from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
+import toJson from "enzyme-to-json";
 
 const getOffersMock = (count) => {
   const templateOffers = Array(count)
@@ -51,6 +53,8 @@ const getOffersMock = (count) => {
   return templateOffers;
 };
 
+configure({adapter: new Adapter()});
+
 let mockState;
 beforeEach(() => {
   mockState = {
@@ -73,22 +77,24 @@ beforeEach(() => {
 });
 
 it(`Should MainPlaces render correctly`, () => {
+  const div = global.document.createElement(`div`);
+  global.document.body.appendChild(div);
+
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
-  const tree = renderer
-    .create(
-        <Provider store={store}>
-          <Router history={browserHistory}>
-            <MainPlaces
-              offers={getOffersMock(5)}
-              city={`Amsterdam`}
-              enteredOfferLocation={[]}
-              enteredOfferId={1}
-              sortType={`type`}
-            />
-          </Router>
-        </Provider>)
-    .toJSON();
+  const wrapper = mount(
+      <Provider store={store}>
+        <Router history={browserHistory}>
+          <MainPlaces
+            offers={getOffersMock(5)}
+            city={`Amsterdam`}
+            enteredOfferLocation={[]}
+            enteredOfferId={1}
+            sortType={`type`}
+          />
+        </Router>
+      </Provider>,
+      {attachTo: div});
 
-  expect(tree).toMatchSnapshot();
+  expect(toJson(wrapper)).toMatchSnapshot();
 });

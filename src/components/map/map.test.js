@@ -1,7 +1,9 @@
+import toJson from "enzyme-to-json";
+import {configure, mount} from "enzyme";
+import Adapter from "enzyme-adapter-react-16";
 import {createBrowserHistory} from "history";
 import React from "react";
 import {Router} from "react-router-dom";
-import renderer from "react-test-renderer";
 import {MapClassName} from "../../constants";
 import MapComponent from "./map";
 
@@ -65,27 +67,30 @@ const getOffersMock = (count) => {
   return templateOffers;
 };
 
+configure({adapter: new Adapter()});
+
 it(`Should Map Component render correctly`, () => {
+  const div = global.document.createElement(`div`);
+  global.document.body.appendChild(div);
+
   const offers = getOffersMock(4);
   const enteredOfferLocation = getOffersMock(1).cityLocation;
   const history = createBrowserHistory();
 
-  const tree = renderer
-    .create(
-        <Router history={history}>
-          <MapComponent
-            key={`key`}
-            className={MapClassName.CITIES}
-            cityLocation={offers[0].cityLocation}
-            zoom={offers[0].cityZoom}
-            pinLocations={offers
+  const wrapper = mount(
+      <Router history={history}>
+        <MapComponent
+          key={`key`}
+          className={MapClassName.CITIES}
+          cityLocation={offers[0].cityLocation}
+          zoom={offers[0].cityZoom}
+          pinLocations={offers
             .map((offer) => offer.location)
             .filter((offerLocation) => offerLocation !== enteredOfferLocation)}
-            chosedPinLocation={enteredOfferLocation}
-          />
-        </Router>
-    )
-    .toJSON();
+          chosedPinLocation={enteredOfferLocation}
+        />
+      </Router>,
+      {attachTo: div});
 
-  expect(tree).toMatchSnapshot();
+  expect(toJson(wrapper)).toMatchSnapshot();
 });
