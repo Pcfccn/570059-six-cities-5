@@ -62,5 +62,5 @@ MainSort.propTypes = {
 };
 
 const withOpenSortMainSort = withSortMenuOpen(MainSort);
-export {withOpenSortMainSort};
+export {MainSort};
 export default connect(mapStateToProps, mapDispatchToProps)(withOpenSortMainSort);

@@ -33,4 +33,15 @@ const sortOffers = (cityOffers, sortType) => {
   }
 };
 
-export {getOffer, getReviews, getWidthForRatingStar, extend, filterOffersByCity, sortOffers};
+const sortComments = (prev, next) => {
+  switch (true) {
+    case prev.date > next.date:
+      return -1;
+    case prev.date < next.date:
+      return 1;
+    default:
+      return 0;
+  }
+};
+
+export {getOffer, getReviews, getWidthForRatingStar, extend, filterOffersByCity, sortOffers, sortComments};

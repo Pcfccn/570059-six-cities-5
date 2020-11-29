@@ -5,6 +5,7 @@ import {PropTypes} from "prop-types";
 class MapComponent extends PureComponent {
   constructor(props) {
     super(props);
+    this.myRef = React.createRef();
   }
 
   componentDidMount() {

@@ -9,9 +9,11 @@ const ActionType = {
   LOAD_USER_DATA: `LOAD_USER_DATA`,
   LOAD_ONE_OFFER: `LOAD_ONE_OFFER`,
   LOAD_COMMENTS: `LOAD_COMMENTS`,
+  LOAD_FAVORITES: `LOAD_FAVORITES`,
   LOAD_NEARBY_OFFERS: `LOAD_NEARBY_OFFERS`,
   SET_RATING: `SET_RATING`,
   ENTER_TEXT: `ENTER_TEXT`,
+  CHANGE_COMMENT_SENDING_STATUS: `CHANGE_COMMENT_SENDING_STATUS`,
 };
 
 const Path = {
@@ -24,9 +26,11 @@ const Path = {
 const ApiURL = {
   LOGIN: `/login`,
   HOTELS: `/hotels`,
+  FAVORITES: `/favorite`,
   getUrlById: (id) => (`/hotels/${id}`),
   getUrlNearbyById: (id) => (`/hotels/${id}/nearby`),
   getUrlCommentsById: (id) => (`/comments/${id}`),
+  getUrlFavoriteStatus: (id, status) => (`/favorite/${id}/${status}`),
 };
 
 const ratingStars = [5, 4, 3, 2, 1];
@@ -58,5 +62,16 @@ const AuthorizationStatus = {
   NO_AUTH: `NO_AUTH`,
 };
 
+const BookmarksButtonType = {
+  PROPERTY: `PROPERTY`,
+  PLACE_CARD: `PLACE_CARD`,
+};
+
+const CommentSendingStatus = {
+  SENDING: `SENDING`,
+  DONE: `DONE`,
+  ERROR: `ERROR`,
+};
+
 export {ActionType, Path, ApiURL, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
-  MapClassName, cities, SortType, AuthorizationStatus};
+  MapClassName, cities, SortType, AuthorizationStatus, BookmarksButtonType, CommentSendingStatus};

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should Inside render correctly 1`] = `
+Array [
+  <li
+    className="property__inside-item"
+  >
+    a
+  </li>,
+  <li
+    className="property__inside-item"
+  >
+    b
+  </li>,
+]
+`;

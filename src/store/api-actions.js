@@ -1,7 +1,13 @@
-import {AuthorizationStatus, Path, ApiURL} from "../constants";
+import {AuthorizationStatus, Path, ApiURL, CommentSendingStatus} from "../constants";
 import {ActionCreator} from "./action";
 
 const ApiActionCreator = {
+  fetchFavorites: () => (dispatch, _getState, api) => (
+    api.get(ApiURL.FAVORITES)
+      .then(({data}) => dispatch(ActionCreator.loadFavorites(data)))
+      .catch(() => {})
+  ),
+
   fetchOfferList: () => (dispatch, _getState, api) => (
     api.get(ApiURL.HOTELS)
       .then(({data}) => dispatch(ActionCreator.loadOffers(data)))
@@ -48,6 +54,18 @@ const ApiActionCreator = {
       dispatch(ApiActionCreator.fetchComments(id));
       dispatch(ActionCreator.setRating(`0`));
       dispatch(ActionCreator.enterText(``));
+      dispatch(ActionCreator.changeCommentSendingStatus(CommentSendingStatus.DONE));
+    })
+    .catch(() => {
+      dispatch(ActionCreator.changeCommentSendingStatus(CommentSendingStatus.ERROR));
+    })
+  ),
+
+  postFavorite: (id, status) => (dispatch, _getState, api) => (
+    api
+    .post(ApiURL.getUrlFavoriteStatus(id, status))
+    .then((data) => {
+      dispatch(ActionCreator.loadOneOffer(data.data));
     })
     .catch(() => {})
   ),

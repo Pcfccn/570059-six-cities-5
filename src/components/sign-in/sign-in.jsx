@@ -12,8 +12,8 @@ const SignIn = ({onSubmit}) => {
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
     onSubmit({
-      email: emailRef.current.value,
-      password: passwordRef.current.value
+      email: emailRef.current ? emailRef.current.value : ``,
+      password: passwordRef.current ? passwordRef.current.value : ``
     });
   };
 
@@ -38,7 +38,7 @@ const SignIn = ({onSubmit}) => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  required=""
+                  required={true}
                   ref={emailRef}
                 />
               </div>
@@ -48,7 +48,7 @@ const SignIn = ({onSubmit}) => {
                   className="login__input form__input"
                   type="password" name="password"
                   placeholder="Password"
-                  required=""
+                  required={true}
                   ref={passwordRef}
                 />
               </div>

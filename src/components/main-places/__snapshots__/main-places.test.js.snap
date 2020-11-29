@@ -1,0 +1,2644 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should MainPlaces render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <MainPlaces
+      city="Amsterdam"
+      enteredOfferId={1}
+      enteredOfferLocation={Array []}
+      offers={
+        Array [
+          Object {
+            "adults": 4,
+            "bedrooms": 3,
+            "city": "Amsterdam",
+            "cityLocation": Array [
+              52.369553943508,
+              4.85309666406198,
+            ],
+            "cityZoom": 10,
+            "host": Object {
+              "avatar": "/img/avatar-angelina.jpg",
+              "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+              "name": "Anagelina",
+              "pro": true,
+            },
+            "id": 1,
+            "image": Array [
+              "/img/apartment-01.jpg",
+              "/img/apartment-02.jpg",
+              "/img/apartment-03.jpg",
+              "/img/room.jpg",
+              "/img/studio-01.jpg",
+              "/img/studio-photos.jpg",
+            ],
+            "inside": Array [
+              "Wi-Fi",
+              "Washing machine",
+              "Towels",
+              "Heating",
+              "Coffee machine",
+              "Baby seat",
+              "Kitchen",
+              "Dishwasher",
+              "whatewer you want",
+            ],
+            "isInBookmarks": true,
+            "isPremium": true,
+            "location": Array [
+              52.3909553943508,
+              4.85309666406198,
+            ],
+            "name": "Beautiful & luxurious studio",
+            "previewImage": "/img/avatar-angelina.jpg",
+            "price": Object {
+              "period": "night",
+              "value": 1234,
+            },
+            "rating": 3.5,
+            "reviews": Array [
+              2134,
+              2135,
+            ],
+            "type": "Apartament",
+          },
+          Object {
+            "adults": 4,
+            "bedrooms": 3,
+            "city": "Amsterdam",
+            "cityLocation": Array [
+              52.369553943508,
+              4.85309666406198,
+            ],
+            "cityZoom": 10,
+            "host": Object {
+              "avatar": "/img/avatar-angelina.jpg",
+              "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+              "name": "Anagelina",
+              "pro": true,
+            },
+            "id": 2,
+            "image": Array [
+              "/img/apartment-01.jpg",
+              "/img/apartment-02.jpg",
+              "/img/apartment-03.jpg",
+              "/img/room.jpg",
+              "/img/studio-01.jpg",
+              "/img/studio-photos.jpg",
+            ],
+            "inside": Array [
+              "Wi-Fi",
+              "Washing machine",
+              "Towels",
+              "Heating",
+              "Coffee machine",
+              "Baby seat",
+              "Kitchen",
+              "Dishwasher",
+              "whatewer you want",
+            ],
+            "isInBookmarks": true,
+            "isPremium": true,
+            "location": Array [
+              52.3909553943508,
+              4.85309666406198,
+            ],
+            "name": "Beautiful & luxurious studio",
+            "previewImage": "/img/avatar-angelina.jpg",
+            "price": Object {
+              "period": "night",
+              "value": 1234,
+            },
+            "rating": 3.5,
+            "reviews": Array [
+              2135,
+              2136,
+            ],
+            "type": "Apartament",
+          },
+          Object {
+            "adults": 4,
+            "bedrooms": 3,
+            "city": "Amsterdam",
+            "cityLocation": Array [
+              52.369553943508,
+              4.85309666406198,
+            ],
+            "cityZoom": 10,
+            "host": Object {
+              "avatar": "/img/avatar-angelina.jpg",
+              "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+              "name": "Anagelina",
+              "pro": true,
+            },
+            "id": 3,
+            "image": Array [
+              "/img/apartment-01.jpg",
+              "/img/apartment-02.jpg",
+              "/img/apartment-03.jpg",
+              "/img/room.jpg",
+              "/img/studio-01.jpg",
+              "/img/studio-photos.jpg",
+            ],
+            "inside": Array [
+              "Wi-Fi",
+              "Washing machine",
+              "Towels",
+              "Heating",
+              "Coffee machine",
+              "Baby seat",
+              "Kitchen",
+              "Dishwasher",
+              "whatewer you want",
+            ],
+            "isInBookmarks": true,
+            "isPremium": true,
+            "location": Array [
+              52.3909553943508,
+              4.85309666406198,
+            ],
+            "name": "Beautiful & luxurious studio",
+            "previewImage": "/img/avatar-angelina.jpg",
+            "price": Object {
+              "period": "night",
+              "value": 1234,
+            },
+            "rating": 3.5,
+            "reviews": Array [
+              2136,
+              2137,
+            ],
+            "type": "Apartament",
+          },
+          Object {
+            "adults": 4,
+            "bedrooms": 3,
+            "city": "Amsterdam",
+            "cityLocation": Array [
+              52.369553943508,
+              4.85309666406198,
+            ],
+            "cityZoom": 10,
+            "host": Object {
+              "avatar": "/img/avatar-angelina.jpg",
+              "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+              "name": "Anagelina",
+              "pro": true,
+            },
+            "id": 4,
+            "image": Array [
+              "/img/apartment-01.jpg",
+              "/img/apartment-02.jpg",
+              "/img/apartment-03.jpg",
+              "/img/room.jpg",
+              "/img/studio-01.jpg",
+              "/img/studio-photos.jpg",
+            ],
+            "inside": Array [
+              "Wi-Fi",
+              "Washing machine",
+              "Towels",
+              "Heating",
+              "Coffee machine",
+              "Baby seat",
+              "Kitchen",
+              "Dishwasher",
+              "whatewer you want",
+            ],
+            "isInBookmarks": true,
+            "isPremium": true,
+            "location": Array [
+              52.3909553943508,
+              4.85309666406198,
+            ],
+            "name": "Beautiful & luxurious studio",
+            "previewImage": "/img/avatar-angelina.jpg",
+            "price": Object {
+              "period": "night",
+              "value": 1234,
+            },
+            "rating": 3.5,
+            "reviews": Array [
+              2137,
+              2138,
+            ],
+            "type": "Apartament",
+          },
+          Object {
+            "adults": 4,
+            "bedrooms": 3,
+            "city": "Amsterdam",
+            "cityLocation": Array [
+              52.369553943508,
+              4.85309666406198,
+            ],
+            "cityZoom": 10,
+            "host": Object {
+              "avatar": "/img/avatar-angelina.jpg",
+              "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+              "name": "Anagelina",
+              "pro": true,
+            },
+            "id": 5,
+            "image": Array [
+              "/img/apartment-01.jpg",
+              "/img/apartment-02.jpg",
+              "/img/apartment-03.jpg",
+              "/img/room.jpg",
+              "/img/studio-01.jpg",
+              "/img/studio-photos.jpg",
+            ],
+            "inside": Array [
+              "Wi-Fi",
+              "Washing machine",
+              "Towels",
+              "Heating",
+              "Coffee machine",
+              "Baby seat",
+              "Kitchen",
+              "Dishwasher",
+              "whatewer you want",
+            ],
+            "isInBookmarks": true,
+            "isPremium": true,
+            "location": Array [
+              52.3909553943508,
+              4.85309666406198,
+            ],
+            "name": "Beautiful & luxurious studio",
+            "previewImage": "/img/avatar-angelina.jpg",
+            "price": Object {
+              "period": "night",
+              "value": 1234,
+            },
+            "rating": 3.5,
+            "reviews": Array [
+              2138,
+              2139,
+            ],
+            "type": "Apartament",
+          },
+        ]
+      }
+      sortType="type"
+    >
+      <div
+        className="cities"
+      >
+        <div
+          className="cities__places-container container"
+        >
+          <section
+            className="cities__places places"
+          >
+            <h2
+              className="visually-hidden"
+            >
+              Places
+            </h2>
+            <b
+              className="places__found"
+            >
+              5 places to stay in Amsterdam
+            </b>
+            <Connect(WithToggle)>
+              <WithToggle
+                changeSortType={[Function]}
+                city="Amsterdam"
+                offers={
+                  Array [
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 1,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2134,
+                        2135,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 2,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2135,
+                        2136,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 3,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2136,
+                        2137,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 4,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2137,
+                        2138,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 5,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2138,
+                        2139,
+                      ],
+                      "type": "Apartament",
+                    },
+                  ]
+                }
+                sortType="Popular"
+              >
+                <MainSort
+                  changeSortType={[Function]}
+                  city="Amsterdam"
+                  handleToggleClick={[Function]}
+                  isActive={false}
+                  offers={
+                    Array [
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 1,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2134,
+                          2135,
+                        ],
+                        "type": "Apartament",
+                      },
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 2,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2135,
+                          2136,
+                        ],
+                        "type": "Apartament",
+                      },
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 3,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2136,
+                          2137,
+                        ],
+                        "type": "Apartament",
+                      },
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 4,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2137,
+                          2138,
+                        ],
+                        "type": "Apartament",
+                      },
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 5,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2138,
+                          2139,
+                        ],
+                        "type": "Apartament",
+                      },
+                    ]
+                  }
+                  sortType="Popular"
+                >
+                  <form
+                    action="#"
+                    className="places__sorting"
+                    method="get"
+                  >
+                    <span
+                      className="places__sorting-caption"
+                    >
+                      Sort by 
+                    </span>
+                    <span
+                      className="places__sorting-type"
+                      onClick={[Function]}
+                      tabIndex="0"
+                    >
+                      Popular
+                      <svg
+                        className="places__sorting-arrow"
+                        height="4"
+                        width="7"
+                      >
+                        <use
+                          xlinkHref="#icon-arrow-select"
+                        />
+                      </svg>
+                    </span>
+                    <ul
+                      className="places__options places__options--custom "
+                    >
+                      <MainSortingOptionsList
+                        activeSortType="Popular"
+                        changeType={[Function]}
+                      >
+                        <MainSortingOption
+                          activeSortType="Popular"
+                          changeType={[Function]}
+                          key="Price: low to high"
+                          type="Price: low to high"
+                        >
+                          <li
+                            className="places__option "
+                            onClick={[Function]}
+                            tabIndex="0"
+                          >
+                            Price: low to high
+                          </li>
+                        </MainSortingOption>
+                        <MainSortingOption
+                          activeSortType="Popular"
+                          changeType={[Function]}
+                          key="Price: high to low"
+                          type="Price: high to low"
+                        >
+                          <li
+                            className="places__option "
+                            onClick={[Function]}
+                            tabIndex="0"
+                          >
+                            Price: high to low
+                          </li>
+                        </MainSortingOption>
+                        <MainSortingOption
+                          activeSortType="Popular"
+                          changeType={[Function]}
+                          key="Popular"
+                          type="Popular"
+                        >
+                          <li
+                            className="places__option places__option--active"
+                            onClick={[Function]}
+                            tabIndex="0"
+                          >
+                            Popular
+                          </li>
+                        </MainSortingOption>
+                        <MainSortingOption
+                          activeSortType="Popular"
+                          changeType={[Function]}
+                          key="Top rated first"
+                          type="Top rated first"
+                        >
+                          <li
+                            className="places__option "
+                            onClick={[Function]}
+                            tabIndex="0"
+                          >
+                            Top rated first
+                          </li>
+                        </MainSortingOption>
+                      </MainSortingOptionsList>
+                    </ul>
+                  </form>
+                </MainSort>
+              </WithToggle>
+            </Connect(WithToggle)>
+            <Connect(OfferList)
+              key="type"
+              offerCards={
+                Array [
+                  Object {
+                    "adults": 4,
+                    "bedrooms": 3,
+                    "city": "Amsterdam",
+                    "cityLocation": Array [
+                      52.369553943508,
+                      4.85309666406198,
+                    ],
+                    "cityZoom": 10,
+                    "host": Object {
+                      "avatar": "/img/avatar-angelina.jpg",
+                      "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                      "name": "Anagelina",
+                      "pro": true,
+                    },
+                    "id": 1,
+                    "image": Array [
+                      "/img/apartment-01.jpg",
+                      "/img/apartment-02.jpg",
+                      "/img/apartment-03.jpg",
+                      "/img/room.jpg",
+                      "/img/studio-01.jpg",
+                      "/img/studio-photos.jpg",
+                    ],
+                    "inside": Array [
+                      "Wi-Fi",
+                      "Washing machine",
+                      "Towels",
+                      "Heating",
+                      "Coffee machine",
+                      "Baby seat",
+                      "Kitchen",
+                      "Dishwasher",
+                      "whatewer you want",
+                    ],
+                    "isInBookmarks": true,
+                    "isPremium": true,
+                    "location": Array [
+                      52.3909553943508,
+                      4.85309666406198,
+                    ],
+                    "name": "Beautiful & luxurious studio",
+                    "previewImage": "/img/avatar-angelina.jpg",
+                    "price": Object {
+                      "period": "night",
+                      "value": 1234,
+                    },
+                    "rating": 3.5,
+                    "reviews": Array [
+                      2134,
+                      2135,
+                    ],
+                    "type": "Apartament",
+                  },
+                  Object {
+                    "adults": 4,
+                    "bedrooms": 3,
+                    "city": "Amsterdam",
+                    "cityLocation": Array [
+                      52.369553943508,
+                      4.85309666406198,
+                    ],
+                    "cityZoom": 10,
+                    "host": Object {
+                      "avatar": "/img/avatar-angelina.jpg",
+                      "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                      "name": "Anagelina",
+                      "pro": true,
+                    },
+                    "id": 2,
+                    "image": Array [
+                      "/img/apartment-01.jpg",
+                      "/img/apartment-02.jpg",
+                      "/img/apartment-03.jpg",
+                      "/img/room.jpg",
+                      "/img/studio-01.jpg",
+                      "/img/studio-photos.jpg",
+                    ],
+                    "inside": Array [
+                      "Wi-Fi",
+                      "Washing machine",
+                      "Towels",
+                      "Heating",
+                      "Coffee machine",
+                      "Baby seat",
+                      "Kitchen",
+                      "Dishwasher",
+                      "whatewer you want",
+                    ],
+                    "isInBookmarks": true,
+                    "isPremium": true,
+                    "location": Array [
+                      52.3909553943508,
+                      4.85309666406198,
+                    ],
+                    "name": "Beautiful & luxurious studio",
+                    "previewImage": "/img/avatar-angelina.jpg",
+                    "price": Object {
+                      "period": "night",
+                      "value": 1234,
+                    },
+                    "rating": 3.5,
+                    "reviews": Array [
+                      2135,
+                      2136,
+                    ],
+                    "type": "Apartament",
+                  },
+                  Object {
+                    "adults": 4,
+                    "bedrooms": 3,
+                    "city": "Amsterdam",
+                    "cityLocation": Array [
+                      52.369553943508,
+                      4.85309666406198,
+                    ],
+                    "cityZoom": 10,
+                    "host": Object {
+                      "avatar": "/img/avatar-angelina.jpg",
+                      "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                      "name": "Anagelina",
+                      "pro": true,
+                    },
+                    "id": 3,
+                    "image": Array [
+                      "/img/apartment-01.jpg",
+                      "/img/apartment-02.jpg",
+                      "/img/apartment-03.jpg",
+                      "/img/room.jpg",
+                      "/img/studio-01.jpg",
+                      "/img/studio-photos.jpg",
+                    ],
+                    "inside": Array [
+                      "Wi-Fi",
+                      "Washing machine",
+                      "Towels",
+                      "Heating",
+                      "Coffee machine",
+                      "Baby seat",
+                      "Kitchen",
+                      "Dishwasher",
+                      "whatewer you want",
+                    ],
+                    "isInBookmarks": true,
+                    "isPremium": true,
+                    "location": Array [
+                      52.3909553943508,
+                      4.85309666406198,
+                    ],
+                    "name": "Beautiful & luxurious studio",
+                    "previewImage": "/img/avatar-angelina.jpg",
+                    "price": Object {
+                      "period": "night",
+                      "value": 1234,
+                    },
+                    "rating": 3.5,
+                    "reviews": Array [
+                      2136,
+                      2137,
+                    ],
+                    "type": "Apartament",
+                  },
+                  Object {
+                    "adults": 4,
+                    "bedrooms": 3,
+                    "city": "Amsterdam",
+                    "cityLocation": Array [
+                      52.369553943508,
+                      4.85309666406198,
+                    ],
+                    "cityZoom": 10,
+                    "host": Object {
+                      "avatar": "/img/avatar-angelina.jpg",
+                      "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                      "name": "Anagelina",
+                      "pro": true,
+                    },
+                    "id": 4,
+                    "image": Array [
+                      "/img/apartment-01.jpg",
+                      "/img/apartment-02.jpg",
+                      "/img/apartment-03.jpg",
+                      "/img/room.jpg",
+                      "/img/studio-01.jpg",
+                      "/img/studio-photos.jpg",
+                    ],
+                    "inside": Array [
+                      "Wi-Fi",
+                      "Washing machine",
+                      "Towels",
+                      "Heating",
+                      "Coffee machine",
+                      "Baby seat",
+                      "Kitchen",
+                      "Dishwasher",
+                      "whatewer you want",
+                    ],
+                    "isInBookmarks": true,
+                    "isPremium": true,
+                    "location": Array [
+                      52.3909553943508,
+                      4.85309666406198,
+                    ],
+                    "name": "Beautiful & luxurious studio",
+                    "previewImage": "/img/avatar-angelina.jpg",
+                    "price": Object {
+                      "period": "night",
+                      "value": 1234,
+                    },
+                    "rating": 3.5,
+                    "reviews": Array [
+                      2137,
+                      2138,
+                    ],
+                    "type": "Apartament",
+                  },
+                  Object {
+                    "adults": 4,
+                    "bedrooms": 3,
+                    "city": "Amsterdam",
+                    "cityLocation": Array [
+                      52.369553943508,
+                      4.85309666406198,
+                    ],
+                    "cityZoom": 10,
+                    "host": Object {
+                      "avatar": "/img/avatar-angelina.jpg",
+                      "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                      "name": "Anagelina",
+                      "pro": true,
+                    },
+                    "id": 5,
+                    "image": Array [
+                      "/img/apartment-01.jpg",
+                      "/img/apartment-02.jpg",
+                      "/img/apartment-03.jpg",
+                      "/img/room.jpg",
+                      "/img/studio-01.jpg",
+                      "/img/studio-photos.jpg",
+                    ],
+                    "inside": Array [
+                      "Wi-Fi",
+                      "Washing machine",
+                      "Towels",
+                      "Heating",
+                      "Coffee machine",
+                      "Baby seat",
+                      "Kitchen",
+                      "Dishwasher",
+                      "whatewer you want",
+                    ],
+                    "isInBookmarks": true,
+                    "isPremium": true,
+                    "location": Array [
+                      52.3909553943508,
+                      4.85309666406198,
+                    ],
+                    "name": "Beautiful & luxurious studio",
+                    "previewImage": "/img/avatar-angelina.jpg",
+                    "price": Object {
+                      "period": "night",
+                      "value": 1234,
+                    },
+                    "rating": 3.5,
+                    "reviews": Array [
+                      2138,
+                      2139,
+                    ],
+                    "type": "Apartament",
+                  },
+                ]
+              }
+            >
+              <OfferList
+                changeEnteredOffer={[Function]}
+                offerCards={
+                  Array [
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 1,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2134,
+                        2135,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 2,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2135,
+                        2136,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 3,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2136,
+                        2137,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 4,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2137,
+                        2138,
+                      ],
+                      "type": "Apartament",
+                    },
+                    Object {
+                      "adults": 4,
+                      "bedrooms": 3,
+                      "city": "Amsterdam",
+                      "cityLocation": Array [
+                        52.369553943508,
+                        4.85309666406198,
+                      ],
+                      "cityZoom": 10,
+                      "host": Object {
+                        "avatar": "/img/avatar-angelina.jpg",
+                        "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                        "name": "Anagelina",
+                        "pro": true,
+                      },
+                      "id": 5,
+                      "image": Array [
+                        "/img/apartment-01.jpg",
+                        "/img/apartment-02.jpg",
+                        "/img/apartment-03.jpg",
+                        "/img/room.jpg",
+                        "/img/studio-01.jpg",
+                        "/img/studio-photos.jpg",
+                      ],
+                      "inside": Array [
+                        "Wi-Fi",
+                        "Washing machine",
+                        "Towels",
+                        "Heating",
+                        "Coffee machine",
+                        "Baby seat",
+                        "Kitchen",
+                        "Dishwasher",
+                        "whatewer you want",
+                      ],
+                      "isInBookmarks": true,
+                      "isPremium": true,
+                      "location": Array [
+                        52.3909553943508,
+                        4.85309666406198,
+                      ],
+                      "name": "Beautiful & luxurious studio",
+                      "previewImage": "/img/avatar-angelina.jpg",
+                      "price": Object {
+                        "period": "night",
+                        "value": 1234,
+                      },
+                      "rating": 3.5,
+                      "reviews": Array [
+                        2138,
+                        2139,
+                      ],
+                      "type": "Apartament",
+                    },
+                  ]
+                }
+              >
+                <div
+                  className="cities__places-list places__list tabs__content"
+                >
+                  <OfferCard
+                    className="cities__place-card"
+                    key="1"
+                    offer={
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 1,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2134,
+                          2135,
+                        ],
+                        "type": "Apartament",
+                      }
+                    }
+                    onMouseEnterCard={[Function]}
+                  >
+                    <article
+                      className="cities__place-card place-card"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="place-card__mark"
+                      >
+                        <span>
+                          Premium
+                        </span>
+                      </div>
+                      <div
+                        className="cities__image-wrapper place-card__image-wrapper"
+                      >
+                        <Link
+                          to="/offer/1"
+                        >
+                          <LinkAnchor
+                            href="/offer/1"
+                            navigate={[Function]}
+                          >
+                            <a
+                              href="/offer/1"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="Place image"
+                                className="place-card__image"
+                                height="200"
+                                src="/img/avatar-angelina.jpg"
+                                width="260"
+                              />
+                            </a>
+                          </LinkAnchor>
+                        </Link>
+                      </div>
+                      <div
+                        className="place-card__info"
+                      >
+                        <div
+                          className="place-card__price-wrapper"
+                        >
+                          <div
+                            className="place-card__price"
+                          >
+                            <b
+                              className="place-card__price-value"
+                            >
+                              €
+                              1234
+                              .
+                            </b>
+                            <span
+                              className="place-card__price-text"
+                            >
+                              / 
+                              night
+                            </span>
+                          </div>
+                          <Connect(BookmarksButton)
+                            id={1}
+                            isInBookmarks={true}
+                            type="PLACE_CARD"
+                          >
+                            <BookmarksButton
+                              addToBookmarks={[Function]}
+                              id={1}
+                              isInBookmarks={true}
+                              type="PLACE_CARD"
+                            >
+                              <button
+                                className="place-card__bookmark-button place-card__bookmark-button--active button"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  className="place-card__bookmark-icon"
+                                  height={19}
+                                  width={18}
+                                >
+                                  <use
+                                    xlinkHref="#icon-bookmark"
+                                  />
+                                </svg>
+                                <span
+                                  className="visually-hidden"
+                                >
+                                  To bookmarks
+                                </span>
+                              </button>
+                            </BookmarksButton>
+                          </Connect(BookmarksButton)>
+                        </div>
+                        <div
+                          className="place-card__rating rating"
+                        >
+                          <div
+                            className="place-card__stars rating__stars"
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "width": "70%",
+                                }
+                              }
+                            />
+                            <span
+                              className="visually-hidden"
+                            >
+                              Rating
+                            </span>
+                          </div>
+                        </div>
+                        <h2
+                          className="place-card__name"
+                        >
+                          <Link
+                            to="/offer/1"
+                          >
+                            <LinkAnchor
+                              href="/offer/1"
+                              navigate={[Function]}
+                            >
+                              <a
+                                href="/offer/1"
+                                onClick={[Function]}
+                              >
+                                Beautiful & luxurious studio
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </h2>
+                        <p
+                          className="place-card__type"
+                        >
+                          Apartament
+                        </p>
+                      </div>
+                    </article>
+                  </OfferCard>
+                  <OfferCard
+                    className="cities__place-card"
+                    key="2"
+                    offer={
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 2,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2135,
+                          2136,
+                        ],
+                        "type": "Apartament",
+                      }
+                    }
+                    onMouseEnterCard={[Function]}
+                  >
+                    <article
+                      className="cities__place-card place-card"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="place-card__mark"
+                      >
+                        <span>
+                          Premium
+                        </span>
+                      </div>
+                      <div
+                        className="cities__image-wrapper place-card__image-wrapper"
+                      >
+                        <Link
+                          to="/offer/2"
+                        >
+                          <LinkAnchor
+                            href="/offer/2"
+                            navigate={[Function]}
+                          >
+                            <a
+                              href="/offer/2"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="Place image"
+                                className="place-card__image"
+                                height="200"
+                                src="/img/avatar-angelina.jpg"
+                                width="260"
+                              />
+                            </a>
+                          </LinkAnchor>
+                        </Link>
+                      </div>
+                      <div
+                        className="place-card__info"
+                      >
+                        <div
+                          className="place-card__price-wrapper"
+                        >
+                          <div
+                            className="place-card__price"
+                          >
+                            <b
+                              className="place-card__price-value"
+                            >
+                              €
+                              1234
+                              .
+                            </b>
+                            <span
+                              className="place-card__price-text"
+                            >
+                              / 
+                              night
+                            </span>
+                          </div>
+                          <Connect(BookmarksButton)
+                            id={2}
+                            isInBookmarks={true}
+                            type="PLACE_CARD"
+                          >
+                            <BookmarksButton
+                              addToBookmarks={[Function]}
+                              id={2}
+                              isInBookmarks={true}
+                              type="PLACE_CARD"
+                            >
+                              <button
+                                className="place-card__bookmark-button place-card__bookmark-button--active button"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  className="place-card__bookmark-icon"
+                                  height={19}
+                                  width={18}
+                                >
+                                  <use
+                                    xlinkHref="#icon-bookmark"
+                                  />
+                                </svg>
+                                <span
+                                  className="visually-hidden"
+                                >
+                                  To bookmarks
+                                </span>
+                              </button>
+                            </BookmarksButton>
+                          </Connect(BookmarksButton)>
+                        </div>
+                        <div
+                          className="place-card__rating rating"
+                        >
+                          <div
+                            className="place-card__stars rating__stars"
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "width": "70%",
+                                }
+                              }
+                            />
+                            <span
+                              className="visually-hidden"
+                            >
+                              Rating
+                            </span>
+                          </div>
+                        </div>
+                        <h2
+                          className="place-card__name"
+                        >
+                          <Link
+                            to="/offer/2"
+                          >
+                            <LinkAnchor
+                              href="/offer/2"
+                              navigate={[Function]}
+                            >
+                              <a
+                                href="/offer/2"
+                                onClick={[Function]}
+                              >
+                                Beautiful & luxurious studio
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </h2>
+                        <p
+                          className="place-card__type"
+                        >
+                          Apartament
+                        </p>
+                      </div>
+                    </article>
+                  </OfferCard>
+                  <OfferCard
+                    className="cities__place-card"
+                    key="3"
+                    offer={
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 3,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2136,
+                          2137,
+                        ],
+                        "type": "Apartament",
+                      }
+                    }
+                    onMouseEnterCard={[Function]}
+                  >
+                    <article
+                      className="cities__place-card place-card"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="place-card__mark"
+                      >
+                        <span>
+                          Premium
+                        </span>
+                      </div>
+                      <div
+                        className="cities__image-wrapper place-card__image-wrapper"
+                      >
+                        <Link
+                          to="/offer/3"
+                        >
+                          <LinkAnchor
+                            href="/offer/3"
+                            navigate={[Function]}
+                          >
+                            <a
+                              href="/offer/3"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="Place image"
+                                className="place-card__image"
+                                height="200"
+                                src="/img/avatar-angelina.jpg"
+                                width="260"
+                              />
+                            </a>
+                          </LinkAnchor>
+                        </Link>
+                      </div>
+                      <div
+                        className="place-card__info"
+                      >
+                        <div
+                          className="place-card__price-wrapper"
+                        >
+                          <div
+                            className="place-card__price"
+                          >
+                            <b
+                              className="place-card__price-value"
+                            >
+                              €
+                              1234
+                              .
+                            </b>
+                            <span
+                              className="place-card__price-text"
+                            >
+                              / 
+                              night
+                            </span>
+                          </div>
+                          <Connect(BookmarksButton)
+                            id={3}
+                            isInBookmarks={true}
+                            type="PLACE_CARD"
+                          >
+                            <BookmarksButton
+                              addToBookmarks={[Function]}
+                              id={3}
+                              isInBookmarks={true}
+                              type="PLACE_CARD"
+                            >
+                              <button
+                                className="place-card__bookmark-button place-card__bookmark-button--active button"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  className="place-card__bookmark-icon"
+                                  height={19}
+                                  width={18}
+                                >
+                                  <use
+                                    xlinkHref="#icon-bookmark"
+                                  />
+                                </svg>
+                                <span
+                                  className="visually-hidden"
+                                >
+                                  To bookmarks
+                                </span>
+                              </button>
+                            </BookmarksButton>
+                          </Connect(BookmarksButton)>
+                        </div>
+                        <div
+                          className="place-card__rating rating"
+                        >
+                          <div
+                            className="place-card__stars rating__stars"
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "width": "70%",
+                                }
+                              }
+                            />
+                            <span
+                              className="visually-hidden"
+                            >
+                              Rating
+                            </span>
+                          </div>
+                        </div>
+                        <h2
+                          className="place-card__name"
+                        >
+                          <Link
+                            to="/offer/3"
+                          >
+                            <LinkAnchor
+                              href="/offer/3"
+                              navigate={[Function]}
+                            >
+                              <a
+                                href="/offer/3"
+                                onClick={[Function]}
+                              >
+                                Beautiful & luxurious studio
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </h2>
+                        <p
+                          className="place-card__type"
+                        >
+                          Apartament
+                        </p>
+                      </div>
+                    </article>
+                  </OfferCard>
+                  <OfferCard
+                    className="cities__place-card"
+                    key="4"
+                    offer={
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 4,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2137,
+                          2138,
+                        ],
+                        "type": "Apartament",
+                      }
+                    }
+                    onMouseEnterCard={[Function]}
+                  >
+                    <article
+                      className="cities__place-card place-card"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="place-card__mark"
+                      >
+                        <span>
+                          Premium
+                        </span>
+                      </div>
+                      <div
+                        className="cities__image-wrapper place-card__image-wrapper"
+                      >
+                        <Link
+                          to="/offer/4"
+                        >
+                          <LinkAnchor
+                            href="/offer/4"
+                            navigate={[Function]}
+                          >
+                            <a
+                              href="/offer/4"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="Place image"
+                                className="place-card__image"
+                                height="200"
+                                src="/img/avatar-angelina.jpg"
+                                width="260"
+                              />
+                            </a>
+                          </LinkAnchor>
+                        </Link>
+                      </div>
+                      <div
+                        className="place-card__info"
+                      >
+                        <div
+                          className="place-card__price-wrapper"
+                        >
+                          <div
+                            className="place-card__price"
+                          >
+                            <b
+                              className="place-card__price-value"
+                            >
+                              €
+                              1234
+                              .
+                            </b>
+                            <span
+                              className="place-card__price-text"
+                            >
+                              / 
+                              night
+                            </span>
+                          </div>
+                          <Connect(BookmarksButton)
+                            id={4}
+                            isInBookmarks={true}
+                            type="PLACE_CARD"
+                          >
+                            <BookmarksButton
+                              addToBookmarks={[Function]}
+                              id={4}
+                              isInBookmarks={true}
+                              type="PLACE_CARD"
+                            >
+                              <button
+                                className="place-card__bookmark-button place-card__bookmark-button--active button"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  className="place-card__bookmark-icon"
+                                  height={19}
+                                  width={18}
+                                >
+                                  <use
+                                    xlinkHref="#icon-bookmark"
+                                  />
+                                </svg>
+                                <span
+                                  className="visually-hidden"
+                                >
+                                  To bookmarks
+                                </span>
+                              </button>
+                            </BookmarksButton>
+                          </Connect(BookmarksButton)>
+                        </div>
+                        <div
+                          className="place-card__rating rating"
+                        >
+                          <div
+                            className="place-card__stars rating__stars"
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "width": "70%",
+                                }
+                              }
+                            />
+                            <span
+                              className="visually-hidden"
+                            >
+                              Rating
+                            </span>
+                          </div>
+                        </div>
+                        <h2
+                          className="place-card__name"
+                        >
+                          <Link
+                            to="/offer/4"
+                          >
+                            <LinkAnchor
+                              href="/offer/4"
+                              navigate={[Function]}
+                            >
+                              <a
+                                href="/offer/4"
+                                onClick={[Function]}
+                              >
+                                Beautiful & luxurious studio
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </h2>
+                        <p
+                          className="place-card__type"
+                        >
+                          Apartament
+                        </p>
+                      </div>
+                    </article>
+                  </OfferCard>
+                  <OfferCard
+                    className="cities__place-card"
+                    key="5"
+                    offer={
+                      Object {
+                        "adults": 4,
+                        "bedrooms": 3,
+                        "city": "Amsterdam",
+                        "cityLocation": Array [
+                          52.369553943508,
+                          4.85309666406198,
+                        ],
+                        "cityZoom": 10,
+                        "host": Object {
+                          "avatar": "/img/avatar-angelina.jpg",
+                          "description": "A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.
+          The building is green and from 18th century.",
+                          "name": "Anagelina",
+                          "pro": true,
+                        },
+                        "id": 5,
+                        "image": Array [
+                          "/img/apartment-01.jpg",
+                          "/img/apartment-02.jpg",
+                          "/img/apartment-03.jpg",
+                          "/img/room.jpg",
+                          "/img/studio-01.jpg",
+                          "/img/studio-photos.jpg",
+                        ],
+                        "inside": Array [
+                          "Wi-Fi",
+                          "Washing machine",
+                          "Towels",
+                          "Heating",
+                          "Coffee machine",
+                          "Baby seat",
+                          "Kitchen",
+                          "Dishwasher",
+                          "whatewer you want",
+                        ],
+                        "isInBookmarks": true,
+                        "isPremium": true,
+                        "location": Array [
+                          52.3909553943508,
+                          4.85309666406198,
+                        ],
+                        "name": "Beautiful & luxurious studio",
+                        "previewImage": "/img/avatar-angelina.jpg",
+                        "price": Object {
+                          "period": "night",
+                          "value": 1234,
+                        },
+                        "rating": 3.5,
+                        "reviews": Array [
+                          2138,
+                          2139,
+                        ],
+                        "type": "Apartament",
+                      }
+                    }
+                    onMouseEnterCard={[Function]}
+                  >
+                    <article
+                      className="cities__place-card place-card"
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                    >
+                      <div
+                        className="place-card__mark"
+                      >
+                        <span>
+                          Premium
+                        </span>
+                      </div>
+                      <div
+                        className="cities__image-wrapper place-card__image-wrapper"
+                      >
+                        <Link
+                          to="/offer/5"
+                        >
+                          <LinkAnchor
+                            href="/offer/5"
+                            navigate={[Function]}
+                          >
+                            <a
+                              href="/offer/5"
+                              onClick={[Function]}
+                            >
+                              <img
+                                alt="Place image"
+                                className="place-card__image"
+                                height="200"
+                                src="/img/avatar-angelina.jpg"
+                                width="260"
+                              />
+                            </a>
+                          </LinkAnchor>
+                        </Link>
+                      </div>
+                      <div
+                        className="place-card__info"
+                      >
+                        <div
+                          className="place-card__price-wrapper"
+                        >
+                          <div
+                            className="place-card__price"
+                          >
+                            <b
+                              className="place-card__price-value"
+                            >
+                              €
+                              1234
+                              .
+                            </b>
+                            <span
+                              className="place-card__price-text"
+                            >
+                              / 
+                              night
+                            </span>
+                          </div>
+                          <Connect(BookmarksButton)
+                            id={5}
+                            isInBookmarks={true}
+                            type="PLACE_CARD"
+                          >
+                            <BookmarksButton
+                              addToBookmarks={[Function]}
+                              id={5}
+                              isInBookmarks={true}
+                              type="PLACE_CARD"
+                            >
+                              <button
+                                className="place-card__bookmark-button place-card__bookmark-button--active button"
+                                onClick={[Function]}
+                                type="button"
+                              >
+                                <svg
+                                  className="place-card__bookmark-icon"
+                                  height={19}
+                                  width={18}
+                                >
+                                  <use
+                                    xlinkHref="#icon-bookmark"
+                                  />
+                                </svg>
+                                <span
+                                  className="visually-hidden"
+                                >
+                                  To bookmarks
+                                </span>
+                              </button>
+                            </BookmarksButton>
+                          </Connect(BookmarksButton)>
+                        </div>
+                        <div
+                          className="place-card__rating rating"
+                        >
+                          <div
+                            className="place-card__stars rating__stars"
+                          >
+                            <span
+                              style={
+                                Object {
+                                  "width": "70%",
+                                }
+                              }
+                            />
+                            <span
+                              className="visually-hidden"
+                            >
+                              Rating
+                            </span>
+                          </div>
+                        </div>
+                        <h2
+                          className="place-card__name"
+                        >
+                          <Link
+                            to="/offer/5"
+                          >
+                            <LinkAnchor
+                              href="/offer/5"
+                              navigate={[Function]}
+                            >
+                              <a
+                                href="/offer/5"
+                                onClick={[Function]}
+                              >
+                                Beautiful & luxurious studio
+                              </a>
+                            </LinkAnchor>
+                          </Link>
+                        </h2>
+                        <p
+                          className="place-card__type"
+                        >
+                          Apartament
+                        </p>
+                      </div>
+                    </article>
+                  </OfferCard>
+                </div>
+              </OfferList>
+            </Connect(OfferList)>
+          </section>
+          <div
+            className="cities__right-section"
+          >
+            <MapComponent
+              chosedPinLocation={Array []}
+              cityLocation={
+                Array [
+                  52.369553943508,
+                  4.85309666406198,
+                ]
+              }
+              className="cities__map"
+              key="Amsterdam-1"
+              pinLocations={
+                Array [
+                  Array [
+                    52.3909553943508,
+                    4.85309666406198,
+                  ],
+                  Array [
+                    52.3909553943508,
+                    4.85309666406198,
+                  ],
+                  Array [
+                    52.3909553943508,
+                    4.85309666406198,
+                  ],
+                  Array [
+                    52.3909553943508,
+                    4.85309666406198,
+                  ],
+                  Array [
+                    52.3909553943508,
+                    4.85309666406198,
+                  ],
+                ]
+              }
+              zoom={10}
+            >
+              <section
+                className="cities__map map"
+                id="map"
+              />
+            </MapComponent>
+          </div>
+        </div>
+      </div>
+    </MainPlaces>
+  </Router>
+</Provider>
+`;

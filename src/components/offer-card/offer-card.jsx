@@ -1,7 +1,8 @@
 import {PropTypes} from "prop-types";
 import React from "react";
 import {Link} from "react-router-dom";
-import {Path, widthStartsCoefficient} from "../../constants";
+import {BookmarksButtonType, Path, widthStartsCoefficient} from "../../constants";
+import BookmarksButton from "../bookmark-button/bookmark-button";
 import offerPropTypes from "../types/offer";
 
 const OfferCard = ({offer, className, onMouseEnterCard}) => {
@@ -11,11 +12,8 @@ const OfferCard = ({offer, className, onMouseEnterCard}) => {
   const handleCardMouseLeave = () => {
     onMouseEnterCard({id: ``, location: []});
   };
-  const {price, rating, isInBookmarks, name, type, isPremium, previewImage} = offer;
+  const {id, price, rating, isInBookmarks, name, type, isPremium, previewImage} = offer;
   const widthForRatingStar = rating * widthStartsCoefficient;
-  const isInBookmarksButtonActive = isInBookmarks
-    ? `place-card__bookmark-button--active`
-    : ``;
   const isPremiumTemplate = isPremium
     ? <div className="place-card__mark"><span>Premium</span></div>
     : ``;
@@ -37,12 +35,11 @@ const OfferCard = ({offer, className, onMouseEnterCard}) => {
             <b className="place-card__price-value">&euro;{price.value}.</b>
             <span className="place-card__price-text">&#47;&nbsp;{price.period}</span>
           </div>
-          <button className={`place-card__bookmark-button ${isInBookmarksButtonActive} button`} type="button">
-            <svg className="place-card__bookmark-icon" width="18" height="19">
-              <use xlinkHref="#icon-bookmark"></use>
-            </svg>
-            <span className="visually-hidden">In bookmarks</span>
-          </button>
+          <BookmarksButton
+            id={id}
+            type={BookmarksButtonType.PLACE_CARD}
+            isInBookmarks={isInBookmarks}
+          />
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
