@@ -25,15 +25,8 @@ const stateData = (state = initialState, action) => {
         extend(state, {userComment: extend(state.userComment, {text: action.payload})}));
 
     case ActionType.CHANGE_SORT_TYPE:
-      if (action.payload.type === SortType.POPULAR_DESC) {
-        return (extend(state, {
-          sortType: action.payload.type,
-        }));
-      } else {
-        return (extend(state, {
-          sortType: action.payload.type,
-        }));
-      }
+      return (
+        extend(state, {sortType: action.payload.type}));
 
     case ActionType.CHANGE_ENTERED_OFFER:
       return (extend(state, {enteredOffer: action.payload.offer}));
