@@ -147,7 +147,6 @@ exports[`Should PostCommentForm render correctly 1`] = `
     required={true}
     value="fkyukkuy"
   />
-  
   <div
     className="reviews__button-wrapper"
   >

@@ -21,17 +21,13 @@ beforeEach(() => {
 it(`Should Main render correctly`, () => {
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
-
-  const div = global.document.createElement(`div`);
-  global.document.body.appendChild(div);
-
   const wrapper = mount(
       <Provider store={store}>
         <Router history={browserHistory}>
           <App />
         </Router>
-      </Provider>,
-      {attachTo: div});
+      </Provider>
+  );
 
   expect(toJson(wrapper)).toMatchSnapshot();
 });
