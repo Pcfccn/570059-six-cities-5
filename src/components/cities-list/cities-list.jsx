@@ -1,7 +1,7 @@
 import React from "react";
 import City from "../city/city";
 import PropTypes from "prop-types";
-import {cities} from "../../constants";
+import {CITIES} from "../../constants";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
 
@@ -11,7 +11,7 @@ const CitiesList = ({city, changeCity}) => {
       <section className="locations container">
         <ul className="locations__list tabs__list">
           {
-            cities.map((currentCity) => {
+            CITIES.map((currentCity) => {
               const isActive = currentCity === city;
               return (
                 <City

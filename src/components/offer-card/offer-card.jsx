@@ -1,7 +1,7 @@
 import {PropTypes} from "prop-types";
 import React from "react";
 import {Link} from "react-router-dom";
-import {BookmarksButtonType, Path, widthStartsCoefficient} from "../../constants";
+import {BookmarksButtonType, Path, WIDTH_STARS_COEFFICIENT} from "../../constants";
 import BookmarksButton from "../bookmark-button/bookmark-button";
 import offerPropTypes from "../types/offer";
 
@@ -13,7 +13,7 @@ const OfferCard = ({offer, className, onMouseEnterCard}) => {
     onMouseEnterCard({id: ``, location: []});
   };
   const {id, price, rating, isInBookmarks, name, type, isPremium, previewImage} = offer;
-  const widthForRatingStar = rating * widthStartsCoefficient;
+  const widthForRatingStar = rating * WIDTH_STARS_COEFFICIENT;
   const isPremiumTemplate = isPremium
     ? <div className="place-card__mark"><span>Premium</span></div>
     : ``;
