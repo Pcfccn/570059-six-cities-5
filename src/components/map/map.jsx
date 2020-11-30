@@ -10,6 +10,7 @@ class MapComponent extends PureComponent {
 
   componentDidMount() {
     const {cityLocation, zoom, pinLocations, chosedPinLocation} = this.props;
+    console.log(chosedPinLocation);
     const icon = leaflet.icon({
       iconUrl: `img/pin.svg`,
       iconSize: [30, 30]
@@ -53,8 +54,8 @@ MapComponent.propTypes = {
   className: PropTypes.string.isRequired,
   cityLocation: PropTypes.arrayOf(PropTypes.number).isRequired,
   zoom: PropTypes.number.isRequired,
-  pinLocations: PropTypes.array.isRequired,
-  chosedPinLocation: PropTypes.array.isRequired,
+  pinLocations: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
+  chosedPinLocation: PropTypes.arrayOf(PropTypes.number).isRequired,
 };
 
 export default MapComponent;

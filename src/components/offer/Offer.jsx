@@ -161,7 +161,7 @@ Offer.propTypes = {
         })),
     PropTypes.arrayOf(PropTypes.shape()),
   ]).isRequired,
-  nearbyOffers: PropTypes.array.isRequired,
+  nearbyOffers: PropTypes.arrayOf(offerPropTypes).isRequired,
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
   offerProps: PropTypes.object.isRequired,
   loadOfferInfo: PropTypes.func.isRequired,
