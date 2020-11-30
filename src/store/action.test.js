@@ -1,4 +1,4 @@
-import {ActionType, AuthorizationStatus, SortType} from "../constants";
+import {ActionType, AuthorizationStatus, CommentSendingStatus, SortType} from "../constants";
 import {ActionCreator} from "./action";
 
 describe(`Action creator work correctly`, () => {
@@ -95,4 +95,19 @@ describe(`Action creator work correctly`, () => {
       payload: 5,
     });
   });
+
+  it(`changeCommentSendingStatus`, () => {
+    expect(ActionCreator.changeCommentSendingStatus(CommentSendingStatus.ERROR)).toEqual({
+      type: ActionType.CHANGE_COMMENT_SENDING_STATUS,
+      payload: CommentSendingStatus.ERROR,
+    });
+  });
+
+  it(`loadFavorites`, () => {
+    expect(ActionCreator.loadFavorites([{}, {}, {a: [1, 2]}])).toEqual({
+      type: ActionType.LOAD_FAVORITES,
+      payload: [{}, {}, {a: [1, 2]}],
+    });
+  });
+
 });
