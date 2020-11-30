@@ -2,6 +2,7 @@ import React from "react";
 import {configure, shallow} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import {PostCommentForm} from "./offer-post-comment-form";
+import {CommentSendingStatus} from "../../constants";
 
 configure({adapter: new Adapter()});
 
@@ -14,6 +15,7 @@ it(`submit or change PostCommentForm calls callback`, () => {
     id={1}
     rating={`5`}
     text={`fkyukkuy`}
+    commentSendingStatus={CommentSendingStatus.DONE}
     postComment={handlePostComment}
     setRating={() => {}}
     enterText={handleEnterText}

@@ -1,7 +1,7 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import PropTypes from "prop-types";
-import withToggle from "./with-toggle/with-toggle";
+import withToggle from "./with-toggle";
 
 const MockComponent = (props) => {
   const {children} = props;

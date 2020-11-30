@@ -4,7 +4,7 @@ import {ActionCreator} from "../../store/action";
 import {PropTypes} from "prop-types";
 import MainSortingOptionsList from "../main-sorting-options-list/main-sorting-options-list";
 import offerPropTypes from "../types/offer";
-import withSortMenuOpen from "../hocs/with-toggle/with-toggle";
+import withSortMenuOpen from "../../hocs/with-toggle/with-toggle";
 
 class MainSort extends React.PureComponent {
   constructor(props) {
