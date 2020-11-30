@@ -1,0 +1,355 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should Main render correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "createHref": [Function],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "pathname": "/",
+          "search": "",
+          "state": undefined,
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <App>
+      <Router
+        history={
+          Object {
+            "action": "POP",
+            "block": [Function],
+            "createHref": [Function],
+            "go": [Function],
+            "goBack": [Function],
+            "goForward": [Function],
+            "length": 1,
+            "listen": [Function],
+            "location": Object {
+              "hash": "",
+              "pathname": "/",
+              "search": "",
+              "state": undefined,
+            },
+            "push": [Function],
+            "replace": [Function],
+          }
+        }
+      >
+        <Switch>
+          <Route
+            computedMatch={
+              Object {
+                "isExact": true,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+            exact={true}
+            location={
+              Object {
+                "hash": "",
+                "pathname": "/",
+                "search": "",
+                "state": undefined,
+              }
+            }
+            path="/"
+            render={[Function]}
+          >
+            <Connect(Main)>
+              <Main
+                dispatch={[Function]}
+              >
+                <div
+                  className="page page--gray page--main"
+                >
+                  <Connect(Header)>
+                    <Header
+                      dispatch={[Function]}
+                      email=""
+                    >
+                      <header
+                        className="header"
+                      >
+                        <div
+                          className="container"
+                        >
+                          <div
+                            className="header__wrapper"
+                          >
+                            <div
+                              className="header__left"
+                            >
+                              <Link
+                                className="header__logo-link"
+                                to="/"
+                              >
+                                <LinkAnchor
+                                  className="header__logo-link"
+                                  href="/"
+                                  navigate={[Function]}
+                                >
+                                  <a
+                                    className="header__logo-link"
+                                    href="/"
+                                    onClick={[Function]}
+                                  >
+                                    <img
+                                      alt="6 cities logo"
+                                      className="header__logo"
+                                      height="41"
+                                      src="/img/logo.svg"
+                                      width="81"
+                                    />
+                                  </a>
+                                </LinkAnchor>
+                              </Link>
+                            </div>
+                            <nav
+                              className="header__nav"
+                            >
+                              <ul
+                                className="header__nav-list"
+                              >
+                                <li
+                                  className="header__nav-item user"
+                                >
+                                  <Link
+                                    className="header__nav-link header__nav-link--profile"
+                                    to="/favorites"
+                                  >
+                                    <LinkAnchor
+                                      className="header__nav-link header__nav-link--profile"
+                                      href="/favorites"
+                                      navigate={[Function]}
+                                    >
+                                      <a
+                                        className="header__nav-link header__nav-link--profile"
+                                        href="/favorites"
+                                        onClick={[Function]}
+                                      >
+                                        <div
+                                          className="header__avatar-wrapper user__avatar-wrapper"
+                                        />
+                                        <span
+                                          className="header__user-name user__name"
+                                        >
+                                          Sign In
+                                        </span>
+                                      </a>
+                                    </LinkAnchor>
+                                  </Link>
+                                </li>
+                              </ul>
+                            </nav>
+                          </div>
+                        </div>
+                      </header>
+                    </Header>
+                  </Connect(Header)>
+                  <main
+                    className="page__main page__main--index"
+                  >
+                    <h1
+                      className="visually-hidden"
+                    >
+                      Cities
+                    </h1>
+                    <Connect(CitiesList)>
+                      <CitiesList
+                        changeCity={[Function]}
+                      >
+                        <div
+                          className="tabs"
+                        >
+                          <section
+                            className="locations container"
+                          >
+                            <ul
+                              className="locations__list tabs__list"
+                            >
+                              <City
+                                active={false}
+                                changeCity={[Function]}
+                                key="Paris"
+                                thisCity="Paris"
+                              >
+                                <li
+                                  className="locations__item"
+                                >
+                                  <a
+                                    className="locations__item-link tabs__item "
+                                    onClick={[Function]}
+                                  >
+                                    <span>
+                                      Paris
+                                    </span>
+                                  </a>
+                                </li>
+                              </City>
+                              <City
+                                active={false}
+                                changeCity={[Function]}
+                                key="Cologne"
+                                thisCity="Cologne"
+                              >
+                                <li
+                                  className="locations__item"
+                                >
+                                  <a
+                                    className="locations__item-link tabs__item "
+                                    onClick={[Function]}
+                                  >
+                                    <span>
+                                      Cologne
+                                    </span>
+                                  </a>
+                                </li>
+                              </City>
+                              <City
+                                active={false}
+                                changeCity={[Function]}
+                                key="Brussels"
+                                thisCity="Brussels"
+                              >
+                                <li
+                                  className="locations__item"
+                                >
+                                  <a
+                                    className="locations__item-link tabs__item "
+                                    onClick={[Function]}
+                                  >
+                                    <span>
+                                      Brussels
+                                    </span>
+                                  </a>
+                                </li>
+                              </City>
+                              <City
+                                active={false}
+                                changeCity={[Function]}
+                                key="Amsterdam"
+                                thisCity="Amsterdam"
+                              >
+                                <li
+                                  className="locations__item"
+                                >
+                                  <a
+                                    className="locations__item-link tabs__item "
+                                    onClick={[Function]}
+                                  >
+                                    <span>
+                                      Amsterdam
+                                    </span>
+                                  </a>
+                                </li>
+                              </City>
+                              <City
+                                active={false}
+                                changeCity={[Function]}
+                                key="Hamburg"
+                                thisCity="Hamburg"
+                              >
+                                <li
+                                  className="locations__item"
+                                >
+                                  <a
+                                    className="locations__item-link tabs__item "
+                                    onClick={[Function]}
+                                  >
+                                    <span>
+                                      Hamburg
+                                    </span>
+                                  </a>
+                                </li>
+                              </City>
+                              <City
+                                active={false}
+                                changeCity={[Function]}
+                                key="Dusseldorf"
+                                thisCity="Dusseldorf"
+                              >
+                                <li
+                                  className="locations__item"
+                                >
+                                  <a
+                                    className="locations__item-link tabs__item "
+                                    onClick={[Function]}
+                                  >
+                                    <span>
+                                      Dusseldorf
+                                    </span>
+                                  </a>
+                                </li>
+                              </City>
+                            </ul>
+                          </section>
+                        </div>
+                      </CitiesList>
+                    </Connect(CitiesList)>
+                    <MainNoPlaces>
+                      <div
+                        className="cities page__main--index-empty"
+                      >
+                        <div
+                          className="cities__places-container cities__places-container--empty container"
+                        >
+                          <section
+                            className="cities__no-places"
+                          >
+                            <div
+                              className="cities__status-wrapper tabs__content"
+                            >
+                              <b
+                                className="cities__status"
+                              >
+                                No places to stay available
+                              </b>
+                              <p
+                                className="cities__status-description"
+                              >
+                                We could not find any property available at the moment in 
+                              </p>
+                            </div>
+                          </section>
+                          <div
+                            className="cities__right-section"
+                          />
+                        </div>
+                      </div>
+                    </MainNoPlaces>
+                  </main>
+                </div>
+              </Main>
+            </Connect(Main)>
+          </Route>
+        </Switch>
+      </Router>
+    </App>
+  </Router>
+</Provider>
+`;
