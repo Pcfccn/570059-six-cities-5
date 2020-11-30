@@ -73,5 +73,11 @@ const CommentSendingStatus = {
   ERROR: `ERROR`,
 };
 
+const SortingPosition = {
+  FIRST_HIGHER: -1,
+  FIRST_LOWER: 1,
+  ELEMENTS_EQUAL: 0,
+};
+
 export {ActionType, Path, ApiURL, WIDTH_STARS_COEFFICIENT, RATING_STARS, RATING_INPUT_TITLES, OfferCardClassName,
-  MapClassName, CITIES, SortType, AuthorizationStatus, BookmarksButtonType, CommentSendingStatus};
+  MapClassName, CITIES, SortType, AuthorizationStatus, BookmarksButtonType, CommentSendingStatus, SortingPosition};

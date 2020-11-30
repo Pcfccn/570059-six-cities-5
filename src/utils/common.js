@@ -1,4 +1,4 @@
-import {SortType, WIDTH_STARS_COEFFICIENT} from "../constants";
+import {SortingPosition, SortType, WIDTH_STARS_COEFFICIENT} from "../constants";
 import {NameSpace} from "../store/root-reducer";
 
 const getOffer = ((offers, props) => (offers.filter((offer) => offer.id === +props.match.params.id)[0]));
@@ -39,11 +39,11 @@ const getFilteredByCityOffers = (state) => state[NameSpace.DATA].offers.filter((
 const sortComments = (prev, next) => {
   switch (true) {
     case prev.date > next.date:
-      return -1;
+      return SortingPosition.FIRST_HIGHER;
     case prev.date < next.date:
-      return 1;
+      return SortingPosition.FIRST_LOWER;
     default:
-      return 0;
+      return SortingPosition.ELEMENTS_EQUAL;
   }
 };
 
