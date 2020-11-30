@@ -1,5 +1,6 @@
 import React from "react";
 import {getWidthForRatingStar} from "../../utils/common";
+import PropTypes from "prop-types";
 
 const Reviews = ({reviews}) => {
   return (
@@ -33,6 +34,10 @@ const Reviews = ({reviews}) => {
       );
     })
   );
+};
+
+Reviews.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default Reviews;

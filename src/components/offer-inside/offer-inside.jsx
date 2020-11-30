@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Inside = ({inside}) => {
   return (
@@ -9,6 +10,10 @@ const Inside = ({inside}) => {
         </li>);
     })
   );
+};
+
+Inside.propTypes = {
+  inside: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Inside;

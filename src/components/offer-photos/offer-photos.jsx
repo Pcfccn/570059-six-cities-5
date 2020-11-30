@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Photos = ({images}) => {
   return (
@@ -9,6 +10,10 @@ const Photos = ({images}) => {
         </div>);
     })
   );
+};
+
+Photos.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Photos;
