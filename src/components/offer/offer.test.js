@@ -2,7 +2,7 @@ import React from "react";
 import {Provider} from "react-redux";
 import {Router} from "react-router-dom";
 import browserHistory from "../../brouser-history";
-import {AuthorizationStatus} from "../../constants";
+import {AuthorizationStatus, CommentSendingStatus} from "../../constants";
 import {Offer} from "./Offer";
 import configureMockStore from 'redux-mock-store';
 import {configure, mount} from "enzyme";
@@ -68,6 +68,7 @@ beforeEach(() => {
         rating: `5`,
         text: `xyyyyyyyyy`,
       },
+      commentSendingStatus: CommentSendingStatus.DONE,
     },
   };
 });

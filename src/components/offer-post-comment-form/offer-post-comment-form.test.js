@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import { CommentSendingStatus } from "../../constants";
+import {CommentSendingStatus} from "../../constants";
 import {PostCommentForm} from "./offer-post-comment-form";
 const noop = () => {};
 it(`Should PostCommentForm render correctly`, () => {

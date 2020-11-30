@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Should Main render correctly 1`] = `
+exports[`Should App render correctly 1`] = `
 <Provider
   store={
     Object {
@@ -82,15 +82,18 @@ exports[`Should Main render correctly 1`] = `
           >
             <Connect(Main)>
               <Main
+                city="Paris"
                 dispatch={[Function]}
+                offers={Array []}
               >
                 <div
                   className="page page--gray page--main"
                 >
                   <Connect(Header)>
                     <Header
+                      authStatus="AUTH"
                       dispatch={[Function]}
-                      email=""
+                      email="sdf@mail.ri"
                     >
                       <header
                         className="header"
@@ -158,7 +161,7 @@ exports[`Should Main render correctly 1`] = `
                                         <span
                                           className="header__user-name user__name"
                                         >
-                                          Sign In
+                                          sdf@mail.ri
                                         </span>
                                       </a>
                                     </LinkAnchor>
@@ -182,6 +185,7 @@ exports[`Should Main render correctly 1`] = `
                     <Connect(CitiesList)>
                       <CitiesList
                         changeCity={[Function]}
+                        city="Paris"
                       >
                         <div
                           className="tabs"
@@ -193,7 +197,7 @@ exports[`Should Main render correctly 1`] = `
                               className="locations__list tabs__list"
                             >
                               <City
-                                active={false}
+                                active={true}
                                 changeCity={[Function]}
                                 key="Paris"
                                 thisCity="Paris"
@@ -202,7 +206,7 @@ exports[`Should Main render correctly 1`] = `
                                   className="locations__item"
                                 >
                                   <a
-                                    className="locations__item-link tabs__item "
+                                    className="locations__item-link tabs__item  tabs__item--active"
                                     onClick={[Function]}
                                   >
                                     <span>
@@ -311,7 +315,9 @@ exports[`Should Main render correctly 1`] = `
                         </div>
                       </CitiesList>
                     </Connect(CitiesList)>
-                    <MainNoPlaces>
+                    <MainNoPlaces
+                      city="Paris"
+                    >
                       <div
                         className="cities page__main--index-empty"
                       >
@@ -333,6 +339,7 @@ exports[`Should Main render correctly 1`] = `
                                 className="cities__status-description"
                               >
                                 We could not find any property available at the moment in 
+                                Paris
                               </p>
                             </div>
                           </section>

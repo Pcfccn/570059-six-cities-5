@@ -35,7 +35,9 @@ exports[`Should Main render correctly 1`] = `
       }
     }
   >
-    <Connect(Main)>
+    <Connect(Main)
+      offers={Array []}
+    >
       <Main
         city="Amsterdam"
         dispatch={[Function]}

@@ -86,7 +86,7 @@ it(`Should Main render correctly`, () => {
   const wrapper = mount(
       <Provider store={store}>
         <Router history={browserHistory}>
-          <Main />
+          <Main offers={[]}/>
         </Router>
       </Provider>,
       {attachTo: div});

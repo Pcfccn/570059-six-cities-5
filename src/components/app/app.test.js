@@ -7,18 +7,26 @@ import toJson from "enzyme-to-json";
 import {configure, mount} from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import configureMockStore from 'redux-mock-store';
+import {AuthorizationStatus} from "../../constants";
 
 configure({adapter: new Adapter()});
 
 let mockState;
 beforeEach(() => {
   mockState = {
-    USER: {},
-    STATE: {},
-    DATA: {}
+    USER: {
+      authorizationStatus: AuthorizationStatus.AUTH,
+      email: `sdf@mail.ri`
+    },
+    STATE: {
+      city: `Paris`
+    },
+    DATA: {
+      offers: [],
+    }
   };
 });
-it(`Should Main render correctly`, () => {
+it(`Should App render correctly`, () => {
   const mockStore = configureMockStore();
   const store = mockStore(mockState);
   const wrapper = mount(
