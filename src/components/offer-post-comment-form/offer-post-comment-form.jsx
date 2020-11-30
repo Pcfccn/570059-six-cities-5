@@ -7,6 +7,9 @@ import {ApiActionCreator} from "../../store/api-actions";
 import RatingStar from "../offer-post-comment-rating-star/offer-post-comment-rating-star";
 
 const PostCommentForm = ({id, rating, text, postComment, setRating, enterText, changeCommentSendingStatus, commentSendingStatus}) => {
+
+  const isButtonDisabled = !+rating || text.length < 50 || commentSendingStatus === CommentSendingStatus.SENDING;
+
   const handelFormSubmit = (evt) => {
     evt.preventDefault();
     changeCommentSendingStatus(CommentSendingStatus.SENDING);
@@ -39,7 +42,7 @@ const PostCommentForm = ({id, rating, text, postComment, setRating, enterText, c
         maxLength={300}
       >
       </textarea>
-      {commentSendingStatus === CommentSendingStatus.ERROR ? `<span><b>Sorry, something go wrong with server, we cant send your review</b></span>` : ``}
+      {commentSendingStatus === CommentSendingStatus.ERROR && <span><b>Sorry, something go wrong with server, we cant send your review</b></span>}
       <div className="reviews__button-wrapper">
         <p className="reviews__help">
                       To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.
@@ -47,7 +50,7 @@ const PostCommentForm = ({id, rating, text, postComment, setRating, enterText, c
         <button
           className="reviews__submit form__submit button"
           type="submit"
-          disabled={+rating && text.length >= 50 && commentSendingStatus !== CommentSendingStatus.SENDING ? false : true}
+          disabled={isButtonDisabled}
         >
           Submit
         </button>

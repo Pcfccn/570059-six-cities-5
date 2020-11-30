@@ -10,7 +10,6 @@ class MapComponent extends PureComponent {
 
   componentDidMount() {
     const {cityLocation, zoom, pinLocations, chosedPinLocation} = this.props;
-    console.log(chosedPinLocation);
     const icon = leaflet.icon({
       iconUrl: `img/pin.svg`,
       iconSize: [30, 30]
