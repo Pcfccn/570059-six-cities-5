@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MainSortingOption Should render corectly 1`] = `
+exports[`MainSortingOption Should render correctly 1`] = `
 Array [
   <li
     className="places__option "

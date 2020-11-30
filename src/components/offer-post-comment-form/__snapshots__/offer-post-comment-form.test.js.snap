@@ -140,11 +140,14 @@ exports[`Should PostCommentForm render correctly 1`] = `
   <textarea
     className="reviews__textarea form__textarea"
     id="review"
+    maxLength={300}
     name="review"
     onChange={[Function]}
     placeholder="Tell how was your stay, what you like and what can be improved"
+    required={true}
     value="fkyukkuy"
   />
+  
   <div
     className="reviews__button-wrapper"
   >
@@ -167,7 +170,7 @@ exports[`Should PostCommentForm render correctly 1`] = `
     </p>
     <button
       className="reviews__submit form__submit button"
-      disabled=""
+      disabled={true}
       type="submit"
     >
       Submit

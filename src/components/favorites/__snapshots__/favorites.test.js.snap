@@ -589,7 +589,7 @@ exports[`Should Favorites render correctly 1`] = `
   >
     <a
       className="footer__logo-link"
-      href="main.html"
+      href="/"
     >
       <img
         alt="6 cities logo"

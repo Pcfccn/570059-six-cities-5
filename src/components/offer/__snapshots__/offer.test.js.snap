@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`offer Should render corectly 1`] = `
+exports[`offer Should render correctly 1`] = `
 <Provider
   store={
     Object {
@@ -659,6 +659,7 @@ exports[`offer Should render corectly 1`] = `
                     id={1}
                   >
                     <PostCommentForm
+                      changeCommentSendingStatus={[Function]}
                       enterText={[Function]}
                       id={1}
                       postComment={[Function]}
@@ -840,9 +841,11 @@ exports[`offer Should render corectly 1`] = `
                         <textarea
                           className="reviews__textarea form__textarea"
                           id="review"
+                          maxLength={300}
                           name="review"
                           onChange={[Function]}
                           placeholder="Tell how was your stay, what you like and what can be improved"
+                          required={true}
                           value="xyyyyyyyyy"
                         />
                         <div
@@ -867,7 +870,7 @@ exports[`offer Should render corectly 1`] = `
                           </p>
                           <button
                             className="reviews__submit form__submit button"
-                            disabled=""
+                            disabled={true}
                             type="submit"
                           >
                             Submit

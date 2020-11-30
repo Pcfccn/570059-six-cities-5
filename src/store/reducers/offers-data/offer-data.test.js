@@ -125,6 +125,7 @@ const offers = [
 ];
 const adaptedOffers = {
   comments: [],
+  numberOfComments: 0,
   nearbyOffers: [],
   offers: [
     {
@@ -240,10 +241,11 @@ describe(`offer-data reducer work correctly`, () => {
       comments: [],
       nearbyOffers: [],
       favorites: [],
+      numberOfComments: 0,
     });
   });
 
-  it(`should update offers by load offers`, () => {
+  it(`should update offers by load`, () => {
     expect(offersData(void 0, {
       type: ActionType.LOAD_OFFERS,
       payload: offers,
@@ -252,7 +254,7 @@ describe(`offer-data reducer work correctly`, () => {
     );
   });
 
-  it(`should update one offer by load offer`, () => {
+  it(`should update ONE offer by load offer`, () => {
     expect(offersData(void 0, {
       type: ActionType.LOAD_ONE_OFFER,
       payload: offers[0],
@@ -260,7 +262,8 @@ describe(`offer-data reducer work correctly`, () => {
       comments: [],
       favorites: [],
       nearbyOffers: [],
-      offers: [adaptedOffers.offers[0]]
+      numberOfComments: 0,
+      offers: [],
     });
   });
 
@@ -268,9 +271,13 @@ describe(`offer-data reducer work correctly`, () => {
     expect(offersData(void 0, {
       type: ActionType.LOAD_COMMENTS,
       payload: [{}, {}],
-    })).toEqual(
-        {"comments": [{}, {}], "nearbyOffers": [], "offers": [], "favorites": []}
-    );
+    })).toEqual({
+      comments: [{}, {}],
+      nearbyOffers: [],
+      numberOfComments: 2,
+      offers: [],
+      favorites: []
+    });
   });
 
   it(`should update nearby offer by load`, () => {
@@ -281,6 +288,7 @@ describe(`offer-data reducer work correctly`, () => {
       comments: [],
       favorites: [],
       nearbyOffers: adaptedOffers.offers,
+      numberOfComments: 0,
       offers: []
     });
   });

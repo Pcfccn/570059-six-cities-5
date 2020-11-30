@@ -9,6 +9,7 @@ it(`submit or change PostCommentForm calls callback`, () => {
   const handlePostComment = jest.fn();
   const handleEnterText = jest.fn();
   const formSendPrevention = jest.fn();
+  const changeCommentSendingStatus = jest.fn();
   const wrapper = shallow(<PostCommentForm
     id={1}
     rating={`5`}
@@ -16,6 +17,7 @@ it(`submit or change PostCommentForm calls callback`, () => {
     postComment={handlePostComment}
     setRating={() => {}}
     enterText={handleEnterText}
+    changeCommentSendingStatus={changeCommentSendingStatus}
   />);
 
   wrapper.find(`form.reviews__form`).simulate(`submit`, {
@@ -28,4 +30,5 @@ it(`submit or change PostCommentForm calls callback`, () => {
   expect(formSendPrevention).toHaveBeenCalledTimes(1);
   expect(handlePostComment).toHaveBeenCalledTimes(1);
   expect(handleEnterText).toHaveBeenCalledTimes(1);
+  expect(changeCommentSendingStatus).toHaveBeenCalledTimes(1);
 });

@@ -1,4 +1,4 @@
-import {ActionType, cities, SortType} from "../../../constants";
+import {ActionType, CITIES, CommentSendingStatus, SortType} from "../../../constants";
 import {stateData} from "./state-data";
 
 const offers = [
@@ -124,7 +124,8 @@ const offers = [
 describe(`state-data reducer work correctly`, () => {
   it(`Should return initial store without parametrs`, () => {
     expect(stateData(void 0, {})).toEqual({
-      city: cities[0],
+      city: CITIES[0],
+      commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
       enteredOffer: {id: ``, location: []},
       userComment: {rating: `0`, text: ``}
@@ -137,6 +138,7 @@ describe(`state-data reducer work correctly`, () => {
       payload: `Paris`,
     })).toEqual({
       city: `Paris`,
+      commentSendingStatus: CommentSendingStatus.DONE,
       enteredOffer: {id: ``, location: []},
       sortType: `Popular`,
       userComment: {rating: `0`, text: ``}
@@ -148,7 +150,8 @@ describe(`state-data reducer work correctly`, () => {
       type: ActionType.SET_RATING,
       payload: `5`,
     })).toEqual({
-      city: cities[0],
+      city: CITIES[0],
+      commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
       enteredOffer: {id: ``, location: []},
       userComment: {rating: `5`, text: ``}
@@ -160,7 +163,8 @@ describe(`state-data reducer work correctly`, () => {
       type: ActionType.ENTER_TEXT,
       payload: `testText`,
     })).toEqual({
-      city: cities[0],
+      city: CITIES[0],
+      commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
       enteredOffer: {id: ``, location: []},
       userComment: {rating: `0`, text: `testText`}
@@ -172,14 +176,13 @@ describe(`state-data reducer work correctly`, () => {
       type: ActionType.CHANGE_SORT_TYPE,
       payload: {
         type: SortType.RATING_DESC,
-        offers
       },
     })).toEqual({
-      city: cities[0],
+      city: CITIES[0],
+      commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.RATING_DESC,
       enteredOffer: {id: ``, location: []},
       userComment: {rating: `0`, text: ``},
-      offers
     });
   });
 
@@ -188,7 +191,8 @@ describe(`state-data reducer work correctly`, () => {
       type: ActionType.CHANGE_ENTERED_OFFER,
       payload: {offer: offers[0]},
     })).toEqual({
-      city: cities[0],
+      city: CITIES[0],
+      commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
       enteredOffer: offers[0],
       userComment: {rating: `0`, text: ``},
