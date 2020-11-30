@@ -39,6 +39,16 @@ class MainSort extends React.PureComponent {
     );
   }
 }
+const withOpenSortMainSort = withSortMenuOpen(MainSort);
+
+MainSort.propTypes = {
+  changeSortType: PropTypes.func.isRequired,
+  sortType: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
+  isActive: PropTypes.bool.isRequired,
+  handleToggleClick: PropTypes.func.isRequired,
+};
 
 const mapStateToProps = ({STATE, DATA}) => ({
   sortType: STATE.sortType,
@@ -52,15 +62,5 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-MainSort.propTypes = {
-  changeSortType: PropTypes.func.isRequired,
-  sortType: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  isActive: PropTypes.bool.isRequired,
-  handleToggleClick: PropTypes.func.isRequired,
-};
-
-const withOpenSortMainSort = withSortMenuOpen(MainSort);
 export {MainSort};
 export default connect(mapStateToProps, mapDispatchToProps)(withOpenSortMainSort);
