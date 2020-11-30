@@ -11,7 +11,6 @@ import {AuthorizationStatus, BookmarksButtonType, MapClassName, OfferCardClassNa
 import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 import {connect} from "react-redux";
-import {reviews} from "../../mock/offer";
 import {ApiActionCreator} from "../../store/api-actions";
 import BookmarksButton from "../bookmark-button/bookmark-button";
 
@@ -26,7 +25,7 @@ class Offer extends PureComponent {
   }
 
   render() {
-    const {authorizationStatus, offers, offerProps, comments, nearbyOffers} = this.props;
+    const {authorizationStatus, offers, offerProps, comments, nearbyOffers, numberOfComments} = this.props;
     const offer = getOffer(offers, offerProps);
     if (!offer) {
       return null;
@@ -109,7 +108,7 @@ class Offer extends PureComponent {
                   </div>
                 </div>
                 <section className="property__reviews reviews">
-                  <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{reviews.length}</span></h2>
+                  <h2 className="reviews__title">Reviews &middot; <span className="reviews__amount">{numberOfComments}</span></h2>
                   <ul className="reviews__list">
                     <Reviews reviews={comments} />
                   </ul>
@@ -152,24 +151,28 @@ Offer.propTypes = {
       id: PropTypes.string.isRequired
     })
   }),
-  reviews: PropTypes.arrayOf(
-      PropTypes.shape({
-        avatar: PropTypes.string.isRequired,
-        name: PropTypes.string.isRequired,
-        rating: PropTypes.number.isRequired,
-        text: PropTypes.string.isRequired,
-      })),
-  comments: PropTypes.array.isRequired,
+  comments: PropTypes.oneOfType([
+    PropTypes.arrayOf(
+        PropTypes.shape({
+          avatar: PropTypes.string,
+          name: PropTypes.string.isRequired,
+          rating: PropTypes.number.isRequired,
+          text: PropTypes.string.isRequired,
+        })),
+    PropTypes.arrayOf(PropTypes.shape()),
+  ]).isRequired,
   nearbyOffers: PropTypes.array.isRequired,
   offers: PropTypes.arrayOf(offerPropTypes).isRequired,
   offerProps: PropTypes.object.isRequired,
   loadOfferInfo: PropTypes.func.isRequired,
   authorizationStatus: PropTypes.string.isRequired,
+  numberOfComments: PropTypes.number,
 };
 
 const mapStateToProps = ({DATA, USER}) => ({
   offers: DATA.offers,
   comments: DATA.comments,
+  numberOfComments: DATA.numberOfComments,
   nearbyOffers: DATA.nearbyOffers,
   authorizationStatus: USER.authorizationStatus,
 });

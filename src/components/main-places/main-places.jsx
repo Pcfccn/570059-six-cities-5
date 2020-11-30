@@ -7,7 +7,6 @@ import offerPropTypes from "../types/offer";
 import MainSort from "../main-sorting/main-sorting";
 import {connect} from "react-redux";
 import {getCityOffers} from "../../store/selectors";
-
 const MainPlaces = ({offers, city, enteredOfferLocation, enteredOfferId, sortType}) => {
   return (
     <div className="cities">

@@ -7,6 +7,7 @@ const initialState = {
   favorites: [],
   comments: [],
   nearbyOffers: [],
+  numberOfComments: 0,
 };
 
 const offersData = (state = initialState, action) => {
@@ -33,7 +34,8 @@ const offersData = (state = initialState, action) => {
       return extend(state, {
         comments: action.payload
         .sort((prev, next) => sortComments(prev, next))
-        .slice(0, 10)
+        .slice(0, 10),
+        numberOfComments: action.payload.length,
       });
 
     case ActionType.LOAD_NEARBY_OFFERS:
