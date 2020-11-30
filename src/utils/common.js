@@ -1,4 +1,4 @@
-import {SortType, widthStartsCoefficient} from "../constants";
+import {SortType, WIDTH_STARS_COEFFICIENT} from "../constants";
 
 const getOffer = ((offers, props) => (offers.filter((offer) => offer.id === +props.match.params.id)[0]));
 
@@ -8,7 +8,7 @@ const getReviews = ((offers, reviews, props) => {
   );
 });
 
-const getWidthForRatingStar = (rating) => `${rating * widthStartsCoefficient}%`;
+const getWidthForRatingStar = (rating) => `${rating * WIDTH_STARS_COEFFICIENT}%`;
 
 const extend = (a, b) => {
   return Object.assign({}, a, b);

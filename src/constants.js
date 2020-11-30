@@ -33,10 +33,10 @@ const ApiURL = {
   getUrlFavoriteStatus: (id, status) => (`/favorite/${id}/${status}`),
 };
 
-const ratingStars = [5, 4, 3, 2, 1];
-const ratingInputTitle = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
+const RATING_STARS = [5, 4, 3, 2, 1];
+const RATING_INPUT_TITLES = [`perfect`, `good`, `not bad`, `badly`, `terribly`];
 
-const widthStartsCoefficient = 20;
+const WIDTH_STARS_COEFFICIENT = 20;
 
 const OfferCardClassName = {
   NEAR_PLACE: `near-places__card`,
@@ -48,7 +48,7 @@ const MapClassName = {
   CITIES: `cities__map`,
 };
 
-const cities = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
+const CITIES = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
 
 const SortType = {
   PRICE_ASC: `Price: low to high`,
@@ -73,5 +73,5 @@ const CommentSendingStatus = {
   ERROR: `ERROR`,
 };
 
-export {ActionType, Path, ApiURL, widthStartsCoefficient, ratingStars, ratingInputTitle, OfferCardClassName,
-  MapClassName, cities, SortType, AuthorizationStatus, BookmarksButtonType, CommentSendingStatus};
+export {ActionType, Path, ApiURL, WIDTH_STARS_COEFFICIENT, RATING_STARS, RATING_INPUT_TITLES, OfferCardClassName,
+  MapClassName, CITIES, SortType, AuthorizationStatus, BookmarksButtonType, CommentSendingStatus};

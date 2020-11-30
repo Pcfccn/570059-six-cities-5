@@ -1,7 +1,7 @@
 import {PropTypes} from "prop-types";
 import React from "react";
 import {connect} from "react-redux";
-import {CommentSendingStatus, ratingStars} from "../../constants";
+import {CommentSendingStatus, RATING_STARS} from "../../constants";
 import {ActionCreator} from "../../store/action";
 import {ApiActionCreator} from "../../store/api-actions";
 import RatingStar from "../offer-post-comment-rating-star/offer-post-comment-rating-star";
@@ -23,7 +23,7 @@ const PostCommentForm = ({id, rating, text, postComment, setRating, enterText, c
     <form className="reviews__form form" action="#" method="post" onSubmit={handelFormSubmit}>
       <label className="reviews__label form__label" htmlFor="review">Your review</label>
       <div className="reviews__rating-form form__rating">
-        {ratingStars.map((star) => <RatingStar
+        {RATING_STARS.map((star) => <RatingStar
           key={star}
           rating={star}
           currentRating={rating}

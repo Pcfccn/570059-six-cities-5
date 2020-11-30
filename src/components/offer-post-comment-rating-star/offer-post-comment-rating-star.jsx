@@ -1,6 +1,6 @@
 import {PropTypes} from "prop-types";
 import React, {Fragment} from "react";
-import {ratingInputTitle} from "../../constants";
+import {RATING_INPUT_TITLES} from "../../constants";
 
 const RatingStar = ({rating, currentRating, onChange}) => {
   const handleInputChange = (evt) =>{
@@ -18,7 +18,7 @@ const RatingStar = ({rating, currentRating, onChange}) => {
         type="radio"
         onChange={handleInputChange}
       />
-      <label htmlFor={`${rating}-stars`} className="reviews__rating-label form__rating-label" title={ratingInputTitle[-rating + 5]}>
+      <label htmlFor={`${rating}-stars`} className="reviews__rating-label form__rating-label" title={RATING_INPUT_TITLES[-rating + 5]}>
         <svg className="form__star-image" width="37" height="33">
           <use xlinkHref="#icon-star"></use>
         </svg>

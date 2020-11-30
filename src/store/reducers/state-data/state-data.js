@@ -1,9 +1,9 @@
-import {ActionType, cities, CommentSendingStatus, SortType} from "../../../constants";
+import {ActionType, CITIES, CommentSendingStatus, SortType} from "../../../constants";
 import {offers} from "../../../mock/offer";
 import {extend, filterOffersByCity, sortOffers} from "../../../utils/common";
 
 const initialState = {
-  city: cities[0],
+  city: CITIES[0],
   sortType: SortType.POPULAR_DESC,
   enteredOffer: {id: ``, location: []},
   userComment: {rating: `0`, text: ``},
