@@ -293,7 +293,7 @@ describe(`offer-data reducer work correctly`, () => {
     });
   });
 
-  it(`should favorites nearby offer by load`, () => {
+  it(`should update favorites by load`, () => {
     expect(offersData(void 0, {
       type: ActionType.LOAD_FAVORITES,
       payload: offers,
