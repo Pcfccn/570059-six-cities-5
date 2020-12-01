@@ -292,6 +292,19 @@ describe(`offer-data reducer work correctly`, () => {
       offers: []
     });
   });
+
+  it(`should favorites nearby offer by load`, () => {
+    expect(offersData(void 0, {
+      type: ActionType.LOAD_FAVORITES,
+      payload: offers,
+    })).toEqual({
+      comments: [],
+      favorites: adaptedOffers.offers,
+      nearbyOffers: [],
+      numberOfComments: 0,
+      offers: []
+    });
+  });
 });
 
 

@@ -198,4 +198,17 @@ describe(`state-data reducer work correctly`, () => {
       userComment: {rating: `0`, text: ``},
     });
   });
+
+  it(`should change CommentSendingStatus`, () => {
+    expect(stateData(void 0, {
+      type: ActionType.CHANGE_COMMENT_SENDING_STATUS,
+      payload: CommentSendingStatus.SENDING,
+    })).toEqual({
+      city: CITIES[0],
+      commentSendingStatus: CommentSendingStatus.SENDING,
+      sortType: SortType.POPULAR_DESC,
+      enteredOffer: {id: ``, location: []},
+      userComment: {rating: `0`, text: ``},
+    });
+  });
 });
