@@ -1,3 +1,3 @@
-type TComment = {
+export type TComment = {
   date: Date
   };

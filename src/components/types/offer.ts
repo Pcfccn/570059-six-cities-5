@@ -1,9 +1,9 @@
-type TOffer = {
+export type TOffer = {
+  id: number
   adults: number
   bedrooms: number
   city: string
   host: object
-  id: number
   image: string[]
   inside: string[]
   isInBookmarks: boolean
@@ -18,5 +18,3 @@ type TOffer = {
   type: string
   previewImage: string
 };
-
-export {TOffer};

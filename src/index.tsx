@@ -4,7 +4,7 @@ import {Provider} from "react-redux";
 import {applyMiddleware, createStore} from "redux";
 import thunk from "redux-thunk";
 import App from "./components/app/app";
-import rootReducer from "./store/root-reducer";
+import rootReducer from "./store/root-reducer.ts";
 import {composeWithDevTools} from "redux-devtools-extension";
 import {createAPI} from "./services/api";
 import {ActionCreator} from "./store/action";

@@ -12,7 +12,7 @@ import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 import {connect} from "react-redux";
 import {ApiActionCreator} from "../../store/api-actions";
-import BookmarksButton from "../bookmark-button/bookmark-button";
+import BookmarksButton from "../bookmark-button/bookmark-button.tsx";
 
 class Offer extends PureComponent {
   constructor(props) {

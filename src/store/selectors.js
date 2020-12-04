@@ -1,6 +1,6 @@
 import {createSelector} from "reselect";
 import {sortOffers} from "../utils/common.ts";
-import {NameSpace} from "./root-reducer";
+import {NameSpace} from "./root-reducer.ts";
 
 const getOffers = (state) => state;
 const getFilteredByCityOffers = (state) => state[NameSpace.DATA].offers.filter((offer) => offer.city === state[NameSpace.STATE].city);

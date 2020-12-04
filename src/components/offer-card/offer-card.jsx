@@ -2,7 +2,7 @@ import {PropTypes} from "prop-types";
 import React from "react";
 import {Link} from "react-router-dom";
 import {BookmarksButtonType, Path, WIDTH_STARS_COEFFICIENT} from "../../constants";
-import BookmarksButton from "../bookmark-button/bookmark-button";
+import BookmarksButton from "../bookmark-button/bookmark-button.tsx";
 import offerPropTypes from "../types/offer";
 
 const OfferCard = ({offer, className, onMouseEnterCard}) => {

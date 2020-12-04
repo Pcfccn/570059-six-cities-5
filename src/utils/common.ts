@@ -1,3 +1,4 @@
+import {TComment} from "../components/types/comment";
 import {TOffer} from "../components/types/offer";
 import {SortingPosition, SortType, WIDTH_STARS_COEFFICIENT} from "../constants";
 
