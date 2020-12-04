@@ -1,5 +1,5 @@
 import {ActionType, CITIES, CommentSendingStatus, SortType} from "../../../constants";
-import {extend} from "../../../utils/common";
+import {extend} from "../../../utils/common.ts";
 
 const initialState = {
   city: CITIES[0],

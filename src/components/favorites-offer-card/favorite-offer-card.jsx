@@ -1,6 +1,6 @@
 import React from "react";
 import {BookmarksButtonType, Path} from "../../constants";
-import {getWidthForRatingStar} from "../../utils/common";
+import {getWidthForRatingStar} from "../../utils/common.ts";
 import BookmarksButton from "../bookmark-button/bookmark-button";
 import offerPropTypes from "../types/offer";
 

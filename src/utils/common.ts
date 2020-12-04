@@ -1,24 +1,19 @@
+import {TOffer} from "../components/types/offer";
 import {SortingPosition, SortType, WIDTH_STARS_COEFFICIENT} from "../constants";
 
-const getOffer = ((offers, props) => (offers.filter((offer) => offer.id === +props.match.params.id)[0]));
+const getOffer = ((offers: TOffer[], props: any) => (offers.filter((offer) => offer.id === +props.match.params.id)[0]));
 
-const getReviews = ((offers, reviews, props) => {
-  return (
-    getOffer(offers, props).reviews.map((id) => reviews[id])
-  );
-});
+const getWidthForRatingStar = (rating: number) => `${rating * WIDTH_STARS_COEFFICIENT}%`;
 
-const getWidthForRatingStar = (rating) => `${rating * WIDTH_STARS_COEFFICIENT}%`;
-
-const extend = (a, b) => {
+const extend = (a: object, b: object) => {
   return Object.assign({}, a, b);
 };
 
-const filterOffersByCity = (offers, city) => {
+const filterOffersByCity = (offers: TOffer[], city: string) => {
   return (offers.filter((offer) => (offer.city === city)));
 };
 
-const sortOffers = (cityOffers, sortType) => {
+const sortOffers = (cityOffers: TOffer[], sortType: string) => {
   switch (sortType) {
     case SortType.POPULAR_DESC:
       return cityOffers;
@@ -33,7 +28,7 @@ const sortOffers = (cityOffers, sortType) => {
   }
 };
 
-const sortComments = (prev, next) => {
+const sortComments = (prev: TComment, next: TComment) => {
   switch (true) {
     case prev.date > next.date:
       return SortingPosition.FIRST_HIGHER;
@@ -44,4 +39,4 @@ const sortComments = (prev, next) => {
   }
 };
 
-export {getOffer, getReviews, getWidthForRatingStar, extend, filterOffersByCity, sortOffers, sortComments};
+export {getOffer, getWidthForRatingStar, extend, filterOffersByCity, sortOffers, sortComments};

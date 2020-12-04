@@ -1,5 +1,5 @@
 import {createSelector} from "reselect";
-import {sortOffers} from "../utils/common";
+import {sortOffers} from "../utils/common.ts";
 import {NameSpace} from "./root-reducer";
 
 const getOffers = (state) => state;

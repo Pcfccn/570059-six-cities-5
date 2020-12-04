@@ -1,0 +1,3 @@
+type TComment = {
+  date: Date
+  };

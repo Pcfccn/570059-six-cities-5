@@ -1,4 +1,4 @@
-import {extend, sortComments} from "../../../utils/common";
+import {extend, sortComments} from "../../../utils/common.ts";
 import {ActionType} from "../../../constants";
 import {adaptDataToOffers} from "../../../services/adapter";
 

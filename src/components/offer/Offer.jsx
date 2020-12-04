@@ -1,6 +1,6 @@
 import {PropTypes} from "prop-types";
 import React, {PureComponent} from "react";
-import {getOffer, getWidthForRatingStar} from "../../utils/common";
+import {getOffer, getWidthForRatingStar} from "../../utils/common.ts";
 import PostCommentForm from "../offer-post-comment-form/offer-post-comment-form";
 import Inside from "../offer-inside/offer-inside";
 import Photos from "../offer-photos/offer-photos";

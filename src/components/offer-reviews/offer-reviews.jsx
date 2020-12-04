@@ -1,5 +1,5 @@
 import React from "react";
-import {getWidthForRatingStar} from "../../utils/common";
+import {getWidthForRatingStar} from "../../utils/common.ts";
 import PropTypes from "prop-types";
 
 const Reviews = ({reviews}) => {
