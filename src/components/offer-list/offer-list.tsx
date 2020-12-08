@@ -1,13 +1,16 @@
-import React from "react";
-import {PropTypes} from "prop-types";
+import React, {FC} from "react";
 import OfferCard from "../offer-card/offer-card";
-import offerPropTypes from "../types/offer";
 import {OfferCardClassName} from "../../constants";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
+import {TEmptyOffer, TOffer} from "../types/offer";
 
-const OfferList = ({changeEnteredOffer, offerCards}) => {
-  const handleMouseEnterCard = (entreredOffer) => {
+type TOfferListProps = {
+  changeEnteredOffer: (entreredOffer: TOffer | TEmptyOffer) => void
+  offerCards: TOffer[]
+}
+const OfferList: FC<TOfferListProps> = ({changeEnteredOffer, offerCards}) => {
+  const handleMouseEnterCard = (entreredOffer: TOffer | TEmptyOffer) => {
     changeEnteredOffer(entreredOffer);
   };
 
@@ -25,13 +28,8 @@ const OfferList = ({changeEnteredOffer, offerCards}) => {
   );
 };
 
-OfferList.propTypes = {
-  offerCards: PropTypes.arrayOf(offerPropTypes).isRequired,
-  changeEnteredOffer: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  changeEnteredOffer(entreredOffer) {
+const mapDispatchToProps = (dispatch: any) => ({
+  changeEnteredOffer(entreredOffer: TOffer | TEmptyOffer) {
     dispatch(ActionCreator.changeEnteredOffer(entreredOffer));
   },
 });

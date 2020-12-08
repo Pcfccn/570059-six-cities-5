@@ -2,12 +2,7 @@ import React, { FC } from "react";
 import {Link} from "react-router-dom";
 import {BookmarksButtonType, Path, WIDTH_STARS_COEFFICIENT} from "../../constants";
 import BookmarksButton from "../bookmark-button/bookmark-button";
-import {TOffer} from "../types/offer";
-
-type TEmptyOffer = {
-  id: null
-  location: []
-}
+import {TEmptyOffer, TOffer} from "../types/offer";
 
 type TOfferCardProps = {
   offer: TOffer
@@ -20,7 +15,7 @@ const OfferCard: FC<TOfferCardProps> = ({offer, className, onMouseEnterCard}) =>
     onMouseEnterCard(offer);
   };
   const handleCardMouseLeave = () => {
-    onMouseEnterCard({id: null, location: []});
+    onMouseEnterCard({id: 0, location: []});
   };
   const {id, price, rating, isInBookmarks, name, type, isPremium, previewImage} = offer;
   const widthForRatingStar = rating * WIDTH_STARS_COEFFICIENT;

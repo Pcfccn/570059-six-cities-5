@@ -11,7 +11,7 @@ import {TRootReducer} from "../types/reducer";
 type TMainPlaces = {
   offers: TOffer[]
   city: string
-  enteredOfferLocation: [number, number] | null
+  enteredOfferLocation: [number, number]
   enteredOfferId: string
   sortType: string
 }

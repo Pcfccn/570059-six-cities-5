@@ -5,7 +5,7 @@ import {extend} from "../../../utils/common";
 type TStateData = {
   city: string,
   sortType: string,
-  enteredOffer: {id: string, location: [number, number] | null},
+  enteredOffer: {id: string, location: [number, number]},
   userComment: {rating: string, text: string},
   commentSendingStatus: string,
 };
@@ -13,7 +13,7 @@ type TStateData = {
 const initialState: TStateData = {
   city: CITIES[0],
   sortType: SortType.POPULAR_DESC,
-  enteredOffer: {id: ``, location: null},
+  enteredOffer: {id: ``, location: [0, 0]},
   userComment: {rating: `0`, text: ``},
   commentSendingStatus: CommentSendingStatus.DONE,
 };

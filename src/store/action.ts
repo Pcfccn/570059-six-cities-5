@@ -1,5 +1,5 @@
 import { TComment } from "../components/types/comment";
-import { TOffer } from "../components/types/offer";
+import { TEmptyOffer, TOffer } from "../components/types/offer";
 import {ActionType} from "../constants";
 
 const ActionCreator = {
@@ -12,7 +12,7 @@ const ActionCreator = {
     type: ActionType.CHANGE_SORT_TYPE,
     payload: {offers, city, type},
   }),
-  changeEnteredOffer: (offer: TOffer) => ({
+  changeEnteredOffer: (offer: TOffer | TEmptyOffer) => ({
     type: ActionType.CHANGE_ENTERED_OFFER,
     payload: {offer},
   }),

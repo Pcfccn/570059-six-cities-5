@@ -1,4 +1,4 @@
-export type TOffer = {
+type TOffer = {
   id: number
   adults: number
   bedrooms: number
@@ -25,3 +25,10 @@ export type TOffer = {
   cityLocation: [number, number]
   cityZoom: number
 };
+
+type TEmptyOffer = {
+  id: number
+  location: []
+}
+
+export {TOffer, TEmptyOffer}
