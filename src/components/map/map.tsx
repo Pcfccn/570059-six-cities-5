@@ -1,11 +1,17 @@
 import React, {PureComponent} from "react";
 import leaflet from "leaflet";
-import {PropTypes} from "prop-types";
 
-class MapComponent extends PureComponent {
-  constructor(props) {
+type TMapComponentProps = {
+  className: string
+  cityLocation: [number, number]
+  zoom: number
+  pinLocations: Array<[number, number]>
+  chosedPinLocation: [number, number]
+}
+
+class MapComponent extends PureComponent<TMapComponentProps> {
+  constructor(props: TMapComponentProps) {
     super(props);
-    this.myRef = React.createRef();
   }
 
   componentDidMount() {
@@ -22,7 +28,6 @@ class MapComponent extends PureComponent {
       center: cityLocation,
       zoom,
       zoomControl: false,
-      marker: true
     });
     map.setView(cityLocation, zoom);
     leaflet.tileLayer(`https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`, {
@@ -33,7 +38,7 @@ class MapComponent extends PureComponent {
       leaflet.marker(pinLocation, {icon}).addTo(map);
     });
     if (chosedPinLocation && chosedPinLocation.length) {
-      leaflet.marker(chosedPinLocation, {activeIcon}).addTo(map);
+      leaflet.marker(chosedPinLocation).setIcon(activeIcon).addTo(map);
     }
   }
 
@@ -44,17 +49,5 @@ class MapComponent extends PureComponent {
     );
   }
 }
-
-MapComponent.defaultProps = {
-  chosedPinLocation: [],
-};
-
-MapComponent.propTypes = {
-  className: PropTypes.string.isRequired,
-  cityLocation: PropTypes.arrayOf(PropTypes.number).isRequired,
-  zoom: PropTypes.number.isRequired,
-  pinLocations: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number)).isRequired,
-  chosedPinLocation: PropTypes.arrayOf(PropTypes.number).isRequired,
-};
 
 export default MapComponent;

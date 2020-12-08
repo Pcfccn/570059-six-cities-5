@@ -1,13 +1,22 @@
-import React from "react";
-import {PropTypes} from "prop-types";
+import React, { FC } from "react";
 import OfferList from "../offer-list/offer-list";
 import MapComponent from "../map/map";
 import {MapClassName} from "../../constants";
-import offerPropTypes from "../types/offer";
 import MainSort from "../main-sorting/main-sorting";
 import {connect} from "react-redux";
 import {getCityOffers} from "../../store/selectors";
-const MainPlaces = ({offers, city, enteredOfferLocation, enteredOfferId, sortType}) => {
+import {TOffer} from "../types/offer";
+import {TRootReducer} from "../types/reducer";
+
+type TMainPlaces = {
+  offers: TOffer[]
+  city: string
+  enteredOfferLocation: [number, number] | null
+  enteredOfferId: string
+  sortType: string
+}
+
+const MainPlaces: FC<TMainPlaces> = ({offers, city, enteredOfferLocation, enteredOfferId, sortType}) => {
   return (
     <div className="cities">
       <div className="cities__places-container container">
@@ -32,15 +41,7 @@ const MainPlaces = ({offers, city, enteredOfferLocation, enteredOfferId, sortTyp
   );
 };
 
-MainPlaces.propTypes = {
-  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  city: PropTypes.string.isRequired,
-  sortType: PropTypes.string.isRequired,
-  enteredOfferId: PropTypes.oneOfType([PropTypes.number.isRequired, PropTypes.string.isRequired]),
-  enteredOfferLocation: PropTypes.array.isRequired,
-};
-
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state: TRootReducer) => ({
   enteredOfferLocation: state.STATE.enteredOffer.location,
   enteredOfferId: state.STATE.enteredOffer.id,
   offers: getCityOffers(state),

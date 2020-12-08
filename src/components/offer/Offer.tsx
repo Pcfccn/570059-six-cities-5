@@ -1,21 +1,32 @@
-import {PropTypes} from "prop-types";
 import React, {PureComponent} from "react";
-import {getOffer, getWidthForRatingStar} from "../../utils/common.ts";
+import {getOffer, getWidthForRatingStar} from "../../utils/common";
 import PostCommentForm from "../offer-post-comment-form/offer-post-comment-form";
 import Inside from "../offer-inside/offer-inside";
 import Photos from "../offer-photos/offer-photos";
 import Reviews from "../offer-reviews/offer-reviews";
-import offerPropTypes from "../types/offer";
+import {TOffer} from "../types/offer";
 import MapComponent from "../map/map";
 import {AuthorizationStatus, BookmarksButtonType, MapClassName, OfferCardClassName} from "../../constants";
 import OfferCard from "../offer-card/offer-card";
 import Header from "../header/header";
 import {connect} from "react-redux";
 import {ApiActionCreator} from "../../store/api-actions";
-import BookmarksButton from "../bookmark-button/bookmark-button.tsx";
+import BookmarksButton from "../bookmark-button/bookmark-button";
+import { TComment } from "../types/comment";
+import { TRootReducer } from "../types/reducer";
 
-class Offer extends PureComponent {
-  constructor(props) {
+type TOfferProps ={
+  authorizationStatus: string
+  offers: TOffer[]
+  offerProps: any
+  comments: TComment[]
+  nearbyOffers: TOffer[]
+  numberOfComments: number
+  loadOfferInfo: (id: number) => void
+}
+
+class Offer extends PureComponent<TOfferProps> {
+  constructor(props: TOfferProps) {
     super(props);
   }
 
@@ -117,7 +128,7 @@ class Offer extends PureComponent {
               </div>
             </div>
             <MapComponent
-              key={nearbyOffers.map((nearestOffer) => nearestOffer.id).join(id)}
+              key={nearbyOffers.map((nearestOffer) => nearestOffer.id).join(id.toString())}
               className={MapClassName.PROPERTY}
               cityLocation={offer.cityLocation}
               zoom={offer.cityZoom}
@@ -145,31 +156,8 @@ class Offer extends PureComponent {
     );
   }
 }
-Offer.propTypes = {
-  match: PropTypes.shape({
-    params: PropTypes.shape({
-      id: PropTypes.string.isRequired
-    })
-  }),
-  comments: PropTypes.oneOfType([
-    PropTypes.arrayOf(
-        PropTypes.shape({
-          avatar: PropTypes.string,
-          name: PropTypes.string.isRequired,
-          rating: PropTypes.number.isRequired,
-          text: PropTypes.string.isRequired,
-        })),
-    PropTypes.arrayOf(PropTypes.shape()),
-  ]).isRequired,
-  nearbyOffers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  offerProps: PropTypes.object.isRequired,
-  loadOfferInfo: PropTypes.func.isRequired,
-  authorizationStatus: PropTypes.string.isRequired,
-  numberOfComments: PropTypes.number,
-};
 
-const mapStateToProps = ({DATA, USER}) => ({
+const mapStateToProps = ({DATA, USER}: TRootReducer) => ({
   offers: DATA.offers,
   comments: DATA.comments,
   numberOfComments: DATA.numberOfComments,
@@ -177,8 +165,8 @@ const mapStateToProps = ({DATA, USER}) => ({
   authorizationStatus: USER.authorizationStatus,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  loadOfferInfo(id) {
+const mapDispatchToProps = (dispatch: any) => ({
+  loadOfferInfo(id: number) {
     dispatch(ApiActionCreator.fetchOffer(id));
     dispatch(ApiActionCreator.fetchComments(id));
     dispatch(ApiActionCreator.fetchNearbyOffers(id));

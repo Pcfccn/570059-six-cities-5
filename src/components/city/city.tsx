@@ -1,7 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 
-const City = ({thisCity, active, changeCity}) => {
+type TCityProps = {
+  thisCity: string
+  active: boolean
+  changeCity: (city: string) => void
+}
+
+const City: React.FC<TCityProps> = ({thisCity, active, changeCity}) => {
   const isActive = active ? ` tabs__item--active` : ``;
   const handleItemLinkClick = () => {
     changeCity(thisCity);
@@ -16,12 +21,6 @@ const City = ({thisCity, active, changeCity}) => {
       </a>
     </li>
   );
-};
-
-City.propTypes = {
-  thisCity: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired,
-  changeCity: PropTypes.func.isRequired,
 };
 
 export default City;

@@ -3,8 +3,9 @@ import {adaptDataToOffers} from "../../../services/adapter";
 import {TComment} from "../../../components/types/comment";
 import {TOffer} from "../../../components/types/offer";
 import {extend, sortComments} from "../../../utils/common";
+import {TAction} from "../../../components/types/action";
 
-type TOfferDataInitialState = {
+type TOfferData = {
   offers: TOffer[]
   favorites: []
   comments: TComment []
@@ -12,7 +13,7 @@ type TOfferDataInitialState = {
   numberOfComments: number
 }
 
-const initialState: TOfferDataInitialState = {
+const initialState: TOfferData = {
   offers: [],
   favorites: [],
   comments: [],
@@ -20,7 +21,7 @@ const initialState: TOfferDataInitialState = {
   numberOfComments: 0,
 };
 
-const offersData = (state: TOfferDataInitialState = initialState, action: any) => {
+const offersData = (state: TOfferData = initialState, action: TAction) => {
   switch (action.type) {
     case ActionType.LOAD_OFFERS:
       return extend(state, {offers: adaptDataToOffers(action.payload)});
@@ -31,7 +32,7 @@ const offersData = (state: TOfferDataInitialState = initialState, action: any) =
     case ActionType.LOAD_ONE_OFFER:
       return extend(
           state,
-          {offers: state.offers.map((offer) => {
+          {offers: state.offers.map((offer: TOffer) => {
             if (offer.id !== action.payload.id) {
               return offer;
             } else {
@@ -54,4 +55,4 @@ const offersData = (state: TOfferDataInitialState = initialState, action: any) =
   return state;
 };
 
-export {offersData};
+export {offersData, TOfferData};

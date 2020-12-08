@@ -1,10 +1,15 @@
-import React from "react";
-import {getWidthForRatingStar} from "../../utils/common.ts";
-import PropTypes from "prop-types";
+import React, {FC} from "react";
+import {getWidthForRatingStar} from "../../utils/common";
+import {TComment} from "../types/comment";
 
-const Reviews = ({reviews}) => {
+type TReviewsProps = {
+  reviews: TComment[]
+}
+
+const Reviews: FC<TReviewsProps> = ({reviews}) => {
   return (
-    Object.values(reviews).map((review, i) => {
+  <>
+    {Object.values(reviews).map((review, i) => {
       return (
         <li className="reviews__item" key={`${i}-${review.user.name}`}>
           <div className="reviews__user user">
@@ -32,12 +37,9 @@ const Reviews = ({reviews}) => {
           </div>
         </li>
       );
-    })
-  );
-};
-
-Reviews.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+    })}
+  </>
+);
 };
 
 export default Reviews;

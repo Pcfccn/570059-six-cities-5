@@ -1,13 +1,18 @@
-import {PropTypes} from "prop-types";
-import React from "react";
+import React, {FC} from "react";
 import {connect} from "react-redux";
 import CitiesList from "../cities-list/cities-list";
 import Header from "../header/header";
 import MainPlaces from "../main-places/main-places";
 import MainNoPlaces from "../main-no-places/main-no-places";
-import offerPropTypes from "../types/offer";
+import {TOffer} from "../types/offer";
+import {TRootReducer} from "../types/reducer";
 
-const Main = ({offers, city}) => {
+type TMainProps = {
+  offers: TOffer[]
+  city: string
+}
+
+const Main: FC<TMainProps> = ({offers, city}) => {
   return (
     <div className="page page--gray page--main">
       <Header />
@@ -24,12 +29,7 @@ const Main = ({offers, city}) => {
   );
 };
 
-Main.propTypes = {
-  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  city: PropTypes.string.isRequired,
-};
-
-const mapStateToProps = ({DATA, STATE}) => ({
+const mapStateToProps = ({DATA, STATE}: TRootReducer) => ({
   offers: DATA.offers,
   city: STATE.city,
 });

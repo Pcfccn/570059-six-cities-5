@@ -1,16 +1,26 @@
-import {PropTypes} from "prop-types";
-import React from "react";
+import React, { FC } from "react";
 import {Link} from "react-router-dom";
 import {BookmarksButtonType, Path, WIDTH_STARS_COEFFICIENT} from "../../constants";
-import BookmarksButton from "../bookmark-button/bookmark-button.tsx";
-import offerPropTypes from "../types/offer";
+import BookmarksButton from "../bookmark-button/bookmark-button";
+import {TOffer} from "../types/offer";
 
-const OfferCard = ({offer, className, onMouseEnterCard}) => {
+type TEmptyOffer = {
+  id: null
+  location: []
+}
+
+type TOfferCardProps = {
+  offer: TOffer
+  className: string
+  onMouseEnterCard: (offer: TOffer | TEmptyOffer) => void
+}
+
+const OfferCard: FC<TOfferCardProps> = ({offer, className, onMouseEnterCard}) => {
   const handleCardMouseEnter = () => {
     onMouseEnterCard(offer);
   };
   const handleCardMouseLeave = () => {
-    onMouseEnterCard({id: ``, location: []});
+    onMouseEnterCard({id: null, location: []});
   };
   const {id, price, rating, isInBookmarks, name, type, isPremium, previewImage} = offer;
   const widthForRatingStar = rating * WIDTH_STARS_COEFFICIENT;
@@ -54,12 +64,6 @@ const OfferCard = ({offer, className, onMouseEnterCard}) => {
       </div>
     </article>
   );
-};
-
-OfferCard.propTypes = {
-  offer: offerPropTypes,
-  className: PropTypes.string.isRequired,
-  onMouseEnterCard: PropTypes.func.isRequired,
 };
 
 export default OfferCard;

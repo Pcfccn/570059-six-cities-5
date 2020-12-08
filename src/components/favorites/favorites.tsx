@@ -3,10 +3,16 @@ import {connect} from "react-redux";
 import {ApiActionCreator} from "../../store/api-actions";
 import FavoritesCityItem from "../favorites-city-item/favorites-city-item";
 import Header from "../header/header";
-import {PropTypes} from "prop-types";
-import offerPropTypes from "../types/offer";
+import {TOffer} from "../types/offer";
+import {TRootReducer} from "../types/reducer";
 
-const Favorites = ({favorites, offers, fetchFavorites}) => {
+type TFavoritesProps = {
+  favorites: TOffer[]
+  offers: TOffer[]
+  fetchFavorites: () => void
+};
+
+const Favorites: React.FC<TFavoritesProps> = ({favorites, offers, fetchFavorites}) => {
   useEffect(() => {
     fetchFavorites();
   }, []);
@@ -36,12 +42,12 @@ const Favorites = ({favorites, offers, fetchFavorites}) => {
   }
 
 
-  const favoritesCity = new Set();
+  const favoritesCity = new Set<string>();
   favorites.map((item) => {
     favoritesCity.add(item.city);
   });
 
-  const getFavoritesFromCity = (city, favotiteOffers) => ((favotiteOffers).filter((offer) => offer.city === city));
+  const getFavoritesFromCity = (city: string, favotiteOffers: TOffer[]) => ((favotiteOffers).filter((offer) => offer.city === city));
 
   const favoritesCityComponents = Array.from(favoritesCity).map((city) => (<FavoritesCityItem
     key={city}
@@ -72,18 +78,12 @@ const Favorites = ({favorites, offers, fetchFavorites}) => {
   );
 };
 
-Favorites.propTypes = {
-  fetchFavorites: PropTypes.func.isRequired,
-  favorites: PropTypes.arrayOf(offerPropTypes).isRequired,
-  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-};
-
-const mapStateToProps = ({DATA}) => ({
+const mapStateToProps = ({DATA}: TRootReducer) => ({
   favorites: DATA.favorites,
   offers: DATA.offers,
 });
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = (dispatch: any) => ({
   fetchFavorites() {
     dispatch(ApiActionCreator.fetchFavorites());
   },

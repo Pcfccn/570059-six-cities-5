@@ -1,15 +1,24 @@
+import {TAction} from "../../../components/types/action";
 import {ActionType, CITIES, CommentSendingStatus, SortType} from "../../../constants";
-import {extend} from "../../../utils/common.ts";
+import {extend} from "../../../utils/common";
 
-const initialState = {
+type TStateData = {
+  city: string,
+  sortType: string,
+  enteredOffer: {id: string, location: [number, number] | null},
+  userComment: {rating: string, text: string},
+  commentSendingStatus: string,
+};
+
+const initialState: TStateData = {
   city: CITIES[0],
   sortType: SortType.POPULAR_DESC,
-  enteredOffer: {id: ``, location: []},
+  enteredOffer: {id: ``, location: null},
   userComment: {rating: `0`, text: ``},
   commentSendingStatus: CommentSendingStatus.DONE,
 };
 
-const stateData = (state = initialState, action) => {
+const stateData = (state: TStateData = initialState, action: TAction) => {
   switch (action.type) {
     case ActionType.CHANGE_CITY:
       return (
@@ -39,4 +48,4 @@ const stateData = (state = initialState, action) => {
   }
 };
 
-export {stateData};
+export {stateData, TStateData};

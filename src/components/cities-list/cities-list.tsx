@@ -4,8 +4,15 @@ import PropTypes from "prop-types";
 import {CITIES} from "../../constants";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
+import {TStateData} from "../../store/reducers/state-data/state-data";
+import { TRootReducer } from "../types/reducer";
 
-const CitiesList = ({city, changeCity}) => {
+type TCityListProps = {
+  city: string
+  changeCity: (city: string) => void
+}
+
+const CitiesList: React.FC<TCityListProps> = ({city, changeCity}) => {
   return (
     <div className="tabs">
       <section className="locations container">
@@ -34,13 +41,12 @@ CitiesList.propTypes = {
   changeCity: PropTypes.func.isRequired,
 };
 
-
-const mapStateToProps = ({STATE}) => ({
+const mapStateToProps = ({STATE}: TRootReducer) => ({
   city: STATE.city,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  changeCity(thisCity) {
+const mapDispatchToProps = (dispatch: any) => ({
+  changeCity(thisCity: string) {
     dispatch(ActionCreator.changeCity(thisCity));
   },
 });

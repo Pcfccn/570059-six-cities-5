@@ -1,8 +1,10 @@
-// выполнено до того, как это стало заданием
-import React from "react";
-import {PropTypes} from "prop-types";
+import React, { FC } from "react";
 
-const MainNoPlaces = ({city}) => {
+type TMainNoPlaces = {
+  city: string
+}
+
+const MainNoPlaces: FC<TMainNoPlaces> = ({city}) => {
   return (
     <div className="cities page__main--index-empty">
       <div className="cities__places-container cities__places-container--empty container">
@@ -16,10 +18,6 @@ const MainNoPlaces = ({city}) => {
       </div>
     </div>
   );
-};
-
-MainNoPlaces.propTypes = {
-  city: PropTypes.string.isRequired
 };
 
 export default MainNoPlaces;

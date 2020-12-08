@@ -1,10 +1,16 @@
-import React from "react";
+import React, {FC} from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {Link} from "react-router-dom";
 import {Path, AuthorizationStatus} from "../../constants";
+import {TRootReducer} from "../types/reducer";
 
-const Header = ({authStatus, email}) => {
+type THeaderProps = {
+  authStatus: typeof AuthorizationStatus.AUTH | typeof AuthorizationStatus.NO_AUTH
+  email: string | null
+}
+
+const Header: FC<THeaderProps> = ({authStatus, email}) => {
   return (
     <header className="header">
       <div className="container">
@@ -35,16 +41,7 @@ const Header = ({authStatus, email}) => {
   );
 };
 
-Header.propTypes = {
-  email: PropTypes.string.isRequired,
-  authStatus: PropTypes.string.isRequired,
-};
-
-Header.defaultProps = {
-  email: ``
-};
-
-const mapStateToProps = ({USER}) =>({
+const mapStateToProps = ({USER}: TRootReducer) =>({
   authStatus: USER.authorizationStatus,
   email: USER.email
 });

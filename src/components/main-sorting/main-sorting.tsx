@@ -1,22 +1,31 @@
 import React from "react";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../store/action";
-import {PropTypes} from "prop-types";
 import MainSortingOptionsList from "../main-sorting-options-list/main-sorting-options-list";
-import offerPropTypes from "../types/offer";
 import withSortMenuOpen from "../../hocs/with-toggle/with-toggle";
+import {TRootReducer} from "../types/reducer";
+import {TOffer} from "../types/offer";
 
-class MainSort extends React.PureComponent {
-  constructor(props) {
+type TMainSortProps = {
+  offers: TOffer[]
+  city: string
+  sortType: string
+  isActive: boolean
+  changeSortType: (offers: TOffer[], city: string, sortType: string) => {}
+  handleToggleClick: () => void
+}
+
+class MainSort extends React.PureComponent<TMainSortProps> {
+  constructor(props: TMainSortProps) {
     super(props);
 
     this.handleChangeSortType = this.handleChangeSortType.bind(this);
   }
 
-  handleChangeSortType(chosedSortType) {
-    const {offers, city, changeSortType} = this.props;
+  handleChangeSortType(chosedSortType: string) {
+    const {offers, city, changeSortType, handleToggleClick} = this.props;
     changeSortType(offers, city, chosedSortType);
-    this.props.handleToggleClick();
+    handleToggleClick();
   }
 
   render() {
@@ -24,7 +33,7 @@ class MainSort extends React.PureComponent {
     return (
       <form className="places__sorting" action="#" method="get">
         <span className="places__sorting-caption">Sort by </span>
-        <span className="places__sorting-type" tabIndex="0"
+        <span className="places__sorting-type" tabIndex={0}
           onClick={handleToggleClick}
         >
           {sortType}
@@ -41,23 +50,14 @@ class MainSort extends React.PureComponent {
 }
 const withOpenSortMainSort = withSortMenuOpen(MainSort);
 
-MainSort.propTypes = {
-  changeSortType: PropTypes.func.isRequired,
-  sortType: PropTypes.string.isRequired,
-  city: PropTypes.string.isRequired,
-  offers: PropTypes.arrayOf(offerPropTypes).isRequired,
-  isActive: PropTypes.bool.isRequired,
-  handleToggleClick: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = ({STATE, DATA}) => ({
+const mapStateToProps = ({STATE, DATA}: TRootReducer) => ({
   sortType: STATE.sortType,
   offers: DATA.offers,
   city: STATE.city,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  changeSortType(offers, city, sortType) {
+const mapDispatchToProps = (dispatch: any) => ({
+  changeSortType(offers: TOffer[], city: string, sortType: string) {
     dispatch(ActionCreator.changeSortType(offers, city, sortType));
   },
 });

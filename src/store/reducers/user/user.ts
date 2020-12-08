@@ -1,11 +1,26 @@
+import {TAction} from "../../../components/types/action";
 import {AuthorizationStatus, ActionType} from "../../../constants";
-import {extend} from "../../../utils/common.ts";
+import {extend} from "../../../utils/common";
 
-const initialState = {
+type TUser = {
+  authorizationStatus: string
+  id: number | null
+  email: string | null,
+  name: string | null,
+  avatarUrl: string | null,
+  isPro: boolean,
+}
+
+const initialState: TUser = {
   authorizationStatus: AuthorizationStatus.NO_AUTH,
+  id: null,
+  email: null,
+  name: null,
+  avatarUrl: null,
+  isPro: false,
 };
 
-const user = (state = initialState, action) => {
+const user = (state: TUser = initialState, action: TAction) => {
   switch (action.type) {
     case ActionType.REQUIRED_AUTHORIZATION:
       return extend(state, {
@@ -25,4 +40,4 @@ const user = (state = initialState, action) => {
   return state;
 };
 
-export {user};
+export {user, TUser};

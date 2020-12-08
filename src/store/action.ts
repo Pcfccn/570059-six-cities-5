@@ -1,75 +1,77 @@
+import { TComment } from "../components/types/comment";
+import { TOffer } from "../components/types/offer";
 import {ActionType} from "../constants";
 
 const ActionCreator = {
-  changeCity: (city) => ({
+  changeCity: (city: string) => ({
     type: ActionType.CHANGE_CITY,
     payload: city,
   }),
 
-  changeSortType: (offers, city, type) => ({
+  changeSortType: (offers: TOffer[], city: string, type: string) => ({
     type: ActionType.CHANGE_SORT_TYPE,
     payload: {offers, city, type},
   }),
-  changeEnteredOffer: (offer) => ({
+  changeEnteredOffer: (offer: TOffer) => ({
     type: ActionType.CHANGE_ENTERED_OFFER,
     payload: {offer},
   }),
-  enterText: (text) => ({
+  enterText: (text: string) => ({
     type: ActionType.ENTER_TEXT,
     payload: text,
   }),
 
-  changeCommentSendingStatus: (status) => ({
+  changeCommentSendingStatus: (status: number) => ({
     type: ActionType.CHANGE_COMMENT_SENDING_STATUS,
     payload: status,
   }),
 
-  loadUserData: (userData) => ({
+  loadUserData: (userData: {}) => ({
     type: ActionType.LOAD_USER_DATA,
     payload: userData,
   }),
 
-  loadFavorites: (favoritesData) => ({
+  loadFavorites: (favoritesData: TOffer[]) => ({
     type: ActionType.LOAD_FAVORITES,
     payload: favoritesData,
   }),
 
-  loadOffers: (offers) => ({
+  loadOffers: (offers: TOffer[]) => ({
     type: ActionType.LOAD_OFFERS,
     payload: offers,
   }),
 
-  loadOneOffer: (offer) => ({
+  loadOneOffer: (offer: TOffer) => ({
     type: ActionType.LOAD_ONE_OFFER,
     payload: offer,
   }),
 
-  loadComments: (comment) => ({
+  loadComments: (comments: TComment[]) => ({
     type: ActionType.LOAD_COMMENTS,
-    payload: comment,
+    payload: comments,
   }),
 
-  loadNearbyOffers: (nearbyOffers) => ({
+  loadNearbyOffers: (nearbyOffers: TOffer[]) => ({
     type: ActionType.LOAD_NEARBY_OFFERS,
     payload: nearbyOffers,
   }),
 
-  openSortOptions: (toggle) => ({
+  openSortOptions: (toggle: boolean) => ({
     type: ActionType.OPEN_SORT_OPTIONS,
     payload: !toggle,
   }),
 
-  redirectToRoute: (url) => ({
+  redirectToRoute: (url: string) => ({
     type: ActionType.REDIRECT_TO_ROUTE,
     payload: url,
   }),
 
-  requireAuthorization: (status) => ({
+  requireAuthorization: (status: string) => ({
     type: ActionType.REQUIRED_AUTHORIZATION,
     payload: status,
   }),
 
-  setRating: (rating) => ({
+  setRating: (rating: string) => ({
     type: ActionType.SET_RATING,
     payload: rating,
   }),

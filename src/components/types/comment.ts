@@ -1,3 +1,9 @@
 export type TComment = {
-  date: Date
+  comment: string
+  date: string
+  rating: number
+  user: {
+    name: string
+    avatar_url: string
+  }
   };

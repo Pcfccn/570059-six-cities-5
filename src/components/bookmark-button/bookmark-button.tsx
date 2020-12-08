@@ -1,14 +1,14 @@
-import React, { Dispatch } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import {BookmarksButtonType} from "../../constants";
 import {connect} from "react-redux";
 import {ApiActionCreator} from "../../store/api-actions";
 
 type TBookmarksButtonProps = {
-  id: number
+  id: number | null
   type: string
   isInBookmarks: boolean
-  addToBookmarks: (id: number, isInBookmarks: number) => void
+  addToBookmarks: (id: number | null, isInBookmarks: number) => void
 }
 
 const BookmarksButton: React.FC<TBookmarksButtonProps> = ({id, type, isInBookmarks, addToBookmarks}) => {
@@ -46,7 +46,7 @@ const BookmarksButton: React.FC<TBookmarksButtonProps> = ({id, type, isInBookmar
 };
 
 const mapDispatchToProps = (dispatch: any) => ({
-  addToBookmarks(id: number, status: number) {
+  addToBookmarks(id: number | null, status: number) {
     dispatch(ApiActionCreator.postFavorite(id, status));
   },
 });
