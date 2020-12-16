@@ -1,9 +1,18 @@
-import {PropTypes} from "prop-types";
-import React, {Fragment} from "react";
+import React, {FC, Fragment, ReactNode} from "react";
 import {connect} from "react-redux";
 import {Redirect, Route} from "react-router-dom";
+import { TRootReducer } from "../types/reducer";
 
-const PrivateRoute = ({path, isAuthorizated, redirectPath, children, exact, authorizationStatus}) => {
+type TPrivateRouteProps = {
+  authorizationStatus: string
+  isAuthorizated: string
+  exact: boolean
+  path: string
+  redirectPath: string
+  children: ReactNode
+}
+
+const PrivateRoute: FC<TPrivateRouteProps> = ({path, isAuthorizated, redirectPath, children, exact, authorizationStatus}) => {
   return (
     <Route
       path={path}
@@ -20,16 +29,7 @@ const PrivateRoute = ({path, isAuthorizated, redirectPath, children, exact, auth
   );
 };
 
-PrivateRoute.propTypes = {
-  authorizationStatus: PropTypes.string.isRequired,
-  isAuthorizated: PropTypes.string.isRequired,
-  exact: PropTypes.bool.isRequired,
-  path: PropTypes.string.isRequired,
-  redirectPath: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired
-};
-
-const mapStateToProps = ({USER}) => ({
+const mapStateToProps = ({USER}: TRootReducer) => ({
   authorizationStatus: USER.authorizationStatus,
 });
 

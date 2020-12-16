@@ -6,7 +6,7 @@ type TStateData = {
   city: string,
   sortType: string,
   enteredOffer: {id: string, location: [number, number]},
-  userComment: {rating: string, text: string},
+  userComment: {rating: number, text: string},
   commentSendingStatus: string,
 };
 
@@ -14,7 +14,7 @@ const initialState: TStateData = {
   city: CITIES[0],
   sortType: SortType.POPULAR_DESC,
   enteredOffer: {id: ``, location: [0, 0]},
-  userComment: {rating: `0`, text: ``},
+  userComment: {rating: 0, text: ``},
   commentSendingStatus: CommentSendingStatus.DONE,
 };
 

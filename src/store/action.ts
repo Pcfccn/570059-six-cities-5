@@ -21,7 +21,7 @@ const ActionCreator = {
     payload: text,
   }),
 
-  changeCommentSendingStatus: (status: number) => ({
+  changeCommentSendingStatus: (status: string) => ({
     type: ActionType.CHANGE_COMMENT_SENDING_STATUS,
     payload: status,
   }),
@@ -71,7 +71,7 @@ const ActionCreator = {
     payload: status,
   }),
 
-  setRating: (rating: string) => ({
+  setRating: (rating: number) => ({
     type: ActionType.SET_RATING,
     payload: rating,
   }),

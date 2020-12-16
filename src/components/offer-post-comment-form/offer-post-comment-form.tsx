@@ -1,25 +1,49 @@
-import {PropTypes} from "prop-types";
-import React from "react";
+import React, { FC } from "react";
 import {connect} from "react-redux";
 import {CommentSendingStatus, RATING_STARS} from "../../constants";
 import {ActionCreator} from "../../store/action";
 import {ApiActionCreator} from "../../store/api-actions";
 import RatingStar from "../offer-post-comment-rating-star/offer-post-comment-rating-star";
+import { TRootReducer } from "../types/reducer";
 
-const PostCommentForm = ({id, rating, text, postComment, setRating, enterText, changeCommentSendingStatus, commentSendingStatus}) => {
+type TPostComment = {
+  id: number
+  object: {
+    comment: string
+    rating: number
+  }
+}
+
+type TPostCommentFormProps = {
+  id:number
+  rating:number
+  text:string
+  postComment: (
+    id: number,
+    {comment, rating}:  {
+      comment: string
+      rating: number
+  }) => void
+  setRating: (rating: number) => void
+  enterText: (enterText: string) => void
+  changeCommentSendingStatus: (sendingStatus: string) => void
+  commentSendingStatus: string
+}
+
+const PostCommentForm: FC<TPostCommentFormProps> = ({id, rating, text, postComment, setRating, enterText, changeCommentSendingStatus, commentSendingStatus}) => {
 
   const isButtonDisabled = !+rating || text.length < 50 || commentSendingStatus === CommentSendingStatus.SENDING;
 
-  const handelFormSubmit = (evt) => {
+  const handelFormSubmit = (evt: any) => {
     evt.preventDefault();
     changeCommentSendingStatus(CommentSendingStatus.SENDING);
     postComment(id, {comment: text, rating});
   };
 
-  const handleRatingAreaChange = (stars) => {
+  const handleRatingAreaChange = (stars: number) => {
     setRating(stars);
   };
-  const handleTextAreaChange = (evt) => {
+  const handleTextAreaChange = (evt: any) => {
     enterText(evt.target.value);
   };
   return (
@@ -59,36 +83,27 @@ const PostCommentForm = ({id, rating, text, postComment, setRating, enterText, c
   );
 };
 
-
-PostCommentForm.propTypes = {
-  id: PropTypes.number.isRequired,
-  commentSendingStatus: PropTypes.string.isRequired,
-  rating: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
-  enterText: PropTypes.func.isRequired,
-  postComment: PropTypes.func.isRequired,
-  setRating: PropTypes.func.isRequired,
-  changeCommentSendingStatus: PropTypes.func.isRequired,
-};
-
-const mapStateToProps = ({STATE}) => ({
+const mapStateToProps = ({STATE}: TRootReducer) => ({
   rating: STATE.userComment.rating,
   text: STATE.userComment.text,
   commentSendingStatus: STATE.commentSendingStatus,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  setRating(rating) {
+const mapDispatchToProps = (dispatch: any) => ({
+  setRating(rating: number) {
     dispatch(ActionCreator.setRating(rating));
   },
-  enterText(text) {
+  enterText(text: string) {
     dispatch(ActionCreator.enterText(text));
   },
-  postComment(id, {comment, rating}) {
+  postComment(id: number, {comment, rating}:  {
+    comment: string
+    rating: number
+}) {
     dispatch(ApiActionCreator.postComment(id, {comment, rating}));
   },
 
-  changeCommentSendingStatus(status) {
+  changeCommentSendingStatus(status: string) {
     dispatch(ActionCreator.changeCommentSendingStatus(status));
   },
 });

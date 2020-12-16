@@ -1,9 +1,14 @@
-import {PropTypes} from "prop-types";
-import React, {Fragment} from "react";
+import React, {FC, Fragment} from "react";
 import {RATING_INPUT_TITLES} from "../../constants";
 
-const RatingStar = ({rating, currentRating, onChange}) => {
-  const handleInputChange = (evt) =>{
+type TRatingStarProps = {
+  rating: number
+  currentRating: number
+  onChange: (stars: number) => void
+}
+
+const RatingStar: FC<TRatingStarProps> = ({rating, currentRating, onChange}) => {
+  const handleInputChange = (evt: any) =>{
     onChange(evt.target.value);
   };
 
@@ -25,12 +30,6 @@ const RatingStar = ({rating, currentRating, onChange}) => {
       </label>
     </Fragment>
   );
-};
-
-RatingStar.propTypes = {
-  rating: PropTypes.number.isRequired,
-  currentRating: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
 };
 
 export default RatingStar;

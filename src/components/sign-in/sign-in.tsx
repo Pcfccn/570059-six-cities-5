@@ -1,15 +1,23 @@
-import React from "react";
+import React, { FC } from "react";
 import {connect} from "react-redux";
 import {ApiActionCreator} from "../../store/api-actions";
 import Header from "../header/header";
 import PropTypes from "prop-types";
 
-const SignIn = ({onSubmit}) => {
+type TAuthData = {
+  email: string
+  password: string
+}
+type TSignInProps = {
+  onSubmit: ({email, password}: TAuthData) => void
+}
 
-  const emailRef = React.createRef();
-  const passwordRef = React.createRef();
+const SignIn: FC<TSignInProps> = ({onSubmit}) => {
 
-  const handleFormSubmit = (evt) => {
+  const emailRef = React.createRef<HTMLInputElement>();
+  const passwordRef = React.createRef<HTMLInputElement>();
+
+  const handleFormSubmit = (evt: any) => {
     evt.preventDefault();
     onSubmit({
       email: emailRef.current ? emailRef.current.value : ``,
@@ -72,8 +80,8 @@ SignIn.propTypes = {
   onSubmit: PropTypes.func.isRequired,
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  onSubmit(authData) {
+const mapDispatchToProps = (dispatch: any) => ({
+  onSubmit(authData: TAuthData) {
     dispatch(ApiActionCreator.login(authData));
   }
 });
