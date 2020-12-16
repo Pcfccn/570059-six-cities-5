@@ -127,8 +127,8 @@ describe(`state-data reducer work correctly`, () => {
       city: CITIES[0],
       commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
-      enteredOffer: {id: ``, location: []},
-      userComment: {rating: `0`, text: ``}
+      enteredOffer: {id: null, location: [0, 0]},
+      userComment: {rating: 0, text: ``}
     });
   });
 
@@ -139,22 +139,22 @@ describe(`state-data reducer work correctly`, () => {
     })).toEqual({
       city: `Paris`,
       commentSendingStatus: CommentSendingStatus.DONE,
-      enteredOffer: {id: ``, location: []},
+      enteredOffer: {id: null, location: [0, 0]},
       sortType: `Popular`,
-      userComment: {rating: `0`, text: ``}
+      userComment: {rating: 0, text: ``}
     });
   });
 
   it(`should update rating`, () => {
     expect(stateData(void 0, {
       type: ActionType.SET_RATING,
-      payload: `5`,
+      payload: 5,
     })).toEqual({
       city: CITIES[0],
       commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
-      enteredOffer: {id: ``, location: []},
-      userComment: {rating: `5`, text: ``}
+      enteredOffer: {id: null, location: [0, 0]},
+      userComment: {rating: 5, text: ``}
     });
   });
 
@@ -166,8 +166,8 @@ describe(`state-data reducer work correctly`, () => {
       city: CITIES[0],
       commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
-      enteredOffer: {id: ``, location: []},
-      userComment: {rating: `0`, text: `testText`}
+      enteredOffer: {id: null, location: [0, 0]},
+      userComment: {rating: 0, text: `testText`}
     });
   });
 
@@ -181,8 +181,8 @@ describe(`state-data reducer work correctly`, () => {
       city: CITIES[0],
       commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.RATING_DESC,
-      enteredOffer: {id: ``, location: []},
-      userComment: {rating: `0`, text: ``},
+      enteredOffer: {id: null, location: [0, 0]},
+      userComment: {rating: 0, text: ``},
     });
   });
 
@@ -195,7 +195,7 @@ describe(`state-data reducer work correctly`, () => {
       commentSendingStatus: CommentSendingStatus.DONE,
       sortType: SortType.POPULAR_DESC,
       enteredOffer: offers[0],
-      userComment: {rating: `0`, text: ``},
+      userComment: {rating: 0, text: ``},
     });
   });
 
@@ -207,8 +207,8 @@ describe(`state-data reducer work correctly`, () => {
       city: CITIES[0],
       commentSendingStatus: CommentSendingStatus.SENDING,
       sortType: SortType.POPULAR_DESC,
-      enteredOffer: {id: ``, location: []},
-      userComment: {rating: `0`, text: ``},
+      enteredOffer: {id: null, location: [0, 0]},
+      userComment: {rating: 0, text: ``},
     });
   });
 });

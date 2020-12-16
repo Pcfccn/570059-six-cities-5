@@ -4,7 +4,12 @@ import {user} from "./user";
 describe(`user reducer work correctly`, () => {
   it(`Should return initial store without parametrs`, () => {
     expect(user(void 0, {})).toEqual({
-      authorizationStatus: AuthorizationStatus.NO_AUTH
+      authorizationStatus: AuthorizationStatus.NO_AUTH,
+      avatarUrl: null,
+      email: null,
+      id: null,
+      isPro: false,
+      name: null,
     });
   });
 
@@ -13,7 +18,12 @@ describe(`user reducer work correctly`, () => {
       type: ActionType.REQUIRED_AUTHORIZATION,
       payload: AuthorizationStatus.AUTH
     })).toEqual({
-      authorizationStatus: AuthorizationStatus.AUTH
+      authorizationStatus: AuthorizationStatus.AUTH,
+      avatarUrl: null,
+      email: null,
+      id: null,
+      isPro: false,
+      name: null,
     });
   });
 

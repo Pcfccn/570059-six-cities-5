@@ -1447,7 +1447,7 @@ exports[`Should Main render correctly 1`] = `
                               <span
                                 className="places__sorting-type"
                                 onClick={[Function]}
-                                tabIndex="0"
+                                tabIndex={0}
                               >
                                 Popular
                                 <svg
@@ -1476,7 +1476,7 @@ exports[`Should Main render correctly 1`] = `
                                     <li
                                       className="places__option "
                                       onClick={[Function]}
-                                      tabIndex="0"
+                                      tabIndex={0}
                                     >
                                       Price: low to high
                                     </li>
@@ -1490,7 +1490,7 @@ exports[`Should Main render correctly 1`] = `
                                     <li
                                       className="places__option "
                                       onClick={[Function]}
-                                      tabIndex="0"
+                                      tabIndex={0}
                                     >
                                       Price: high to low
                                     </li>
@@ -1504,7 +1504,7 @@ exports[`Should Main render correctly 1`] = `
                                     <li
                                       className="places__option places__option--active"
                                       onClick={[Function]}
-                                      tabIndex="0"
+                                      tabIndex={0}
                                     >
                                       Popular
                                     </li>
@@ -1518,7 +1518,7 @@ exports[`Should Main render correctly 1`] = `
                                     <li
                                       className="places__option "
                                       onClick={[Function]}
-                                      tabIndex="0"
+                                      tabIndex={0}
                                     >
                                       Top rated first
                                     </li>
