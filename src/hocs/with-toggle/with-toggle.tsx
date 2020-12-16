@@ -1,8 +1,12 @@
-import React from "react";
+import React, { Component, FC } from "react";
 
-const withToggle = (Component) => {
-  return class WithToggle extends React.PureComponent {
-    constructor(props) {
+type TComponentState = {
+  isActive: boolean
+}
+
+const withToggle = (Component: any) => {
+  return class WithToggle extends React.PureComponent<any, TComponentState> {
+    constructor(props: any) {
       super(props);
 
       this.state = {
