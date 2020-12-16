@@ -21,16 +21,16 @@ const Path = {
   SIGN_IN: `/login`,
   FAVORITES: `/favorites`,
   OFFER: `/offer/:id`,
-  getUrlById: (id) => (`/offer/${id}`)
+  getUrlById: (id: number) => (`/offer/${id}`)
 };
 const ApiURL = {
   LOGIN: `/login`,
   HOTELS: `/hotels`,
   FAVORITES: `/favorite`,
-  getUrlById: (id) => (`/hotels/${id}`),
-  getUrlNearbyById: (id) => (`/hotels/${id}/nearby`),
-  getUrlCommentsById: (id) => (`/comments/${id}`),
-  getUrlFavoriteStatus: (id, status) => (`/favorite/${id}/${status}`),
+  getUrlById: (id: number) => (`/hotels/${id}`),
+  getUrlNearbyById: (id: number) => (`/hotels/${id}/nearby`),
+  getUrlCommentsById: (id: number) => (`/comments/${id}`),
+  getUrlFavoriteStatus: (id: number, status: number) => (`/favorite/${id}/${status}`),
 };
 
 const RATING_STARS = [5, 4, 3, 2, 1];

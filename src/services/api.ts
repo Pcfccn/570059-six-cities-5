@@ -7,16 +7,16 @@ const HttpCode = {
   UNAUTHORIZED: 401
 };
 
-export const createAPI = (onUnauthorized) => {
+export const createAPI = (onUnauthorized: any) => {
   const api = axios.create({
     baseURL: BACKEND_URL,
     timeout: REQUEST_TIMEOUT,
     withCredentials: true,
   });
 
-  const onSuccess = (response) => response;
+  const onSuccess = (response: any) => response;
 
-  const onFail = (err) => {
+  const onFail = (err: any) => {
     const {response} = err;
 
     if (response.status === HttpCode.UNAUTHORIZED) {
